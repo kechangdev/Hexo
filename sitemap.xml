@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.neurocoda.com/p/4a17b156.html</loc>
-    
-    <lastmod>2025-02-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.neurocoda.com/tags/index.html</loc>
     
     <lastmod>2025-02-11</lastmod>
