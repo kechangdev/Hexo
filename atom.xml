@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Neurocoda&#39;s Blog</title>
+  <title>Neurocoda&#39;s Site</title>
   
   
-  <link href="https://blog.neurocoda.com/atom.xml" rel="self"/>
+  <link href="https://neurocoda.com/atom.xml" rel="self"/>
   
-  <link href="https://blog.neurocoda.com/"/>
+  <link href="https://neurocoda.com/"/>
   <updated>2025-02-10T11:36:09.000Z</updated>
-  <id>https://blog.neurocoda.com/</id>
+  <id>https://neurocoda.com/</id>
   
   <author>
     <name>Neurocoda</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>如何从 Notion 无痛转移到 Obsidian？（不完全转移）</title>
-    <link href="https://blog.neurocoda.com/p/81a43a38.html"/>
-    <id>https://blog.neurocoda.com/p/81a43a38.html</id>
+    <link href="https://neurocoda.com/p/81a43a38.html"/>
+    <id>https://neurocoda.com/p/81a43a38.html</id>
     <published>2025-02-10T11:36:09.000Z</published>
     <updated>2025-02-10T11:36:09.000Z</updated>
     
@@ -33,10 +33,10 @@
     
     
     
-    <category term="知识库" scheme="https://blog.neurocoda.com/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/"/>
+    <category term="知识库" scheme="https://neurocoda.com/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/"/>
     
     
-    <category term="Obsidian" scheme="https://blog.neurocoda.com/tags/Obsidian/"/>
+    <category term="Obsidian" scheme="https://neurocoda.com/tags/Obsidian/"/>
     
   </entry>
   
