@@ -13,7 +13,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#112;&#117;&#x62;&#x6c;&#x69;&#x63;&#x40;&#x6e;&#101;&#x75;&#x72;&#111;&#x63;&#x6f;&#100;&#97;&#x2e;&#99;&#x6f;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#x6c;&#105;&#x63;&#x40;&#110;&#101;&#117;&#x72;&#x6f;&#99;&#111;&#x64;&#x61;&#x2e;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -143,7 +143,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#108;&#x69;&#x63;&#x40;&#110;&#101;&#x75;&#x72;&#x6f;&#99;&#111;&#x64;&#x61;&#46;&#x63;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#x6c;&#x69;&#x63;&#x40;&#x6e;&#x65;&#117;&#x72;&#111;&#99;&#111;&#x64;&#x61;&#46;&#x63;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -286,359 +286,6 @@
       </categories>
       <tags>
         <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo webhook 自动部署</title>
-    <url>/p/2cc1110b.html</url>
-    <content><![CDATA[<h1 id="Hexo-是什么？"><a href="#Hexo-是什么？" class="headerlink" title="Hexo 是什么？"></a>Hexo 是什么？</h1><blockquote>
-<p>Hexo 是一个快速、简洁且高效的博客框架。 Hexo 使用 <a class="link" href="http://daringfireball.net/projects/markdown/">Markdown<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-<h2 id="本文对应的环境："><a href="#本文对应的环境：" class="headerlink" title="本文对应的环境："></a>本文对应的环境：</h2><ul>
-<li>一台公网服务器</li>
-<li>有 Git 平台托管 hexo 生成的站点（Github 或自建 Git 仓库）</li>
-<li>本地能运行 Hexo</li>
-</ul>
-<p>若你没有公网服务器，那么可以忽略本文 <strong>服务器配置</strong> 部分，转而采用类似 Github page 等其他平台的服务。但是 <strong>本地配置</strong> 部分是相同。</p>
-<h2 id="本文采取的建站方案："><a href="#本文采取的建站方案：" class="headerlink" title="本文采取的建站方案："></a>本文采取的建站方案：</h2><ul>
-<li>本地编写文章，编写好后通过 hexo 构建站点，并将站点通过 git push 到 github 仓库。当 push 结束后，  github 通过 webhook 向我的公网服务器发送提示，我的公网服务器收到提示后自动 clone 站点到 nginx 反向代理的站点目录。  <blockquote>
-<p>公网服务器端通过 <code>neurocoda/gitrigger:latest</code> 容器自动化完成接收 webhook 提示， git clone 工作。</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="Git-平台配置"><a href="#Git-平台配置" class="headerlink" title="Git 平台配置"></a>Git 平台配置</h1><p>创建一个代码仓库。</p>
-<h1 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h1><h2 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h2><p>各种系统的安装方式详见：<a class="link" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<p>我本地是 Ubuntu：<br>根据： <a class="link" href="https://github.com/nodesource/distributions">https://github.com/nodesource/distributions<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh</span><br><span class="line"><span class="built_in">sudo</span> -E bash nodesource_setup.sh</span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure></div>
-
-<p>验证安装：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="安装-Hexo-cli"><a href="#安装-Hexo-cli" class="headerlink" title="安装 Hexo-cli"></a>安装 Hexo-cli</h2><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="建立-Hexo-仓库"><a href="#建立-Hexo-仓库" class="headerlink" title="建立 Hexo 仓库"></a>建立 Hexo 仓库</h2><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;  </span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;  </span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h2><p>创建 ssh key：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure></div>
-
-<p>获取公钥：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /root/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure></div>
-
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193914600.png" class="">
-
-<p>将获取到的公钥添加到你选择的 git 平台</p>
-<blockquote>
-<p>Github: <a class="link" href="https://github.com/settings/keys">https://github.com/settings/keys<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-</blockquote>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193915080.png" class="">
-
-
-<h2 id="Hexo-添加-Git"><a href="#Hexo-添加-Git" class="headerlink" title="Hexo 添加 Git"></a>Hexo 添加 Git</h2><p><strong>在 Hexo 根目录下：</strong></p>
-<p>安装插件：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
-
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure></div>
-
-<p>在底部找到，并添加仓库信息：</p>
-<div class="code-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:neurocoda/Hexo.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div>
-
-<h1 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h1><h2 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h2><p>开放防火墙：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">ufw allow 22</span><br><span class="line">ufw allow 80</span><br><span class="line">ufw allow 443</span><br></pre></td></tr></table></figure></div>
-
-<p>启用并查看防火墙状态：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ufw enable</span><br><span class="line">ufw status</span><br></pre></td></tr></table></figure></div>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193916623.png" class="">
-
-<h2 id="安装-Nginx-Docker"><a href="#安装-Nginx-Docker" class="headerlink" title="安装 Nginx, Docker"></a>安装 Nginx, Docker</h2><p>更新源：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt upgrade -y</span><br></pre></td></tr></table></figure></div>
-
-<p>安装 <code>docker-compose</code>, <code>nginx</code>, <code>python3-certbot-nginx</code>：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">apt install docker-compose nginx certbot python3-certbot-nginx</span><br></pre></td></tr></table></figure></div>
-
-<p>确定 nginx 已经正确运行了：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure></div>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193918604.png" class="">
-
-
-<h2 id="配置-SSH-密钥"><a href="#配置-SSH-密钥" class="headerlink" title="配置 SSH 密钥"></a>配置 SSH 密钥</h2><p><strong>如果你的仓库是私有仓库，那么需要配置 ssh 密钥：</strong></p>
-<p>创建 ssh key：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure></div>
-
-<p>获取公钥：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /root/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure></div>
-
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193914600.png" class="">
-
-<p>将获取到的公钥添加到你选择的 git 平台</p>
-<blockquote>
-<p>Github: <a class="link" href="https://github.com/settings/keys">https://github.com/settings/keys<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-</blockquote>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193915080.png" class="">
-
-<h2 id="配置-Webhook"><a href="#配置-Webhook" class="headerlink" title="配置 Webhook"></a>配置 Webhook</h2><p>在仓库配置 webhook：</p>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193920071.png" class="">
-
-<h2 id="服务启动"><a href="#服务启动" class="headerlink" title="服务启动"></a>服务启动</h2><p>编写 <code>docker-compose.yml</code>:</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure></div>
-
-<p>填入以下内容：</p>
-<div class="code-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.8'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">hexo:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">neurocoda/gitrigger:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">hexo</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"127.0.0.1:7890:5000"</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">REPO_URL:</span> <span class="string">"git@github.com:neurocoda/Hexo.git"</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/root/.ssh/id_ed25519:/root/.ssh/id_rsa:ro</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/www/sites:/clone_data</span></span><br></pre></td></tr></table></figure></div>
-
-<p>在 <code>docker-compose.yml</code> 所在目录执行 up 指令：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure></div>
-
-<p>查看容器状态：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure></div>
-
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193922875.png" class="">
-
-<p>状态为 <code>Up</code> 意为容器正确运行。（这里我还有其他服务，所以看起来可能不一样）</p>
-<p>查看容器日志：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker logs hexo</span><br></pre></td></tr></table></figure></div>
-
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193925162.png" class="">
-
-<h2 id="配置反向代理"><a href="#配置反向代理" class="headerlink" title="配置反向代理"></a>配置反向代理</h2><p>编辑 nginx.conf：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure></div>
-
-<p>添加反向代理：</p>
-<div class="code-container" data-rel="Nginx"><figure class="iseeu highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">user</span> www-data;</span><br><span class="line"><span class="attribute">worker_processes</span> auto;</span><br><span class="line"><span class="attribute">pid</span> /run/nginx.pid;</span><br><span class="line"><span class="attribute">include</span> /etc/nginx/modules-enabled/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line"><span class="section">events</span> {</span><br><span class="line">    <span class="attribute">worker_connections</span> <span class="number">768</span>;</span><br><span class="line">    <span class="comment"># multi_accept on;</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="section">http</span> {</span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Basic Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">sendfile</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">tcp_nopush</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">types_hash_max_size</span> <span class="number">2048</span>;</span><br><span class="line">    <span class="comment"># server_tokens off;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># server_names_hash_bucket_size 64;</span></span><br><span class="line">    <span class="comment"># server_name_in_redirect off;</span></span><br><span class="line"></span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/mime.types;</span><br><span class="line">    <span class="attribute">default_type</span> application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># My Server</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line"></span><br><span class="line">	<span class="section">server</span> {</span><br><span class="line">	    <span class="attribute">server_name</span> neurocoda.com;</span><br><span class="line"></span><br><span class="line">	    <span class="attribute">root</span> /var/www/sites/Hexo;	</span><br><span class="line">	    <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">	</span><br><span class="line">	    <span class="section">location</span> / {</span><br><span class="line">	        <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ =<span class="number">404</span>;</span><br><span class="line">	    }</span><br><span class="line">	</span><br><span class="line">	    <span class="section">location</span> <span class="regexp">~* \.(?:css|js|jpg|jpeg|png|gif|ico|svg|webp)$</span> {</span><br><span class="line">	        <span class="attribute">try_files</span> <span class="variable">$uri</span> =<span class="number">404</span>;</span><br><span class="line">	        <span class="attribute">expires</span> <span class="number">30d</span>;</span><br><span class="line">	        <span class="attribute">add_header</span> Cache-Control <span class="string">"public"</span>;</span><br><span class="line">	    }</span><br><span class="line">	</span><br><span class="line">	    <span class="attribute">error_page</span> <span class="number">404</span> /<span class="number">404</span>.html;</span><br><span class="line">	    <span class="section">location</span> = /<span class="number">404</span>.html {</span><br><span class="line">	        <span class="attribute">root</span> /var/www/sites/hexo;</span><br><span class="line">	    }</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">    <span class="section">server</span> {</span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span> webhook.neurocoda.com;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> / {</span><br><span class="line">            <span class="attribute">proxy_pass</span> http://127.0.0.1:7890;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># SSL Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span> TLSv1.<span class="number">3</span>; <span class="comment"># Dropping SSLv3, ref: POODLE</span></span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Logging Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">access_log</span> /var/log/nginx/access.log;</span><br><span class="line">    <span class="attribute">error_log</span> /var/log/nginx/<span class="literal">error</span>.log;</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Gzip Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">gzip</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># gzip_vary on;</span></span><br><span class="line">    <span class="comment"># gzip_proxied any;</span></span><br><span class="line">    <span class="comment"># gzip_comp_level 6;</span></span><br><span class="line">    <span class="comment"># gzip_buffers 16 8k;</span></span><br><span class="line">    <span class="comment"># gzip_http_version 1.1;</span></span><br><span class="line">    <span class="comment"># gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Virtual Host Configs</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/conf.d/<span class="regexp">*.conf</span>;</span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/sites-enabled/*;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># mail {</span></span><br><span class="line"><span class="comment">#     # See sample authentication script at:</span></span><br><span class="line"><span class="comment">#     # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     # auth_http localhost/auth.php;</span></span><br><span class="line"><span class="comment">#     # pop3_capabilities "TOP" "USER";</span></span><br><span class="line"><span class="comment">#     # imap_capabilities "IMAP4rev1" "UIDPLUS";</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     server {</span></span><br><span class="line"><span class="comment">#         listen     localhost:110;</span></span><br><span class="line"><span class="comment">#         protocol   pop3;</span></span><br><span class="line"><span class="comment">#         proxy      on;</span></span><br><span class="line"><span class="comment">#     }</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     server {</span></span><br><span class="line"><span class="comment">#         listen     localhost:143;</span></span><br><span class="line"><span class="comment">#         protocol   imap;</span></span><br><span class="line"><span class="comment">#         proxy      on;</span></span><br><span class="line"><span class="comment">#     }</span></span><br><span class="line"><span class="comment"># }</span></span><br></pre></td></tr></table></figure></div>
-
-
-<p>修改好配置之后检查语法是否错误：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure></div>
-
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193930105.png" class="">
-
-<p>重载 nginx 配置：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl reload nginx</span><br></pre></td></tr></table></figure></div>
-
-<p>确定已正确配置 DNS 记录：</p>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193932814.png" class="">
-
-
-<h2 id="配置-SSL"><a href="#配置-SSL" class="headerlink" title="配置 SSL"></a>配置 SSL</h2><p>配置 SSL:</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">certbot --nginx</span><br></pre></td></tr></table></figure></div>
-
-<p>按照要求填入信息</p>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193934362.png" class="">
-
-<p>检查 certbot 修改后的 nginx.conf 语法是否正确：</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure></div>
-
-<p>重载 nginx 配置</p>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl reload nginx</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="同步测试"><a href="#同步测试" class="headerlink" title="同步测试"></a>同步测试</h1><p>在你的本地的 Hexo 的目录：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; hexo d</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>等待执行完成后访问你的服务器，不出意外的话，网页已经展示出来了。</strong></p>
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h2><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 755 /var/www/sites/Hexo</span><br><span class="line"><span class="built_in">chown</span> -R www-data:www-data /var/www/sites/Hexo</span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-      <categories>
-        <category>建站</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Git</tag>
-        <tag>webhook</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenWrt 上通过 Tailscale 实现内网穿透</title>
-    <url>/p/da267693.html</url>
-    <content><![CDATA[
-  <div class="note-large default">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <i class="notel-icon fa-solid fa-info"></i><p>💡</p>
-
-    </div>
-    <div class="notel-content">
-      <p>😀 近日用 章鱼星球S912 配置了旁路网关，体验还行。后面想着配置一下内网穿透以便在外出时可以与内网设备交互。之前有朋友推荐用 Tailscale 很方便，本博客由此而来。</p>
-
-    </div>
-  </div>
-
-<h1 id="安装-Tailscale"><a href="#安装-Tailscale" class="headerlink" title="安装 Tailscale"></a>安装 Tailscale</h1><p>我这里是使用的这个项目，读者可以考虑其他方式部署：</p>
-<p><a class="link" href="https://github.com/adyanth/openwrt-tailscale-enabler">https://github.com/adyanth/openwrt-tailscale-enabler<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<p>具体的指令如下：</p>
-<ul>
-<li>通过 <code>ssh</code> 连接到 OpenWrt:</li>
-</ul>
-<div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">ssh root@&lt;IP&gt;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>下载该项目（项目版本可以自选）</li>
-</ul>
-<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">wget &lt;https://github.com/adyanth/openwrt-tailscale-enabler/releases/download/v1.60.0-e428948-autoupdate/openwrt-tailscale-enabler-v1.60.0-e428948-autoupdate.tgz&gt;</span><br></pre></td></tr></table></figure></div>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132052422.png" class="">
-
-<ul>
-<li><p>解压刚才下载下来的这个项目</p>
-  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">tar x -zvC / -f &lt;File Name&gt;</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053115.png" class="">
-<ul>
-<li><p>更新并安装依赖</p>
-  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install libustream-openssl ca-bundle kmod-tun</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053876.png" class="">
-<ul>
-<li><p>设置开机自启动</p>
-  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">/etc/init.d/tailscale enable</span><br><span class="line">ls /etc/rc.d/S*tailscale*</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132054868.png" class="">
-<ul>
-<li><p>启动 Tailscale</p>
-  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">/etc/init.d/tailscale start</span><br><span class="line">tailscale up</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132055590.png" class="">
-<ul>
-<li><p>开启子网路由</p>
-  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">tailscale up --accept-routes --advertise-routes=<span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span> --accept-dns=false</span><br></pre></td></tr></table></figure></div>
-<p>  注意：其中 advertise-routes 的参数格式可能不一样。简单来说，取你当前 OpenWrt 的IP地址的前三部分，最后一部分为 0，并且子网掩码 255.255.255.0 即可。即 <code>&lt;原&gt;.&lt;原&gt;.&lt;原&gt;.&lt;0&gt;/24</code> 比如，我的 OpenWrt 的IP为192.168.1.254，那么我这里就需要192.168.1.0/24</p>
-</li>
-</ul>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132056837.png" class="">
-<ul>
-<li>在 Tailscale 控制台设置路由设置，勾选并保存</li>
-</ul>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132058000.png" class="">
-<h1 id="配置-OpenWrt"><a href="#配置-OpenWrt" class="headerlink" title="配置 OpenWrt"></a>配置 OpenWrt</h1><h2 id="配置网络接口"><a href="#配置网络接口" class="headerlink" title="配置网络接口"></a>配置网络接口</h2><p>在 LuCI 界面中：</p>
-<ol>
-<li><strong>添加接口</strong><ul>
-<li>转到 <strong>网络 &gt; 接口 &gt; 添加新接口</strong>。</li>
-<li>名称：<code>tailscale</code></li>
-<li>协议：<strong>静态地址</strong></li>
-<li>设备：选择 <code>tailscale0</code></li>
-<li>IPv4 地址：填写 Tailscale 分配给路由器的 IP（如 <code>100.x.x.x</code>）。</li>
-<li>子网掩码：<code>255.0.0.0</code></li>
-<li>防火墙区域：选择 <code>lan</code>。</li>
-</ul>
-</li>
-<li>保存并应用更改。</li>
-</ol>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132059204.png" class="">
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132101934.png" class="">
-
-
-<h2 id="添加防火墙规则"><a href="#添加防火墙规则" class="headerlink" title="添加防火墙规则"></a>添加防火墙规则</h2><p>在 LuCI 界面中：</p>
-<ol>
-<li>转到 <strong>网络 &gt; 防火墙 &gt; 自定义规则</strong>。</li>
-<li>添加以下内容以允许 Tailscale 流量通过：</li>
-</ol>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -I FORWARD -i tailscale0 -j ACCEPT</span><br><span class="line">iptables -I FORWARD -o tailscale0 -j ACCEPT</span><br><span class="line">iptables -t nat -I POSTROUTING -o tailscale0 -j MASQUERADE</span><br></pre></td></tr></table></figure></div>
-
-<ol>
-<li>保存并重启防火墙。</li>
-</ol>
-<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132103184.png" class="">
-<p>这样就完成了。</p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>OpenWrt</tag>
-        <tag>Tailscale</tag>
-        <tag>内网穿透</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tailscale 暴露 Socks5 端口供代理软件使用</title>
-    <url>/p/2ccf300b.html</url>
-    <content><![CDATA[<p>💡本人长期使用 Clash 或 Quantumult X 等软件，在通过 Tailscale 搭建好内网服务后，每次需要访问内网服务时都需要切换软件（Tailscale 客户端与 上述代理软件同一时间只能运行一个），很不方便。故考虑添加内网代理节点到代理软件并配置分流规则使得不再需要频繁切换软件。</p>
-<h1 id="部署-Tailscale-容器"><a href="#部署-Tailscale-容器" class="headerlink" title="部署 Tailscale 容器"></a>部署 Tailscale 容器</h1><p>参考 <a class="link" href="https://tailscale.com/kb/1112/userspace-networking">**Userspace networking mode (for containers)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>** ，部署 tailscale 容器并暴露 socks5 端口。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d \\</span><br><span class="line">  --name tailscale-socks5 \\</span><br><span class="line">  --restart=unless-stopped \\</span><br><span class="line">  --cap-add=NET_ADMIN \\</span><br><span class="line">  -e TS_USERSPACE=<span class="literal">true</span> \\</span><br><span class="line">  -e TS_SOCKS5_SERVER=0.0.0.0:1055 \\</span><br><span class="line">  -p 127.0.0.1:1055:1055 \\</span><br><span class="line">  -v /var/www/tailscale-socks5:/var/lib/tailscale \\</span><br><span class="line">  tailscale/tailscale:latest tailscaled --tun=userspace-networking --socks5-server=0.0.0.0:1055</span><br></pre></td></tr></table></figure></div>
-
-<p>检查是否监听 <code>:1055</code> 端口：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 ss -tuln</span><br></pre></td></tr></table></figure></div>
-
-<p>启动 tailscale 并完成登录：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 tailscale up --accept-dns=<span class="literal">false</span> --accept-routes</span><br></pre></td></tr></table></figure></div>
-
-<p>登录成功后，测试 tilscale 容器暴露的 socks5 端口是否能正常使用：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl --socks5 127.0.0.1:1055 &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
-
-<p>但是这个 socks5 不带鉴权（用户名密码），为了稍显安全地暴露到公网，可以考虑部署一个带用户名/密码鉴权的 SOCKS5 代理，其 <strong>出站流量</strong> 转发给 tailscale 的不带鉴权 SOCKS5 服务。</p>
-<h1 id="部署-kechangdev-s2s-容器"><a href="#部署-kechangdev-s2s-容器" class="headerlink" title="部署 kechangdev/s2s 容器"></a>部署 kechangdev/s2s 容器</h1><p>项目地址：<a class="link" href="https://github.com/kechangdev/s2s">https://github.com/kechangdev/s2s<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<p>以下示例会启动本容器，监听本机 <code>45675</code> 端口，用户名/密码均设置为 <code>username</code> / <code>password</code>，并将流量转发给本机的无鉴权 SOCKS5 代理 <code>127.0.0.1:1055</code>。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --network host \\</span><br><span class="line">  --name tailscale-s2s \\</span><br><span class="line">  -e SOCKS5_USERNAME=<span class="string">"username"</span> \\</span><br><span class="line">  -e SOCKS5_PASSWORD=<span class="string">"password"</span> \\</span><br><span class="line">  -e TS_SOCKS5_HOST=<span class="string">"127.0.0.1"</span> \\</span><br><span class="line">  -e TS_SOCKS5_PORT=<span class="string">"1055"</span> \\</span><br><span class="line">  -e INBOUND_PORT=<span class="string">"45675"</span> \\</span><br><span class="line">  kechangdev/s2s:latest</span><br></pre></td></tr></table></figure></div>
-
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>默认值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>SOCKS5_USERNAME</code></td>
-<td><code>username</code></td>
-<td><strong>入站 SOCKS5</strong> 鉴权使用的用户名</td>
-</tr>
-<tr>
-<td><code>SOCKS5_PASSWORD</code></td>
-<td><code>password</code></td>
-<td><strong>入站 SOCKS5</strong> 鉴权使用的密码</td>
-</tr>
-<tr>
-<td><code>TS_SOCKS5_HOST</code></td>
-<td><code>127.0.0.1</code></td>
-<td><strong>出站 SOCKS5</strong> 的地址（例如 Tailscale 提供的 socks5）</td>
-</tr>
-<tr>
-<td><code>TS_SOCKS5_PORT</code></td>
-<td><code>1055</code></td>
-<td><strong>出站 SOCKS5</strong> 的端口</td>
-</tr>
-<tr>
-<td><code>INBOUND_PORT</code></td>
-<td><code>45675</code></td>
-<td>本容器对外暴露的 SOCKS5 端口（带用户名/密码鉴权）</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>说明：</p>
-<ul>
-<li><code>-network host</code> 通常用于让容器与宿主机共享网络命名空间，方便连接到本机的 Tailscale SOCKS5。也可根据需要使用其他网络模式，只要容器能访问 <code>TS_SOCKS5_HOST:TS_SOCKS5_PORT</code> 即可。</li>
-<li>如果想修改监听端口，只需在启动时更改 <code>INBOUND_PORT</code> 并相应映射端口。</li>
-</ul>
-</blockquote>
-<p>测试：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v --socks5 127.0.0.1:45675 -U username:password &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
-
-<p>若能正确返回目标页面内容，则说明整个代理链路正常。</p>
-<h1 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h1><p>以 Quantumult X 为例：</p>
-<ul>
-<li>配置 Socks5 节点：</li>
-</ul>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">socks5=IP:Port, username=XXX, password=XXX, fast-open=<span class="literal">false</span>, udp-relay=<span class="literal">false</span>, server_check_url=http://tailscale 内网服务, tag=tailscale</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>配置策略组：</li>
-</ul>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">static=Tailscale, tailscale</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>配置分流规则：</li>
-</ul>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">; Tailscale</span><br><span class="line">ip-cidr, 100.64.0.0/10, Tailscale</span><br></pre></td></tr></table></figure></div>
-
-
-<p>好啦，你可以无感访问你的 tailscale 内网了：</p>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2ccf300b/IMG-20250213190445127.jpeg" class="">
-<h1 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h1><p>强烈建议使用 <strong>TLS/SSH 隧道</strong> 或 <strong>Fail2Ban</strong> 等其他方式加固安全。仅使用 SOCKS5 + 用户名/密码在公网暴露仍存在潜在风险（暴力穷举、抓包等）。</p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>Tailscale</tag>
-        <tag>内网穿透</tag>
-        <tag>中继服务</tag>
-        <tag>家里云</tag>
       </tags>
   </entry>
   <entry>
@@ -1195,24 +842,356 @@
       </tags>
   </entry>
   <entry>
-    <title>Win 服务器保持断开 RDP 后的会话</title>
-    <url>/p/e228fa80.html</url>
-    <content><![CDATA[<p>创建文本并输入以下内容：</p>
-<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
+    <title>OpenWrt 上通过 Tailscale 实现内网穿透</title>
+    <url>/p/da267693.html</url>
+    <content><![CDATA[
+  <div class="note-large default">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <i class="notel-icon fa-solid fa-info"></i><p>💡</p>
 
-<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
-<p>进入下面的地址：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
+    </div>
+    <div class="notel-content">
+      <p>😀 近日用 章鱼星球S912 配置了旁路网关，体验还行。后面想着配置一下内网穿透以便在外出时可以与内网设备交互。之前有朋友推荐用 Tailscale 很方便，本博客由此而来。</p>
 
-<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
-<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+    </div>
+  </div>
+
+<h1 id="安装-Tailscale"><a href="#安装-Tailscale" class="headerlink" title="安装 Tailscale"></a>安装 Tailscale</h1><p>我这里是使用的这个项目，读者可以考虑其他方式部署：</p>
+<p><a class="link" href="https://github.com/adyanth/openwrt-tailscale-enabler">https://github.com/adyanth/openwrt-tailscale-enabler<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>具体的指令如下：</p>
+<ul>
+<li>通过 <code>ssh</code> 连接到 OpenWrt:</li>
+</ul>
+<div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">ssh root@&lt;IP&gt;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>下载该项目（项目版本可以自选）</li>
+</ul>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">wget &lt;https://github.com/adyanth/openwrt-tailscale-enabler/releases/download/v1.60.0-e428948-autoupdate/openwrt-tailscale-enabler-v1.60.0-e428948-autoupdate.tgz&gt;</span><br></pre></td></tr></table></figure></div>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132052422.png" class="">
+
+<ul>
+<li><p>解压刚才下载下来的这个项目</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">tar x -zvC / -f &lt;File Name&gt;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053115.png" class="">
+<ul>
+<li><p>更新并安装依赖</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install libustream-openssl ca-bundle kmod-tun</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053876.png" class="">
+<ul>
+<li><p>设置开机自启动</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">/etc/init.d/tailscale enable</span><br><span class="line">ls /etc/rc.d/S*tailscale*</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132054868.png" class="">
+<ul>
+<li><p>启动 Tailscale</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">/etc/init.d/tailscale start</span><br><span class="line">tailscale up</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132055590.png" class="">
+<ul>
+<li><p>开启子网路由</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="code"><pre><span class="line">tailscale up --accept-routes --advertise-routes=<span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span> --accept-dns=false</span><br></pre></td></tr></table></figure></div>
+<p>  注意：其中 advertise-routes 的参数格式可能不一样。简单来说，取你当前 OpenWrt 的IP地址的前三部分，最后一部分为 0，并且子网掩码 255.255.255.0 即可。即 <code>&lt;原&gt;.&lt;原&gt;.&lt;原&gt;.&lt;0&gt;/24</code> 比如，我的 OpenWrt 的IP为192.168.1.254，那么我这里就需要192.168.1.0/24</p>
+</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132056837.png" class="">
+<ul>
+<li>在 Tailscale 控制台设置路由设置，勾选并保存</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132058000.png" class="">
+<h1 id="配置-OpenWrt"><a href="#配置-OpenWrt" class="headerlink" title="配置 OpenWrt"></a>配置 OpenWrt</h1><h2 id="配置网络接口"><a href="#配置网络接口" class="headerlink" title="配置网络接口"></a>配置网络接口</h2><p>在 LuCI 界面中：</p>
+<ol>
+<li><strong>添加接口</strong><ul>
+<li>转到 <strong>网络 &gt; 接口 &gt; 添加新接口</strong>。</li>
+<li>名称：<code>tailscale</code></li>
+<li>协议：<strong>静态地址</strong></li>
+<li>设备：选择 <code>tailscale0</code></li>
+<li>IPv4 地址：填写 Tailscale 分配给路由器的 IP（如 <code>100.x.x.x</code>）。</li>
+<li>子网掩码：<code>255.0.0.0</code></li>
+<li>防火墙区域：选择 <code>lan</code>。</li>
+</ul>
+</li>
+<li>保存并应用更改。</li>
+</ol>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132059204.png" class="">
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132101934.png" class="">
+
+
+<h2 id="添加防火墙规则"><a href="#添加防火墙规则" class="headerlink" title="添加防火墙规则"></a>添加防火墙规则</h2><p>在 LuCI 界面中：</p>
+<ol>
+<li>转到 <strong>网络 &gt; 防火墙 &gt; 自定义规则</strong>。</li>
+<li>添加以下内容以允许 Tailscale 流量通过：</li>
+</ol>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -I FORWARD -i tailscale0 -j ACCEPT</span><br><span class="line">iptables -I FORWARD -o tailscale0 -j ACCEPT</span><br><span class="line">iptables -t nat -I POSTROUTING -o tailscale0 -j MASQUERADE</span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li>保存并重启防火墙。</li>
+</ol>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132103184.png" class="">
+<p>这样就完成了。</p>
 ]]></content>
       <categories>
-        <category>杂项</category>
+        <category>网络</category>
       </categories>
       <tags>
-        <tag>RDP</tag>
-        <tag>Windows</tag>
+        <tag>OpenWrt</tag>
+        <tag>Tailscale</tag>
+        <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo webhook 自动部署</title>
+    <url>/p/2cc1110b.html</url>
+    <content><![CDATA[<h1 id="Hexo-是什么？"><a href="#Hexo-是什么？" class="headerlink" title="Hexo 是什么？"></a>Hexo 是什么？</h1><blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。 Hexo 使用 <a class="link" href="http://daringfireball.net/projects/markdown/">Markdown<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<h2 id="本文对应的环境："><a href="#本文对应的环境：" class="headerlink" title="本文对应的环境："></a>本文对应的环境：</h2><ul>
+<li>一台公网服务器</li>
+<li>有 Git 平台托管 hexo 生成的站点（Github 或自建 Git 仓库）</li>
+<li>本地能运行 Hexo</li>
+</ul>
+<p>若你没有公网服务器，那么可以忽略本文 <strong>服务器配置</strong> 部分，转而采用类似 Github page 等其他平台的服务。但是 <strong>本地配置</strong> 部分是相同。</p>
+<h2 id="本文采取的建站方案："><a href="#本文采取的建站方案：" class="headerlink" title="本文采取的建站方案："></a>本文采取的建站方案：</h2><ul>
+<li>本地编写文章，编写好后通过 hexo 构建站点，并将站点通过 git push 到 github 仓库。当 push 结束后，  github 通过 webhook 向我的公网服务器发送提示，我的公网服务器收到提示后自动 clone 站点到 nginx 反向代理的站点目录。  <blockquote>
+<p>公网服务器端通过 <code>neurocoda/gitrigger:latest</code> 容器自动化完成接收 webhook 提示， git clone 工作。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Git-平台配置"><a href="#Git-平台配置" class="headerlink" title="Git 平台配置"></a>Git 平台配置</h1><p>创建一个代码仓库。</p>
+<h1 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h1><h2 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h2><p>各种系统的安装方式详见：<a class="link" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>我本地是 Ubuntu：<br>根据： <a class="link" href="https://github.com/nodesource/distributions">https://github.com/nodesource/distributions<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh</span><br><span class="line"><span class="built_in">sudo</span> -E bash nodesource_setup.sh</span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure></div>
+
+<p>验证安装：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="安装-Hexo-cli"><a href="#安装-Hexo-cli" class="headerlink" title="安装 Hexo-cli"></a>安装 Hexo-cli</h2><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="建立-Hexo-仓库"><a href="#建立-Hexo-仓库" class="headerlink" title="建立 Hexo 仓库"></a>建立 Hexo 仓库</h2><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;  </span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;  </span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h2><p>创建 ssh key：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure></div>
+
+<p>获取公钥：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /root/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure></div>
+
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193914600.png" class="">
+
+<p>将获取到的公钥添加到你选择的 git 平台</p>
+<blockquote>
+<p>Github: <a class="link" href="https://github.com/settings/keys">https://github.com/settings/keys<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+</blockquote>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193915080.png" class="">
+
+
+<h2 id="Hexo-添加-Git"><a href="#Hexo-添加-Git" class="headerlink" title="Hexo 添加 Git"></a>Hexo 添加 Git</h2><p><strong>在 Hexo 根目录下：</strong></p>
+<p>安装插件：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure></div>
+
+<p>在底部找到，并添加仓库信息：</p>
+<div class="code-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:neurocoda/Hexo.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div>
+
+<h1 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h1><h2 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h2><p>开放防火墙：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">ufw allow 22</span><br><span class="line">ufw allow 80</span><br><span class="line">ufw allow 443</span><br></pre></td></tr></table></figure></div>
+
+<p>启用并查看防火墙状态：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ufw enable</span><br><span class="line">ufw status</span><br></pre></td></tr></table></figure></div>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193916623.png" class="">
+
+<h2 id="安装-Nginx-Docker"><a href="#安装-Nginx-Docker" class="headerlink" title="安装 Nginx, Docker"></a>安装 Nginx, Docker</h2><p>更新源：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt upgrade -y</span><br></pre></td></tr></table></figure></div>
+
+<p>安装 <code>docker-compose</code>, <code>nginx</code>, <code>python3-certbot-nginx</code>：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">apt install docker-compose nginx certbot python3-certbot-nginx</span><br></pre></td></tr></table></figure></div>
+
+<p>确定 nginx 已经正确运行了：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure></div>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193918604.png" class="">
+
+
+<h2 id="配置-SSH-密钥"><a href="#配置-SSH-密钥" class="headerlink" title="配置 SSH 密钥"></a>配置 SSH 密钥</h2><p><strong>如果你的仓库是私有仓库，那么需要配置 ssh 密钥：</strong></p>
+<p>创建 ssh key：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure></div>
+
+<p>获取公钥：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /root/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure></div>
+
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193914600.png" class="">
+
+<p>将获取到的公钥添加到你选择的 git 平台</p>
+<blockquote>
+<p>Github: <a class="link" href="https://github.com/settings/keys">https://github.com/settings/keys<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+</blockquote>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193915080.png" class="">
+
+<h2 id="配置-Webhook"><a href="#配置-Webhook" class="headerlink" title="配置 Webhook"></a>配置 Webhook</h2><p>在仓库配置 webhook：</p>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193920071.png" class="">
+
+<h2 id="服务启动"><a href="#服务启动" class="headerlink" title="服务启动"></a>服务启动</h2><p>编写 <code>docker-compose.yml</code>:</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure></div>
+
+<p>填入以下内容：</p>
+<div class="code-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.8'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">hexo:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">neurocoda/gitrigger:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">hexo</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"127.0.0.1:7890:5000"</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">REPO_URL:</span> <span class="string">"git@github.com:neurocoda/Hexo.git"</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/root/.ssh/id_ed25519:/root/.ssh/id_rsa:ro</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/www/sites:/clone_data</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在 <code>docker-compose.yml</code> 所在目录执行 up 指令：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure></div>
+
+<p>查看容器状态：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure></div>
+
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193922875.png" class="">
+
+<p>状态为 <code>Up</code> 意为容器正确运行。（这里我还有其他服务，所以看起来可能不一样）</p>
+<p>查看容器日志：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker logs hexo</span><br></pre></td></tr></table></figure></div>
+
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193925162.png" class="">
+
+<h2 id="配置反向代理"><a href="#配置反向代理" class="headerlink" title="配置反向代理"></a>配置反向代理</h2><p>编辑 nginx.conf：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure></div>
+
+<p>添加反向代理：</p>
+<div class="code-container" data-rel="Nginx"><figure class="iseeu highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">user</span> www-data;</span><br><span class="line"><span class="attribute">worker_processes</span> auto;</span><br><span class="line"><span class="attribute">pid</span> /run/nginx.pid;</span><br><span class="line"><span class="attribute">include</span> /etc/nginx/modules-enabled/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line"><span class="section">events</span> {</span><br><span class="line">    <span class="attribute">worker_connections</span> <span class="number">768</span>;</span><br><span class="line">    <span class="comment"># multi_accept on;</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="section">http</span> {</span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Basic Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">sendfile</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">tcp_nopush</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">types_hash_max_size</span> <span class="number">2048</span>;</span><br><span class="line">    <span class="comment"># server_tokens off;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># server_names_hash_bucket_size 64;</span></span><br><span class="line">    <span class="comment"># server_name_in_redirect off;</span></span><br><span class="line"></span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/mime.types;</span><br><span class="line">    <span class="attribute">default_type</span> application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># My Server</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line"></span><br><span class="line">	<span class="section">server</span> {</span><br><span class="line">	    <span class="attribute">server_name</span> neurocoda.com;</span><br><span class="line"></span><br><span class="line">	    <span class="attribute">root</span> /var/www/sites/Hexo;	</span><br><span class="line">	    <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">	</span><br><span class="line">	    <span class="section">location</span> / {</span><br><span class="line">	        <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ =<span class="number">404</span>;</span><br><span class="line">	    }</span><br><span class="line">	</span><br><span class="line">	    <span class="section">location</span> <span class="regexp">~* \.(?:css|js|jpg|jpeg|png|gif|ico|svg|webp)$</span> {</span><br><span class="line">	        <span class="attribute">try_files</span> <span class="variable">$uri</span> =<span class="number">404</span>;</span><br><span class="line">	        <span class="attribute">expires</span> <span class="number">30d</span>;</span><br><span class="line">	        <span class="attribute">add_header</span> Cache-Control <span class="string">"public"</span>;</span><br><span class="line">	    }</span><br><span class="line">	</span><br><span class="line">	    <span class="attribute">error_page</span> <span class="number">404</span> /<span class="number">404</span>.html;</span><br><span class="line">	    <span class="section">location</span> = /<span class="number">404</span>.html {</span><br><span class="line">	        <span class="attribute">root</span> /var/www/sites/hexo;</span><br><span class="line">	    }</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">    <span class="section">server</span> {</span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span> webhook.neurocoda.com;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> / {</span><br><span class="line">            <span class="attribute">proxy_pass</span> http://127.0.0.1:7890;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># SSL Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span> TLSv1.<span class="number">3</span>; <span class="comment"># Dropping SSLv3, ref: POODLE</span></span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Logging Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">access_log</span> /var/log/nginx/access.log;</span><br><span class="line">    <span class="attribute">error_log</span> /var/log/nginx/<span class="literal">error</span>.log;</span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Gzip Settings</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">gzip</span> <span class="literal">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># gzip_vary on;</span></span><br><span class="line">    <span class="comment"># gzip_proxied any;</span></span><br><span class="line">    <span class="comment"># gzip_comp_level 6;</span></span><br><span class="line">    <span class="comment"># gzip_buffers 16 8k;</span></span><br><span class="line">    <span class="comment"># gzip_http_version 1.1;</span></span><br><span class="line">    <span class="comment"># gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Virtual Host Configs</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/conf.d/<span class="regexp">*.conf</span>;</span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/sites-enabled/*;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># mail {</span></span><br><span class="line"><span class="comment">#     # See sample authentication script at:</span></span><br><span class="line"><span class="comment">#     # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     # auth_http localhost/auth.php;</span></span><br><span class="line"><span class="comment">#     # pop3_capabilities "TOP" "USER";</span></span><br><span class="line"><span class="comment">#     # imap_capabilities "IMAP4rev1" "UIDPLUS";</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     server {</span></span><br><span class="line"><span class="comment">#         listen     localhost:110;</span></span><br><span class="line"><span class="comment">#         protocol   pop3;</span></span><br><span class="line"><span class="comment">#         proxy      on;</span></span><br><span class="line"><span class="comment">#     }</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     server {</span></span><br><span class="line"><span class="comment">#         listen     localhost:143;</span></span><br><span class="line"><span class="comment">#         protocol   imap;</span></span><br><span class="line"><span class="comment">#         proxy      on;</span></span><br><span class="line"><span class="comment">#     }</span></span><br><span class="line"><span class="comment"># }</span></span><br></pre></td></tr></table></figure></div>
+
+
+<p>修改好配置之后检查语法是否错误：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure></div>
+
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193930105.png" class="">
+
+<p>重载 nginx 配置：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl reload nginx</span><br></pre></td></tr></table></figure></div>
+
+<p>确定已正确配置 DNS 记录：</p>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193932814.png" class="">
+
+
+<h2 id="配置-SSL"><a href="#配置-SSL" class="headerlink" title="配置 SSL"></a>配置 SSL</h2><p>配置 SSL:</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">certbot --nginx</span><br></pre></td></tr></table></figure></div>
+
+<p>按照要求填入信息</p>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2cc1110b/IMG-20250213193934362.png" class="">
+
+<p>检查 certbot 修改后的 nginx.conf 语法是否正确：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure></div>
+
+<p>重载 nginx 配置</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl reload nginx</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="同步测试"><a href="#同步测试" class="headerlink" title="同步测试"></a>同步测试</h1><p>在你的本地的 Hexo 的目录：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; hexo d</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>等待执行完成后访问你的服务器，不出意外的话，网页已经展示出来了。</strong></p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h2><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 755 /var/www/sites/Hexo</span><br><span class="line"><span class="built_in">chown</span> -R www-data:www-data /var/www/sites/Hexo</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Git</tag>
+        <tag>webhook</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tailscale 暴露 Socks5 端口供代理软件使用</title>
+    <url>/p/2ccf300b.html</url>
+    <content><![CDATA[<p>💡本人长期使用 Clash 或 Quantumult X 等软件，在通过 Tailscale 搭建好内网服务后，每次需要访问内网服务时都需要切换软件（Tailscale 客户端与 上述代理软件同一时间只能运行一个），很不方便。故考虑添加内网代理节点到代理软件并配置分流规则使得不再需要频繁切换软件。</p>
+<h1 id="部署-Tailscale-容器"><a href="#部署-Tailscale-容器" class="headerlink" title="部署 Tailscale 容器"></a>部署 Tailscale 容器</h1><p>参考 <a class="link" href="https://tailscale.com/kb/1112/userspace-networking">**Userspace networking mode (for containers)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>** ，部署 tailscale 容器并暴露 socks5 端口。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d \\</span><br><span class="line">  --name tailscale-socks5 \\</span><br><span class="line">  --restart=unless-stopped \\</span><br><span class="line">  --cap-add=NET_ADMIN \\</span><br><span class="line">  -e TS_USERSPACE=<span class="literal">true</span> \\</span><br><span class="line">  -e TS_SOCKS5_SERVER=0.0.0.0:1055 \\</span><br><span class="line">  -p 127.0.0.1:1055:1055 \\</span><br><span class="line">  -v /var/www/tailscale-socks5:/var/lib/tailscale \\</span><br><span class="line">  tailscale/tailscale:latest tailscaled --tun=userspace-networking --socks5-server=0.0.0.0:1055</span><br></pre></td></tr></table></figure></div>
+
+<p>检查是否监听 <code>:1055</code> 端口：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 ss -tuln</span><br></pre></td></tr></table></figure></div>
+
+<p>启动 tailscale 并完成登录：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 tailscale up --accept-dns=<span class="literal">false</span> --accept-routes</span><br></pre></td></tr></table></figure></div>
+
+<p>登录成功后，测试 tilscale 容器暴露的 socks5 端口是否能正常使用：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl --socks5 127.0.0.1:1055 &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
+
+<p>但是这个 socks5 不带鉴权（用户名密码），为了稍显安全地暴露到公网，可以考虑部署一个带用户名/密码鉴权的 SOCKS5 代理，其 <strong>出站流量</strong> 转发给 tailscale 的不带鉴权 SOCKS5 服务。</p>
+<h1 id="部署-kechangdev-s2s-容器"><a href="#部署-kechangdev-s2s-容器" class="headerlink" title="部署 kechangdev/s2s 容器"></a>部署 kechangdev/s2s 容器</h1><p>项目地址：<a class="link" href="https://github.com/kechangdev/s2s">https://github.com/kechangdev/s2s<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>以下示例会启动本容器，监听本机 <code>45675</code> 端口，用户名/密码均设置为 <code>username</code> / <code>password</code>，并将流量转发给本机的无鉴权 SOCKS5 代理 <code>127.0.0.1:1055</code>。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --network host \\</span><br><span class="line">  --name tailscale-s2s \\</span><br><span class="line">  -e SOCKS5_USERNAME=<span class="string">"username"</span> \\</span><br><span class="line">  -e SOCKS5_PASSWORD=<span class="string">"password"</span> \\</span><br><span class="line">  -e TS_SOCKS5_HOST=<span class="string">"127.0.0.1"</span> \\</span><br><span class="line">  -e TS_SOCKS5_PORT=<span class="string">"1055"</span> \\</span><br><span class="line">  -e INBOUND_PORT=<span class="string">"45675"</span> \\</span><br><span class="line">  kechangdev/s2s:latest</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SOCKS5_USERNAME</code></td>
+<td><code>username</code></td>
+<td><strong>入站 SOCKS5</strong> 鉴权使用的用户名</td>
+</tr>
+<tr>
+<td><code>SOCKS5_PASSWORD</code></td>
+<td><code>password</code></td>
+<td><strong>入站 SOCKS5</strong> 鉴权使用的密码</td>
+</tr>
+<tr>
+<td><code>TS_SOCKS5_HOST</code></td>
+<td><code>127.0.0.1</code></td>
+<td><strong>出站 SOCKS5</strong> 的地址（例如 Tailscale 提供的 socks5）</td>
+</tr>
+<tr>
+<td><code>TS_SOCKS5_PORT</code></td>
+<td><code>1055</code></td>
+<td><strong>出站 SOCKS5</strong> 的端口</td>
+</tr>
+<tr>
+<td><code>INBOUND_PORT</code></td>
+<td><code>45675</code></td>
+<td>本容器对外暴露的 SOCKS5 端口（带用户名/密码鉴权）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>说明：</p>
+<ul>
+<li><code>-network host</code> 通常用于让容器与宿主机共享网络命名空间，方便连接到本机的 Tailscale SOCKS5。也可根据需要使用其他网络模式，只要容器能访问 <code>TS_SOCKS5_HOST:TS_SOCKS5_PORT</code> 即可。</li>
+<li>如果想修改监听端口，只需在启动时更改 <code>INBOUND_PORT</code> 并相应映射端口。</li>
+</ul>
+</blockquote>
+<p>测试：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v --socks5 127.0.0.1:45675 -U username:password &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
+
+<p>若能正确返回目标页面内容，则说明整个代理链路正常。</p>
+<h1 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h1><p>以 Quantumult X 为例：</p>
+<ul>
+<li>配置 Socks5 节点：</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">socks5=IP:Port, username=XXX, password=XXX, fast-open=<span class="literal">false</span>, udp-relay=<span class="literal">false</span>, server_check_url=http://tailscale 内网服务, tag=tailscale</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>配置策略组：</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">static=Tailscale, tailscale</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>配置分流规则：</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">; Tailscale</span><br><span class="line">ip-cidr, 100.64.0.0/10, Tailscale</span><br></pre></td></tr></table></figure></div>
+
+
+<p>好啦，你可以无感访问你的 tailscale 内网了：</p>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2ccf300b/IMG-20250213190445127.jpeg" class="">
+<h1 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h1><p>强烈建议使用 <strong>TLS/SSH 隧道</strong> 或 <strong>Fail2Ban</strong> 等其他方式加固安全。仅使用 SOCKS5 + 用户名/密码在公网暴露仍存在潜在风险（暴力穷举、抓包等）。</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>Tailscale</tag>
+        <tag>内网穿透</tag>
+        <tag>中继服务</tag>
+        <tag>家里云</tag>
       </tags>
   </entry>
   <entry>
@@ -1228,7 +1207,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#x6c;&#x69;&#99;&#64;&#110;&#x65;&#x75;&#114;&#x6f;&#99;&#111;&#x64;&#x61;&#x2e;&#99;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#112;&#117;&#98;&#x6c;&#105;&#99;&#x40;&#x6e;&#x65;&#x75;&#114;&#x6f;&#x63;&#x6f;&#100;&#97;&#46;&#x63;&#111;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -1366,6 +1345,27 @@
       </categories>
       <tags>
         <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win 服务器保持断开 RDP 后的会话</title>
+    <url>/p/e228fa80.html</url>
+    <content><![CDATA[<p>创建文本并输入以下内容：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
+
+<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
+<p>进入下面的地址：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
+
+<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
+<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>RDP</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
