@@ -13,7 +13,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#112;&#117;&#98;&#x6c;&#x69;&#99;&#64;&#x6e;&#101;&#117;&#x72;&#x6f;&#x63;&#111;&#x64;&#x61;&#x2e;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#112;&#x75;&#x62;&#x6c;&#x69;&#x63;&#64;&#x6e;&#101;&#x75;&#114;&#111;&#99;&#111;&#100;&#x61;&#46;&#99;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -143,7 +143,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#x62;&#x6c;&#105;&#x63;&#64;&#x6e;&#101;&#x75;&#x72;&#x6f;&#x63;&#x6f;&#x64;&#97;&#46;&#x63;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#108;&#105;&#99;&#64;&#110;&#x65;&#x75;&#x72;&#x6f;&#x63;&#x6f;&#100;&#97;&#x2e;&#99;&#111;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -1195,27 +1195,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Win 服务器保持断开 RDP 后的会话</title>
-    <url>/p/e228fa80.html</url>
-    <content><![CDATA[<p>创建文本并输入以下内容：</p>
-<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
-
-<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
-<p>进入下面的地址：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
-
-<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
-<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>RDP</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The race is on to control the global supply chain for AI chips</title>
     <url>/p/706a75fe.html</url>
     <content><![CDATA[
@@ -1228,7 +1207,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#112;&#x75;&#x62;&#108;&#x69;&#99;&#64;&#x6e;&#101;&#x75;&#114;&#x6f;&#99;&#x6f;&#x64;&#97;&#x2e;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#117;&#x62;&#x6c;&#x69;&#99;&#x40;&#110;&#x65;&#117;&#114;&#111;&#x63;&#111;&#x64;&#x61;&#46;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -1369,6 +1348,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Win 服务器保持断开 RDP 后的会话</title>
+    <url>/p/e228fa80.html</url>
+    <content><![CDATA[<p>创建文本并输入以下内容：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
+
+<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
+<p>进入下面的地址：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
+
+<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
+<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>RDP</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>免域名 tailscale derp 搭建</title>
     <url>/p/e68688e7.html</url>
     <content><![CDATA[<p>#Tailscale  #中继服务 #内网穿透 </p>
@@ -1439,6 +1439,75 @@
       <tags>
         <tag>多系统</tag>
         <tag>蓝牙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记一次自建 DoH 服务器</title>
+    <url>/p/cf8cf045.html</url>
+    <content><![CDATA[<p><a href="asset/IMG-20250213182959369.png"></a></p>
+<h1 id="CoreDNS"><a href="#CoreDNS" class="headerlink" title="CoreDNS"></a>CoreDNS</h1><p>CoreDNS 是一个灵活且功能强大的 DNS 服务器，支持多种插件扩展。它非常适合用于搭建 DoH 服务。</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装必要组件"><a href="#安装必要组件" class="headerlink" title="安装必要组件"></a>安装必要组件</h2><p>首先，更新系统并安装所需的软件包，包括 Docker Compose 和 Certbot（用于获取 SSL 证书）。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y &amp;&amp; <span class="built_in">sudo</span> apt install -y docker-compose certbot</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><p>确保服务器的安全性，配置防火墙规则，允许必要的端口（22、80 和 443）。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 22</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 80</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 443</span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="获取-SSL-证书"><a href="#获取-SSL-证书" class="headerlink" title="获取 SSL 证书"></a>获取 SSL 证书</h2><p>使用 Certbot 获取 SSL 证书。请将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot certonly --standalone -d &lt;DOMAIN&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>注意</strong>：确保域名已正确解析到你的服务器 IP，并且 80 端口未被其他服务占用。</p>
+<h1 id="配置并部署-CoreDNS"><a href="#配置并部署-CoreDNS" class="headerlink" title="配置并部署 CoreDNS"></a>配置并部署 CoreDNS</h1><p>我们将通过 Docker 来运行 CoreDNS。</p>
+<h2 id="创建-CoreDNS-配置目录"><a href="#创建-CoreDNS-配置目录" class="headerlink" title="创建 CoreDNS 配置目录"></a>创建 CoreDNS 配置目录</h2><p>创建配置文件存放目录。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/coredns</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="编写-CoreDNS-配置文件"><a href="#编写-CoreDNS-配置文件" class="headerlink" title="编写 CoreDNS 配置文件"></a>编写 CoreDNS 配置文件</h2><p>创建并编辑 <code>/etc/coredns/Corefile</code>：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
+
+<p>在文件中添加以下内容，记得将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://.:443 {</span><br><span class="line">    tls /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</span><br><span class="line">    bind 0.0.0.0:443</span><br><span class="line">    forward . 1.1.1.1 8.8.8.8</span><br><span class="line">    log</span><br><span class="line">    errors</span><br><span class="line">    cache 300</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>配置说明：</strong></p>
+<ul>
+<li><code>&lt;DOMAIN&gt;:443</code>：在 443 端口上监听来自指定域名的 HTTPS 请求。</li>
+<li><code>tls</code>：指定 SSL 证书和私钥的路径。</li>
+<li><code>bind 0.0.0.0:443</code>：绑定所有网络接口的 443 端口，允许外部访问。</li>
+<li><code>forward . 1.1.1.1 8.8.8.8</code>：将 DNS 请求转发到 Cloudflare (1.1.1.1) 和 Google (8.8.8.8) 的公共 DNS 服务器。</li>
+<li><code>log</code> 和 <code>errors</code>：启用日志记录和错误记录，便于调试。</li>
+<li><code>cache 300</code>：启用 DNS 缓存，缓存时间为 300 秒，提高查询速度。</li>
+</ul>
+<h2 id="运行-CoreDNS-容器"><a href="#运行-CoreDNS-容器" class="headerlink" title="运行 CoreDNS 容器"></a>运行 CoreDNS 容器</h2><p>使用 Docker 运行 CoreDNS 容器。确保将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -d \\</span><br><span class="line">  --name coredns \\</span><br><span class="line">  --restart unless-stopped \\</span><br><span class="line">  --network host \\</span><br><span class="line">  -v /etc/coredns:/etc/coredns \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem \\</span><br><span class="line">  coredns/coredns \\</span><br><span class="line">  -conf /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>运行说明：</strong></p>
+<ul>
+<li><code>-network host</code>：使用主机的网络堆栈，允许 CoreDNS 在主机的 443 端口上监听。</li>
+<li><code>v /etc/coredns:/etc/coredns</code>：将主机的配置目录挂载到容器内，方便管理配置文件。</li>
+<li><code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem</code> 和 <code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</code>：将 SSL 证书和私钥挂载到容器内，确保 CoreDNS 能够使用 HTTPS。</li>
+</ul>
+<h2 id="验证-CoreDNS-运行状态"><a href="#验证-CoreDNS-运行状态" class="headerlink" title="验证 CoreDNS 运行状态"></a>验证 CoreDNS 运行状态</h2><p>确保 CoreDNS 容器正在运行，并监听正确的端口。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker ps | grep coredns</span><br></pre></td></tr></table></figure></div>
+
+<p>你应该能看到类似如下的输出，表示 CoreDNS 容器正在运行并监听 443 端口：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES</span><br><span class="line">&lt;container_id&gt; coredns/coredns "/coredns -conf /etc…"  X seconds ago    Up X seconds    0.0.0.0:443-&gt;443/tcp                        coredns</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="配置客户端使用-DoH"><a href="#配置客户端使用-DoH" class="headerlink" title="配置客户端使用 DoH"></a>配置客户端使用 DoH</h1><p>完成上述步骤后，你的 DoH 服务器已经搭建完成。接下来，需要在客户端设备上配置 DNS 设置，使用 <code>https://&lt;DOMAIN&gt;/dns-query</code> 作为 DoH 服务器地址。</p>
+<h1 id="自动更新-SSL-证书"><a href="#自动更新-SSL-证书" class="headerlink" title="自动更新 SSL 证书"></a>自动更新 SSL 证书</h1><p>Certbot 获取的 SSL 证书有效期为 90 天，建议设置定时任务自动更新证书，并重启 CoreDNS 容器。</p>
+<p>创建一个定时任务，每天检查并更新证书：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> crontab -e</span><br></pre></td></tr></table></figure></div>
+
+<p>添加以下内容：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 1 * * certbot renew --quiet &amp;&amp; sudo docker restart coredns</span><br></pre></td></tr></table></figure></div>
+
+<p>此任务将在每个月1号的凌晨 2 点运行，自动更新证书并重启 CoreDNS 容器。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a class="link" href="https://coredns.io/manual/toc/">CoreDNS Manual<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://certbot.eff.org/">Certbot<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://docs.docker.com/">Home<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS">DNS over HTTPS<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>DNS</tag>
+        <tag>DoH</tag>
+        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
@@ -1675,75 +1744,6 @@
       </categories>
       <tags>
         <tag>Obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记一次自建 DoH 服务器</title>
-    <url>/p/cf8cf045.html</url>
-    <content><![CDATA[<p><a href="asset/IMG-20250213182959369.png"></a></p>
-<h1 id="CoreDNS"><a href="#CoreDNS" class="headerlink" title="CoreDNS"></a>CoreDNS</h1><p>CoreDNS 是一个灵活且功能强大的 DNS 服务器，支持多种插件扩展。它非常适合用于搭建 DoH 服务。</p>
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装必要组件"><a href="#安装必要组件" class="headerlink" title="安装必要组件"></a>安装必要组件</h2><p>首先，更新系统并安装所需的软件包，包括 Docker Compose 和 Certbot（用于获取 SSL 证书）。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y &amp;&amp; <span class="built_in">sudo</span> apt install -y docker-compose certbot</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><p>确保服务器的安全性，配置防火墙规则，允许必要的端口（22、80 和 443）。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 22</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 80</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 443</span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></div>
-
-<h2 id="获取-SSL-证书"><a href="#获取-SSL-证书" class="headerlink" title="获取 SSL 证书"></a>获取 SSL 证书</h2><p>使用 Certbot 获取 SSL 证书。请将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot certonly --standalone -d &lt;DOMAIN&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>注意</strong>：确保域名已正确解析到你的服务器 IP，并且 80 端口未被其他服务占用。</p>
-<h1 id="配置并部署-CoreDNS"><a href="#配置并部署-CoreDNS" class="headerlink" title="配置并部署 CoreDNS"></a>配置并部署 CoreDNS</h1><p>我们将通过 Docker 来运行 CoreDNS。</p>
-<h2 id="创建-CoreDNS-配置目录"><a href="#创建-CoreDNS-配置目录" class="headerlink" title="创建 CoreDNS 配置目录"></a>创建 CoreDNS 配置目录</h2><p>创建配置文件存放目录。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/coredns</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="编写-CoreDNS-配置文件"><a href="#编写-CoreDNS-配置文件" class="headerlink" title="编写 CoreDNS 配置文件"></a>编写 CoreDNS 配置文件</h2><p>创建并编辑 <code>/etc/coredns/Corefile</code>：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
-
-<p>在文件中添加以下内容，记得将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://.:443 {</span><br><span class="line">    tls /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</span><br><span class="line">    bind 0.0.0.0:443</span><br><span class="line">    forward . 1.1.1.1 8.8.8.8</span><br><span class="line">    log</span><br><span class="line">    errors</span><br><span class="line">    cache 300</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>配置说明：</strong></p>
-<ul>
-<li><code>&lt;DOMAIN&gt;:443</code>：在 443 端口上监听来自指定域名的 HTTPS 请求。</li>
-<li><code>tls</code>：指定 SSL 证书和私钥的路径。</li>
-<li><code>bind 0.0.0.0:443</code>：绑定所有网络接口的 443 端口，允许外部访问。</li>
-<li><code>forward . 1.1.1.1 8.8.8.8</code>：将 DNS 请求转发到 Cloudflare (1.1.1.1) 和 Google (8.8.8.8) 的公共 DNS 服务器。</li>
-<li><code>log</code> 和 <code>errors</code>：启用日志记录和错误记录，便于调试。</li>
-<li><code>cache 300</code>：启用 DNS 缓存，缓存时间为 300 秒，提高查询速度。</li>
-</ul>
-<h2 id="运行-CoreDNS-容器"><a href="#运行-CoreDNS-容器" class="headerlink" title="运行 CoreDNS 容器"></a>运行 CoreDNS 容器</h2><p>使用 Docker 运行 CoreDNS 容器。确保将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -d \\</span><br><span class="line">  --name coredns \\</span><br><span class="line">  --restart unless-stopped \\</span><br><span class="line">  --network host \\</span><br><span class="line">  -v /etc/coredns:/etc/coredns \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem \\</span><br><span class="line">  coredns/coredns \\</span><br><span class="line">  -conf /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>运行说明：</strong></p>
-<ul>
-<li><code>-network host</code>：使用主机的网络堆栈，允许 CoreDNS 在主机的 443 端口上监听。</li>
-<li><code>v /etc/coredns:/etc/coredns</code>：将主机的配置目录挂载到容器内，方便管理配置文件。</li>
-<li><code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem</code> 和 <code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</code>：将 SSL 证书和私钥挂载到容器内，确保 CoreDNS 能够使用 HTTPS。</li>
-</ul>
-<h2 id="验证-CoreDNS-运行状态"><a href="#验证-CoreDNS-运行状态" class="headerlink" title="验证 CoreDNS 运行状态"></a>验证 CoreDNS 运行状态</h2><p>确保 CoreDNS 容器正在运行，并监听正确的端口。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker ps | grep coredns</span><br></pre></td></tr></table></figure></div>
-
-<p>你应该能看到类似如下的输出，表示 CoreDNS 容器正在运行并监听 443 端口：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES</span><br><span class="line">&lt;container_id&gt; coredns/coredns "/coredns -conf /etc…"  X seconds ago    Up X seconds    0.0.0.0:443-&gt;443/tcp                        coredns</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="配置客户端使用-DoH"><a href="#配置客户端使用-DoH" class="headerlink" title="配置客户端使用 DoH"></a>配置客户端使用 DoH</h1><p>完成上述步骤后，你的 DoH 服务器已经搭建完成。接下来，需要在客户端设备上配置 DNS 设置，使用 <code>https://&lt;DOMAIN&gt;/dns-query</code> 作为 DoH 服务器地址。</p>
-<h1 id="自动更新-SSL-证书"><a href="#自动更新-SSL-证书" class="headerlink" title="自动更新 SSL 证书"></a>自动更新 SSL 证书</h1><p>Certbot 获取的 SSL 证书有效期为 90 天，建议设置定时任务自动更新证书，并重启 CoreDNS 容器。</p>
-<p>创建一个定时任务，每天检查并更新证书：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> crontab -e</span><br></pre></td></tr></table></figure></div>
-
-<p>添加以下内容：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 1 * * certbot renew --quiet &amp;&amp; sudo docker restart coredns</span><br></pre></td></tr></table></figure></div>
-
-<p>此任务将在每个月1号的凌晨 2 点运行，自动更新证书并重启 CoreDNS 容器。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a class="link" href="https://coredns.io/manual/toc/">CoreDNS Manual<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://certbot.eff.org/">Certbot<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://docs.docker.com/">Home<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS">DNS over HTTPS<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>DNS</tag>
-        <tag>DoH</tag>
-        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
