@@ -13,7 +13,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#112;&#x75;&#98;&#x6c;&#x69;&#99;&#x40;&#110;&#x65;&#117;&#x72;&#111;&#99;&#x6f;&#100;&#97;&#46;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#112;&#117;&#98;&#x6c;&#x69;&#99;&#64;&#x6e;&#101;&#117;&#x72;&#x6f;&#x63;&#111;&#x64;&#x61;&#x2e;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -143,7 +143,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#112;&#117;&#x62;&#x6c;&#105;&#99;&#x40;&#110;&#x65;&#117;&#114;&#x6f;&#x63;&#x6f;&#100;&#97;&#46;&#x63;&#111;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#x62;&#x6c;&#105;&#x63;&#64;&#x6e;&#101;&#x75;&#x72;&#x6f;&#x63;&#x6f;&#x64;&#97;&#46;&#x63;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -1195,6 +1195,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Win 服务器保持断开 RDP 后的会话</title>
+    <url>/p/e228fa80.html</url>
+    <content><![CDATA[<p>创建文本并输入以下内容：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
+
+<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
+<p>进入下面的地址：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
+
+<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
+<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>RDP</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>The race is on to control the global supply chain for AI chips</title>
     <url>/p/706a75fe.html</url>
     <content><![CDATA[
@@ -1207,7 +1228,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#117;&#x62;&#108;&#105;&#99;&#64;&#110;&#101;&#x75;&#114;&#111;&#99;&#x6f;&#100;&#x61;&#46;&#99;&#x6f;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#112;&#x75;&#x62;&#108;&#x69;&#99;&#64;&#x6e;&#101;&#x75;&#114;&#x6f;&#99;&#x6f;&#x64;&#97;&#x2e;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -1345,27 +1366,6 @@
       </categories>
       <tags>
         <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Win 服务器保持断开 RDP 后的会话</title>
-    <url>/p/e228fa80.html</url>
-    <content><![CDATA[<p>创建文本并输入以下内容：</p>
-<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
-
-<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
-<p>进入下面的地址：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
-
-<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
-<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>RDP</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
