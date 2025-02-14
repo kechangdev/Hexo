@@ -1,6 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>A short history of AI</title>
+    <url>/p/4e7b3b2c.html</url>
+    <content><![CDATA[
+  <div class="note-large default">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <i class="notel-icon fa-solid fa-info"></i><p>💡</p>
+
+    </div>
+    <div class="notel-content">
+      <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
+<p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
+<p>Thank you for your understanding and support.</p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#x6c;&#105;&#99;&#x40;&#110;&#x65;&#117;&#x72;&#111;&#99;&#x6f;&#x64;&#97;&#46;&#x63;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+
+    </div>
+  </div>
+
+
+<p>Source: <a class="link" href="https://www.economist.com/schools-brief/2024/07/16/a-short-history-of-ai">A short history of AI<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<hr>
+<h1 id="A-short-History-of-AI-一则简短的-AI-历史"><a href="#A-short-History-of-AI-一则简短的-AI-历史" class="headerlink" title="A short History of AI 一则简短的 AI 历史"></a>A short History of AI 一则简短的 AI 历史</h1><img lazyload="" src="/images/loading.svg" data-src="/p/4e7b3b2c/IMG-20250213183424499.jpg" class="">
+<p>IMAGE: MIKE HADDAD</p>
+<p><em><strong>Jul 16th 2024</strong></em></p>
+<p>Over the summer of 1956 a small but illustrious group gathered at <em><strong>Dartmouth College</strong></em> in <em><strong>New Hampshire</strong></em>; it included <em><strong>Claude Shannon</strong></em>, the begetter of information theory, and <em><strong>Herb Simon</strong></em>, the only person ever to win both the <em><strong>Nobel Memorial Prize</strong></em> in Economic Sciences awarded by the <em><strong>Royal Swedish Academy of Sciences</strong></em> and the Turing Award awarded by the <em><strong>Association for Computing Machinery</strong></em>. They had been called together by a young researcher, <em><strong>John McCarthy</strong></em>, who wanted to discuss “how to make machines use language, form abstractions and concepts” and “solve kinds of problems now reserved for humans”. It was the first academic gathering devoted to what <em><strong>McCarthy</strong></em> dubbed “artificial intelligence”. And it set a template for the field’s next 60-odd years in coming up with no advances on a par with its ambitions.</p>
+<blockquote>
+<p>1956 年夏天，一个杰出的小团体聚集在 New Hampshire 的 Dartmouth College；包含信息论的创始人 Claude Shannon，以及至今唯一一位同时获得瑞典皇家科学院授予的经济学的 Nobel Memorial Prize 和 由 ACM 授予 Turing Award 的 Herb Simon。他们被一个年轻的学者 John McCarthy 号召在一起，这个年轻的学者想要讨论 “如何让机器使用语言、形成抽象和概念” 和 “解决目前人类所保留的问题”。这是第一个专门讨论 McCarthy 所称的 “人工智能” 的学术聚会，为该领域接下来的大约六十多年奠定了模板，即使这些年未能取得与其雄心相匹配的突破性进展。</p>
+</blockquote>
+<p>over the summer of 表示在某个特定年份的夏天期间发生的事情。它通常用来描述一段时间内的活动、变化或事件。<br>illustrious adj. 著名的；杰出的<br>begetter n. 生产者<br>swedish adj. 瑞典的；瑞典人的；瑞典语的 ｜ n. 瑞典话； 瑞典人<br>machinery n. 机械装置；机械（总称）<br>dub v. 起绰号；把…称为；配音<br>devoted to phrase. 致力于<br>-odd 表示大约的数量，不精确但接近</p>
+<p><strong>In this series on artificial intelligence</strong></p>
+<ol>
+<li><em>A short history of AI</em>*</li>
+<li><a href="https://www.economist.com/schools-brief/2024/07/23/ai-firms-will-soon-exhaust-most-of-the-internets-data"><em>Running out of data</em></a></li>
+<li><a href="https://www.economist.com/schools-brief/2024/07/30/the-race-is-on-to-control-the-global-supply-chain-for-ai-chips"><em>Controlling the chip supply</em></a></li>
+</ol>
+<p>The <em><strong>Dartmouth</strong></em> meeting did not mark the beginning of scientific inquiry into machines which could think like people. <em><strong>Alan Turing</strong></em>, for whom the <em><strong>Turing prize</strong></em> is named, wondered about it; so did <em><strong>John von Neumann</strong></em>, an inspiration to <em><strong>McCarthy</strong></em>. By 1956 there were already a number of approaches to the issue; historians think one of the reasons <em><strong>McCarthy</strong></em> coined the term artificial intelligence, later AI, for his project was that it was broad enough to encompass them all, keeping open the question of which might be best. Some researchers favoured systems based on combining facts about the world with axioms like those of geometry and symbolic logic so as to infer appropriate responses; others preferred building systems in which the probability of one thing depended on the constantly updated probabilities of many others.</p>
+<blockquote>
+<p>Dartmouth 的会议并没有标志着对能够像人一样思考的机器的科学研究的开端。 Turing prize 名称的来源 Alan Turing 也疑惑过。McCarthy 的灵感来源 John von Neumann 同样如此。在 1956 年，以及有了一些方案可以解决这个问题。历史学家认为 McCarthy 为他的项目创造人工智能（之后称 AI）这个术语的其中一个原因是，它足够宽泛，可以涵盖所有方法，而哪种方法可能最好则没有答案。一些研究人员倾向于将公理与几何和符号逻辑等公理相结合的系统，以便推断出适当的结论。其他人则倾向于建立这样的系统：一件事的概率取决于许多其他事情不断更新的概率。</p>
+</blockquote>
+<p>so did （So + 助动词（do/does/did）+ 主语）表示过去的动作或状态同样发生在另一个主体上<br>historian n. 历史学家<br>encompass v. 包围； 包含<br>keeping open the question 表示继续保持某个问题或争议的开放状态，暂时不作出最终决定或结论<br>axiom n. 公理；自明之理<br>like those of 说明一个事物与另一个事物在某些方面相似，尤其是指代前面提到的多个事物的特征或属性<br>so as to + v. 是用来表达行动或行为的目的，相当于“为了”或“以便于”的意思</p>
+<img lazyload="" src="/images/loading.svg" data-src="/p/4e7b3b2c/IMG-20250213183426348.png" class="">
+<p>Source: Stanford University AI Index report 2024</p>
+<p>The following decades saw much intellectual ferment and argument on the topic, but by the 1980s there was wide agreement on the way forward: “expert systems” which used symbolic logic to capture and apply the best of human know-how. The Japanese government, in particular, threw its weight behind the idea of such systems and the hardware they might need. But for the most part such systems proved too inflexible to cope with the messiness of the real world. By the late 1980s AI had fallen into disrepute, a byword for overpromising and underdelivering. Those researchers still in the field started to shun the term.</p>
+<blockquote>
+<p>在接下来的几十年里，这个话题经历了许多智慧上的动荡和争论，但到了 20 世纪 80 年代，人们对于前进的方向达成了广泛的共识：“专家系统”使用符号逻辑来捕捉和应用人类最好的知识。日本政府尤其大力支持此类系统的想法以及它们可能需要的硬件。但在大多数情况下，这些系统应对现实世界的混乱都过于死板。到 20 世纪 80 年代末，人工智能已声名狼藉，成为言过其实、交付不足的代名词。那些仍在该领域的研究人员开始回避这个词。</p>
+</blockquote>
+<p>ferment n. 发酵；酵素；动乱 ｜ v. 使发酵；动乱<br>threw its weight behind 表示某个组织、团体、或个人积极支持或大力支持某个想法、计划、提议或某个特定的行动<br>cope v. 应付；处理<br>messiness n. 杂乱状态<br>disrepute n. 丧失名誉<br>byword n. 代名词； 笑柄；谚语<br>overpromising 言过其实<br>underdelivering 交付不足<br>shun v. 避开</p>
+<p>It was from one of those pockets of perseverance that today’s boom was born. As the rudiments of the way in which brain cells—a type of neuron—work were pieced together in the 1940s, computer scientists began to wonder if machines could be wired up the same way. In a biological brain there are connections between neurons which allow activity in one to trigger or suppress activity in another; what one neuron does depends on what the other neurons connected to it are doing. A first attempt to model this in the lab (by Marvin Minsky, a Dartmouth attendee) used hardware to model networks of neurons. Since then, layers of interconnected neurons have been simulated in software.</p>
+<blockquote>
+<p>今天的繁荣起源于那些顽强坚持的小群体。20 世纪 40 年代，随着脑细胞（一种神经元）工作方式的雏型被拼凑起来，计算机科学家开始怀疑是否可以使机器以同样的方式联结起来。在生物大脑中，神经元之间存在连接，这使得一个神经元的活动能够触发或抑制另一个神经元的活动。一个神经元的活动取决于与其相连的其他神经元的活动。首次在实验室中的尝试（由 Dartmouth 的出席者 Marvin Minsky 完成）使用硬件来模拟神经网络。此后，互连神经元层开始在软件中模拟。</p>
+</blockquote>
+<p>perseverance n. 毅力；坚持不懈；不屈不挠<br>rudiment n. 基本原理；雏型<br>neuron n. 神经元<br>trigger n. 触发；触发器；板机；诱因 ｜v. 触发；引起；发动<br>attendee n. （会议）出席者<br>interconnecte v. 相互连接的；互相联系的 ｜ v. （使）相互连接；（使）互相联系<br>simulate v. 假装；冒充；模仿；模拟</p>
+<p>These artificial neural networks are not programmed using explicit rules; instead, they “learn” by being exposed to lots of examples. During this training the strength of the connections between the neurons (known as “weights”) are repeatedly adjusted so that, eventually, a given input produces an appropriate output. Minsky himself abandoned the idea, but others took it forward. By the early 1990s neural networks had been trained to do things like help sort the post by recognising handwritten numbers. Researchers thought adding more layers of neurons might allow more sophisticated achievements. But it also made the systems run much more slowly.</p>
+<blockquote>
+<p>这些人工神经网络不使用明确的规则进行编程的，而是通过接触大量示例来“学习”。以便于在训练过程中，神经元之间的连接强度（称为“权重”）反复调整，最终对给定的输入产生适当的输出。Minsky 本人放弃了这个想法，但其他人将其发扬光大。到 20 世纪 90 年代初，神经网络已经经过训练，能够通过识别手写数字来帮助对文章进行分类。研究人员认为，增加更多层神经元可能会实现更复杂的效果，但也会使系统运行速度大大降低。</p>
+</blockquote>
+<p>so that 以便于<br>take it forward 某个已经开始的事情进一步推进或发展。它强调的是对某项工作或项目的延续、改进、或提升，是在已有基础上的进一步动作。<br>handwrite v. 手写<br>sophisticated adj. 老于世故的；老练的；精密复杂的</p>
+<p>A new sort of computer hardware provided a way around the problem. Its potential was dramatically demonstrated in 2009, when researchers at Stanford University increased the speed at which a neural net could run 70-fold, using a gaming PC in their dorm room. This was possible because, as well as the “central processing unit” (cpu) found in all pcs, this one also had a “graphics processing unit” (gpu) to create game worlds on screen. And the gpu was designed in a way suited to running the neural-network code.</p>
+<blockquote>
+<p>一种新型计算机硬件围绕这个问题提供了解决方案。2009 年，Stanford 大学的研究人员利用宿舍里的一台游戏电脑，将神经网络的运行速度提高了 70 倍，这一发现极大地证明了这种硬件的潜力。这是因为，除了所有电脑都有的“中央处理器”（cpu）外，这款电脑还配备了“图形处理单元”（gpu），可以在屏幕上创建游戏世界。并且，gpu 的设计方式适合运行神经网络代码。</p>
+</blockquote>
+<p>-fold 用于描述数量或程度的倍数增加或减少。这个后缀的用法可以表达增长、扩展或减少的倍数<br>dorm n. （集体）宿舍</p>
+<p>Coupling that hardware speed-up with more efficient training algorithms meant that networks with millions of connections could be trained in a reasonable time; neural networks could handle bigger inputs and, crucially, be given more layers. These “deeper” networks turned out to be far more capable.</p>
+<blockquote>
+<p>将硬件加速与更高效的训练算法相结合，意味着拥有数百万个连接的网络可以在合理的时间内完成训练；神经网络可以处理更大的输入，而且最重要的是，可以被给予更多的层数。这些“更深层”的网络被证明更加强大。</p>
+</blockquote>
+<p>coupling n. 联结；结合 ｜ v-ing. 联结；结合<br>turned out to be 结果是；最后证明是</p>
+<p>The power of this new approach, which had come to be known as “deep learning”, became apparent in the ImageNet Challenge of 2012. Image-recognition systems competing in the challenge were provided with a database of more than a million labelled image files. For any given word, such as “dog” or “cat”, the database contained several hundred photos. Image-recognition systems would be trained, using these examples, to “map” input, in the form of images, onto output in the form of one-word descriptions. The systems were then challenged to produce such descriptions when fed previously unseen test images. In 2012 a team led by Geoff Hinton, then at the University of Toronto, used deep learning to achieve an accuracy of 85%. It was instantly recognised as a breakthrough.</p>
+<blockquote>
+<p>这种新方法被称为“深度学习”，其威力在 2012 年的 ImageNet 挑战赛中初露锋芒。参赛的图像识别系统被提供了一个包含超过一百万个带标签图像文件的数据库。对于任何给定的单词，例如 “dog” 或 “cat”，数据库中都包含数百张照片。图像识别系统将使用这些示例进行训练，将以图像形式的输入“映射”到以单词描述形式的输出上。然后，系统被要求在输入之前从未见过的测试图像时生成这样的描述。2012 年，Toronto 大学的 Geoff Hinton 领导的团队使用深度学习实现了 85% 的准确率。它立即被认为是一项突破。</p>
+</blockquote>
+<p>unseen adj. 看不见的；未被发现的；缺席的</p>
+<p>By 2015 almost everyone in the image-recognition field was using deep learning, and the winning accuracy at the ImageNet Challenge had reached 96%—better than the average human score. Deep learning was also being applied to a host of other “problems…reserved for humans” which could be reduced to the mapping of one type of thing onto another: speech recognition (mapping sound to text), face-recognition (mapping faces to names) and translation.</p>
+<blockquote>
+<p>到了 2015 年，在图像识别领域几乎都使用了深度学习，并且 ImageNet 挑战赛中的胜者有着高达 96% 的准确度——超过了人类得分的平均水平。深度学习也被应用于许多其他“人类保留问题”，这些问题可以归结为将一种事物映射到另一种事物上：语音识别（将声音映射到文本）、人脸识别（将人脸映射到名字）和翻译。</p>
+</blockquote>
+<p>a host of 它通常用于描述数量众多的某类事物或人，带有强调数量庞大的意味<br>be reduced to 减少到； 归结为</p>
+<p>In all these applications the huge amounts of data that could be accessed through the internet were vital to success; what was more, the number of people using the internet spoke to the possibility of large markets. And the bigger (ie, deeper) the networks were made, and the more training data they were given, the more their performance improved.</p>
+<blockquote>
+<p>在所有这些应用中，通过互联网获取的大量数据对于成功至关重要；此外，使用互联网的人数表明了巨大市场的可能性。并且，网络越大（即越深），获得的训练数据越多，其性能就越好。</p>
+</blockquote>
+<p>what was more 更重要的是； 更有甚者； 而且<br>the more…the more 表达两者之间的相互关系或变化。这个结构表示随着一个事情（或状态）增加或增强，另一个事情（或状态）也随之增加或增强。通常用于描述两个变量之间的正相关关系</p>
+<p>Deep learning was soon being deployed in all kinds of new products and services. Voice-driven devices such as Amazon’s Alexa appeared. Online transcription services became useful. Web browsers offered automatic translations. Saying such things were enabled by AI started to sound cool, rather than embarrassing, though it was also a bit redundant; nearly every technology referred to as AI then and now actually relies on deep learning under the bonnet.</p>
+<blockquote>
+<p>深度学习很快应用于各种新产品和服务中。Amazon 的 Alexa 等语音驱动设备问世。在线转录服务变得实用。网络浏览器提供自动翻译。说这些项目由 AI 赋能听起来很酷，而不是令人尴尬，尽管这也有点多余；当时和现在，几乎所有被称为人工智能的技术实际上都依赖于深度学习。</p>
+</blockquote>
+<p>transcription n. 抄写；誊写<br>redundant adj. 多余的；过剩的<br>bonnet n. 软帽；阀帽；引擎盖<br>under the bonnet 在内部； 在背后</p>
+<p><strong>Chatgpt and its rivals really do seem to “use language and form abstractions” ChatGPT及其竞争对手确实似乎能够 “使用语言并形成抽象概念”</strong></p>
+<p>In 2017 a qualitative change was added to the quantitative benefits being provided by more computing power and more data: a new way of arranging connections between neurons called the transformer. Transformers enable neural networks to keep track of patterns in their input, even if the elements of the pattern are far apart, in a way that allows them to bestow “attention” on particular features in the data.</p>
+<blockquote>
+<p>2017 年，更强大的计算能力和更多的数据所带来的数量效益发生了质的变化：一种安排神经元之间连接的新方法，称为“Transformer”。Transformer 使神经网络能够跟踪输入中的模式，即使模式中的元素相距很远，也能以某种方式让它们对数据中的特定特征给予“注意力”。</p>
+</blockquote>
+<p>rival n. 竞争者；敌手 ｜ v. 竞争<br>qualitative adj. 性质的；定性的<br>quantitative adj. 数量的；定量的<br>qualitative change 质变<br>quantitative benefits 量变效应<br>keep track of 追踪；纪录<br>bestow v. 给予；赠予；授予<br>bestow … on phrase. 给予；赠予；授予</p>
+<p>Transformers gave networks a better grasp of context, which suited them to a technique called “self-supervised learning”. In essence, some words are randomly blanked out during training, and the model teaches itself to fill in the most likely candidate. Because the training data do not have to be labelled in advance, such models can be trained using billions of words of raw text taken from the internet.</p>
+<blockquote>
+<p>Transformer 让神经网络更好抓住上下文，这让它们更适合一项称为“自监管学习”的技术。本质上，在训练过程中，一些单词会被随机删除，然后模型会自学填写最有可能的候选单词。由于训练数据不需要提前标记，因此这些模型可以使用从互联网上获取的数十亿字的原始文本来训练。</p>
+</blockquote>
+<p>in advance phrase. 提前<br>raw adj. 生的；未经处理的</p>
+<h2 id="Mind-Your-Language-Model-关注你的语言模型"><a href="#Mind-Your-Language-Model-关注你的语言模型" class="headerlink" title="Mind Your Language Model 关注你的语言模型"></a>Mind Your Language Model 关注你的语言模型</h2><p>Transformer-based large language models (LLMs) began attracting wider attention in 2019, when a model called GPT-2 was released by OpenAI, a startup (GPT stands for generative pre-trained transformer). Such LLMs turned out to be capable of “emergent” behaviour for which they had not been explicitly trained. Soaking up huge amounts of language did not just make them surprisingly adept at linguistic tasks like summarisation or translation, but also at things—like simple arithmetic and the writing of software—which were implicit in the training data. Less happily it also meant they reproduced biases in the data fed to them, which meant many of the prevailing prejudices of human society emerged in their output.</p>
+<blockquote>
+<p>基于 Transformer 的大语言模型在 2019 年开始受到广泛关注，当时一个由初创公司 OpenAI 发布了名为 GPT-2（GPT  代表 生成式预训练 Transformer） 的模型。这些 LLM 能够表现出 “emergent” 行为，尽管他们曾经没有接受过专门的训练。吸收大量的语料不仅使它们出人意料地擅长语言学任务（比如总结或翻译），而且还擅长训练数据中隐含的事情（比如简单的算术和软件编写）。但不幸的是，这也意味着它们在输入的数据中重现了偏见，这意味着人类社会许多普遍的偏见都出现在它们的输出中。</p>
+</blockquote>
+<p>startup n. 启动；新兴公司；初创公司<br>stand for phrase. 代表；象征；支持；容忍<br>turn out to be phrase. 结果是；原来是；证实是<br>explicitly adv. 明白地；明确地；直言地<br>soak up phrase. 吸收；吸取<br>surprisingly adv. 令人吃惊地<br>adept adj. 内行的；熟练的；擅长的 ｜ n. 内行<br>summarisation n. 总结<br>arithmetic n. 算术<br>implicit adj. 含蓄的；暗示的；无疑的；绝对的<br>prevailing adj. 普遍的；盛行的；有优势的 ｜ v-ing. 获胜；盛行；劝服<br>prejudice n. 偏见；成见 ｜ v. 使有偏见；损害</p>
+<p>In November 2022 a larger OpenAI model, GPT-3.5, was presented to the public in the form of a chatbot. Anyone with a web browser could enter a prompt and get a response. No consumer product has ever taken off quicker. Within weeks ChatGPT was generating everything from college essays to computer code. AI had made another great leap forward.</p>
+<blockquote>
+<p>2022 年 11 月，更大的 OpenAI 模型 GPT-3.5 以聊天机器人的形式向公众公开。任何拥有网络浏览器的人都可以输入 prompt 并获得响应。从来没有任何消费产品能够像它一样迅速流行。发布后的短短几周内，ChatGPT 就展现出了它强大的生成能力，涵盖了从学术写作到编程等多个领域。人工智能又一次实现了巨大的飞跃。</p>
+</blockquote>
+<p>take off phrase. 突然成功；拿掉；离开；起飞；脱下<br>within weeks 短短几周内<br>another great leap forward 又一次巨大的飞跃</p>
+<p>Where the first cohort of AI-powered products was based on recognition, this second one is based on generation. Deep-learning models such as Stable Diffusion and DALL-E, which also made their debuts around that time, used a technique called diffusion to turn text prompts into images. Other models can produce surprisingly realistic video, speech or music.</p>
+<blockquote>
+<p>第一批 AI 赋能产品基于识别，而第二批则基于生成。Stable Diffusion 和 DALL-E 等深度学习模型也是在那时首次亮相，它们使用一种称为 diffusion 的技术将文本 prompt 转换为图像。其他模型可以制作出令人惊讶的逼真的视频、语音或音乐。</p>
+</blockquote>
+<p>cohort n. 一群人；一帮人<br>debut n. 初次露面；初次登场 ｜ v. 初次登场；首次推出<br>around that time 在那个时候；大约在同一时间<br>diffusion n. 扩散；传播；漫散</p>
+<p>The leap is not just technological. Making things makes a difference. ChatGPT and rivals such as Gemini (from Google) and Claude (from Anthropic, founded by researchers previously at OpenAI) produce outputs from calculations just as other deep-learning systems do. But the fact that they respond to requests with novelties makes them feel very unlike software which recognises faces, takes dictation or translates menus. They really do seem to “use language” and “form abstractions”, just as McCarthy had hoped.</p>
+<blockquote>
+<p>这种飞跃不仅仅是技术上的。创造能够带来改变。ChatGPT 以及它的竞争对手，例如来自 Google 的 Gemini 和 Anthropic（由前 OpenAI 研究人员创立的公司）的Claude 通过计算生成输出，这也像其他深度学习系统一样。但它们通过新颖的方式回应请求这一事实，使它们看起来非常不同于那些识别人脸、进行语音转译或翻译菜单的软件。它们似乎确实在 “使用语言” 和 “形成抽象概念”，正如 McCarthy 所希望的那样。</p>
+</blockquote>
+<p>Making things makes a difference. 创造能够带来改变。</p>
+<p>This series of briefs will look at how these models work, how much further their powers can grow, what new uses they will be put to, as well as what they will not, or should not, be used for. ■</p>
+<blockquote>
+<p>本系列简报将探讨这些模型是怎样工作的、它们的能力还能增强到何种程度、它们将用于何处以及它们不会或不应该用于什么用途。■</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>语言学习</category>
+      </categories>
+      <tags>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI firms will soon exhaust most of the internet’s data</title>
     <url>/p/e88427f1.html</url>
     <content><![CDATA[
@@ -13,7 +143,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#x62;&#x6c;&#x69;&#x63;&#x40;&#110;&#x65;&#x75;&#x72;&#111;&#x63;&#x6f;&#100;&#97;&#46;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#117;&#98;&#x6c;&#x69;&#x63;&#64;&#x6e;&#101;&#x75;&#x72;&#111;&#99;&#x6f;&#x64;&#97;&#x2e;&#x63;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -149,136 +279,6 @@
 </blockquote>
 <p>cull v. 拣选；采集<br>sustainable adj. 可容忍的；可支持的；可持续的</p>
 <blockquote>
-</blockquote>
-]]></content>
-      <categories>
-        <category>语言学习</category>
-      </categories>
-      <tags>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>A short history of AI</title>
-    <url>/p/4e7b3b2c.html</url>
-    <content><![CDATA[
-  <div class="note-large default">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <i class="notel-icon fa-solid fa-info"></i><p>💡</p>
-
-    </div>
-    <div class="notel-content">
-      <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
-<p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
-<p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#112;&#117;&#x62;&#x6c;&#x69;&#x63;&#64;&#110;&#x65;&#117;&#114;&#x6f;&#x63;&#x6f;&#x64;&#97;&#46;&#x63;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-
-    </div>
-  </div>
-
-
-<p>Source: <a class="link" href="https://www.economist.com/schools-brief/2024/07/16/a-short-history-of-ai">A short history of AI<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<hr>
-<h1 id="A-short-History-of-AI-一则简短的-AI-历史"><a href="#A-short-History-of-AI-一则简短的-AI-历史" class="headerlink" title="A short History of AI 一则简短的 AI 历史"></a>A short History of AI 一则简短的 AI 历史</h1><img lazyload="" src="/images/loading.svg" data-src="/p/4e7b3b2c/IMG-20250213183424499.jpg" class="">
-<p>IMAGE: MIKE HADDAD</p>
-<p><em><strong>Jul 16th 2024</strong></em></p>
-<p>Over the summer of 1956 a small but illustrious group gathered at <em><strong>Dartmouth College</strong></em> in <em><strong>New Hampshire</strong></em>; it included <em><strong>Claude Shannon</strong></em>, the begetter of information theory, and <em><strong>Herb Simon</strong></em>, the only person ever to win both the <em><strong>Nobel Memorial Prize</strong></em> in Economic Sciences awarded by the <em><strong>Royal Swedish Academy of Sciences</strong></em> and the Turing Award awarded by the <em><strong>Association for Computing Machinery</strong></em>. They had been called together by a young researcher, <em><strong>John McCarthy</strong></em>, who wanted to discuss “how to make machines use language, form abstractions and concepts” and “solve kinds of problems now reserved for humans”. It was the first academic gathering devoted to what <em><strong>McCarthy</strong></em> dubbed “artificial intelligence”. And it set a template for the field’s next 60-odd years in coming up with no advances on a par with its ambitions.</p>
-<blockquote>
-<p>1956 年夏天，一个杰出的小团体聚集在 New Hampshire 的 Dartmouth College；包含信息论的创始人 Claude Shannon，以及至今唯一一位同时获得瑞典皇家科学院授予的经济学的 Nobel Memorial Prize 和 由 ACM 授予 Turing Award 的 Herb Simon。他们被一个年轻的学者 John McCarthy 号召在一起，这个年轻的学者想要讨论 “如何让机器使用语言、形成抽象和概念” 和 “解决目前人类所保留的问题”。这是第一个专门讨论 McCarthy 所称的 “人工智能” 的学术聚会，为该领域接下来的大约六十多年奠定了模板，即使这些年未能取得与其雄心相匹配的突破性进展。</p>
-</blockquote>
-<p>over the summer of 表示在某个特定年份的夏天期间发生的事情。它通常用来描述一段时间内的活动、变化或事件。<br>illustrious adj. 著名的；杰出的<br>begetter n. 生产者<br>swedish adj. 瑞典的；瑞典人的；瑞典语的 ｜ n. 瑞典话； 瑞典人<br>machinery n. 机械装置；机械（总称）<br>dub v. 起绰号；把…称为；配音<br>devoted to phrase. 致力于<br>-odd 表示大约的数量，不精确但接近</p>
-<p><strong>In this series on artificial intelligence</strong></p>
-<ol>
-<li><em>A short history of AI</em>*</li>
-<li><a href="https://www.economist.com/schools-brief/2024/07/23/ai-firms-will-soon-exhaust-most-of-the-internets-data"><em>Running out of data</em></a></li>
-<li><a href="https://www.economist.com/schools-brief/2024/07/30/the-race-is-on-to-control-the-global-supply-chain-for-ai-chips"><em>Controlling the chip supply</em></a></li>
-</ol>
-<p>The <em><strong>Dartmouth</strong></em> meeting did not mark the beginning of scientific inquiry into machines which could think like people. <em><strong>Alan Turing</strong></em>, for whom the <em><strong>Turing prize</strong></em> is named, wondered about it; so did <em><strong>John von Neumann</strong></em>, an inspiration to <em><strong>McCarthy</strong></em>. By 1956 there were already a number of approaches to the issue; historians think one of the reasons <em><strong>McCarthy</strong></em> coined the term artificial intelligence, later AI, for his project was that it was broad enough to encompass them all, keeping open the question of which might be best. Some researchers favoured systems based on combining facts about the world with axioms like those of geometry and symbolic logic so as to infer appropriate responses; others preferred building systems in which the probability of one thing depended on the constantly updated probabilities of many others.</p>
-<blockquote>
-<p>Dartmouth 的会议并没有标志着对能够像人一样思考的机器的科学研究的开端。 Turing prize 名称的来源 Alan Turing 也疑惑过。McCarthy 的灵感来源 John von Neumann 同样如此。在 1956 年，以及有了一些方案可以解决这个问题。历史学家认为 McCarthy 为他的项目创造人工智能（之后称 AI）这个术语的其中一个原因是，它足够宽泛，可以涵盖所有方法，而哪种方法可能最好则没有答案。一些研究人员倾向于将公理与几何和符号逻辑等公理相结合的系统，以便推断出适当的结论。其他人则倾向于建立这样的系统：一件事的概率取决于许多其他事情不断更新的概率。</p>
-</blockquote>
-<p>so did （So + 助动词（do/does/did）+ 主语）表示过去的动作或状态同样发生在另一个主体上<br>historian n. 历史学家<br>encompass v. 包围； 包含<br>keeping open the question 表示继续保持某个问题或争议的开放状态，暂时不作出最终决定或结论<br>axiom n. 公理；自明之理<br>like those of 说明一个事物与另一个事物在某些方面相似，尤其是指代前面提到的多个事物的特征或属性<br>so as to + v. 是用来表达行动或行为的目的，相当于“为了”或“以便于”的意思</p>
-<img lazyload="" src="/images/loading.svg" data-src="/p/4e7b3b2c/IMG-20250213183426348.png" class="">
-<p>Source: Stanford University AI Index report 2024</p>
-<p>The following decades saw much intellectual ferment and argument on the topic, but by the 1980s there was wide agreement on the way forward: “expert systems” which used symbolic logic to capture and apply the best of human know-how. The Japanese government, in particular, threw its weight behind the idea of such systems and the hardware they might need. But for the most part such systems proved too inflexible to cope with the messiness of the real world. By the late 1980s AI had fallen into disrepute, a byword for overpromising and underdelivering. Those researchers still in the field started to shun the term.</p>
-<blockquote>
-<p>在接下来的几十年里，这个话题经历了许多智慧上的动荡和争论，但到了 20 世纪 80 年代，人们对于前进的方向达成了广泛的共识：“专家系统”使用符号逻辑来捕捉和应用人类最好的知识。日本政府尤其大力支持此类系统的想法以及它们可能需要的硬件。但在大多数情况下，这些系统应对现实世界的混乱都过于死板。到 20 世纪 80 年代末，人工智能已声名狼藉，成为言过其实、交付不足的代名词。那些仍在该领域的研究人员开始回避这个词。</p>
-</blockquote>
-<p>ferment n. 发酵；酵素；动乱 ｜ v. 使发酵；动乱<br>threw its weight behind 表示某个组织、团体、或个人积极支持或大力支持某个想法、计划、提议或某个特定的行动<br>cope v. 应付；处理<br>messiness n. 杂乱状态<br>disrepute n. 丧失名誉<br>byword n. 代名词； 笑柄；谚语<br>overpromising 言过其实<br>underdelivering 交付不足<br>shun v. 避开</p>
-<p>It was from one of those pockets of perseverance that today’s boom was born. As the rudiments of the way in which brain cells—a type of neuron—work were pieced together in the 1940s, computer scientists began to wonder if machines could be wired up the same way. In a biological brain there are connections between neurons which allow activity in one to trigger or suppress activity in another; what one neuron does depends on what the other neurons connected to it are doing. A first attempt to model this in the lab (by Marvin Minsky, a Dartmouth attendee) used hardware to model networks of neurons. Since then, layers of interconnected neurons have been simulated in software.</p>
-<blockquote>
-<p>今天的繁荣起源于那些顽强坚持的小群体。20 世纪 40 年代，随着脑细胞（一种神经元）工作方式的雏型被拼凑起来，计算机科学家开始怀疑是否可以使机器以同样的方式联结起来。在生物大脑中，神经元之间存在连接，这使得一个神经元的活动能够触发或抑制另一个神经元的活动。一个神经元的活动取决于与其相连的其他神经元的活动。首次在实验室中的尝试（由 Dartmouth 的出席者 Marvin Minsky 完成）使用硬件来模拟神经网络。此后，互连神经元层开始在软件中模拟。</p>
-</blockquote>
-<p>perseverance n. 毅力；坚持不懈；不屈不挠<br>rudiment n. 基本原理；雏型<br>neuron n. 神经元<br>trigger n. 触发；触发器；板机；诱因 ｜v. 触发；引起；发动<br>attendee n. （会议）出席者<br>interconnecte v. 相互连接的；互相联系的 ｜ v. （使）相互连接；（使）互相联系<br>simulate v. 假装；冒充；模仿；模拟</p>
-<p>These artificial neural networks are not programmed using explicit rules; instead, they “learn” by being exposed to lots of examples. During this training the strength of the connections between the neurons (known as “weights”) are repeatedly adjusted so that, eventually, a given input produces an appropriate output. Minsky himself abandoned the idea, but others took it forward. By the early 1990s neural networks had been trained to do things like help sort the post by recognising handwritten numbers. Researchers thought adding more layers of neurons might allow more sophisticated achievements. But it also made the systems run much more slowly.</p>
-<blockquote>
-<p>这些人工神经网络不使用明确的规则进行编程的，而是通过接触大量示例来“学习”。以便于在训练过程中，神经元之间的连接强度（称为“权重”）反复调整，最终对给定的输入产生适当的输出。Minsky 本人放弃了这个想法，但其他人将其发扬光大。到 20 世纪 90 年代初，神经网络已经经过训练，能够通过识别手写数字来帮助对文章进行分类。研究人员认为，增加更多层神经元可能会实现更复杂的效果，但也会使系统运行速度大大降低。</p>
-</blockquote>
-<p>so that 以便于<br>take it forward 某个已经开始的事情进一步推进或发展。它强调的是对某项工作或项目的延续、改进、或提升，是在已有基础上的进一步动作。<br>handwrite v. 手写<br>sophisticated adj. 老于世故的；老练的；精密复杂的</p>
-<p>A new sort of computer hardware provided a way around the problem. Its potential was dramatically demonstrated in 2009, when researchers at Stanford University increased the speed at which a neural net could run 70-fold, using a gaming PC in their dorm room. This was possible because, as well as the “central processing unit” (cpu) found in all pcs, this one also had a “graphics processing unit” (gpu) to create game worlds on screen. And the gpu was designed in a way suited to running the neural-network code.</p>
-<blockquote>
-<p>一种新型计算机硬件围绕这个问题提供了解决方案。2009 年，Stanford 大学的研究人员利用宿舍里的一台游戏电脑，将神经网络的运行速度提高了 70 倍，这一发现极大地证明了这种硬件的潜力。这是因为，除了所有电脑都有的“中央处理器”（cpu）外，这款电脑还配备了“图形处理单元”（gpu），可以在屏幕上创建游戏世界。并且，gpu 的设计方式适合运行神经网络代码。</p>
-</blockquote>
-<p>-fold 用于描述数量或程度的倍数增加或减少。这个后缀的用法可以表达增长、扩展或减少的倍数<br>dorm n. （集体）宿舍</p>
-<p>Coupling that hardware speed-up with more efficient training algorithms meant that networks with millions of connections could be trained in a reasonable time; neural networks could handle bigger inputs and, crucially, be given more layers. These “deeper” networks turned out to be far more capable.</p>
-<blockquote>
-<p>将硬件加速与更高效的训练算法相结合，意味着拥有数百万个连接的网络可以在合理的时间内完成训练；神经网络可以处理更大的输入，而且最重要的是，可以被给予更多的层数。这些“更深层”的网络被证明更加强大。</p>
-</blockquote>
-<p>coupling n. 联结；结合 ｜ v-ing. 联结；结合<br>turned out to be 结果是；最后证明是</p>
-<p>The power of this new approach, which had come to be known as “deep learning”, became apparent in the ImageNet Challenge of 2012. Image-recognition systems competing in the challenge were provided with a database of more than a million labelled image files. For any given word, such as “dog” or “cat”, the database contained several hundred photos. Image-recognition systems would be trained, using these examples, to “map” input, in the form of images, onto output in the form of one-word descriptions. The systems were then challenged to produce such descriptions when fed previously unseen test images. In 2012 a team led by Geoff Hinton, then at the University of Toronto, used deep learning to achieve an accuracy of 85%. It was instantly recognised as a breakthrough.</p>
-<blockquote>
-<p>这种新方法被称为“深度学习”，其威力在 2012 年的 ImageNet 挑战赛中初露锋芒。参赛的图像识别系统被提供了一个包含超过一百万个带标签图像文件的数据库。对于任何给定的单词，例如 “dog” 或 “cat”，数据库中都包含数百张照片。图像识别系统将使用这些示例进行训练，将以图像形式的输入“映射”到以单词描述形式的输出上。然后，系统被要求在输入之前从未见过的测试图像时生成这样的描述。2012 年，Toronto 大学的 Geoff Hinton 领导的团队使用深度学习实现了 85% 的准确率。它立即被认为是一项突破。</p>
-</blockquote>
-<p>unseen adj. 看不见的；未被发现的；缺席的</p>
-<p>By 2015 almost everyone in the image-recognition field was using deep learning, and the winning accuracy at the ImageNet Challenge had reached 96%—better than the average human score. Deep learning was also being applied to a host of other “problems…reserved for humans” which could be reduced to the mapping of one type of thing onto another: speech recognition (mapping sound to text), face-recognition (mapping faces to names) and translation.</p>
-<blockquote>
-<p>到了 2015 年，在图像识别领域几乎都使用了深度学习，并且 ImageNet 挑战赛中的胜者有着高达 96% 的准确度——超过了人类得分的平均水平。深度学习也被应用于许多其他“人类保留问题”，这些问题可以归结为将一种事物映射到另一种事物上：语音识别（将声音映射到文本）、人脸识别（将人脸映射到名字）和翻译。</p>
-</blockquote>
-<p>a host of 它通常用于描述数量众多的某类事物或人，带有强调数量庞大的意味<br>be reduced to 减少到； 归结为</p>
-<p>In all these applications the huge amounts of data that could be accessed through the internet were vital to success; what was more, the number of people using the internet spoke to the possibility of large markets. And the bigger (ie, deeper) the networks were made, and the more training data they were given, the more their performance improved.</p>
-<blockquote>
-<p>在所有这些应用中，通过互联网获取的大量数据对于成功至关重要；此外，使用互联网的人数表明了巨大市场的可能性。并且，网络越大（即越深），获得的训练数据越多，其性能就越好。</p>
-</blockquote>
-<p>what was more 更重要的是； 更有甚者； 而且<br>the more…the more 表达两者之间的相互关系或变化。这个结构表示随着一个事情（或状态）增加或增强，另一个事情（或状态）也随之增加或增强。通常用于描述两个变量之间的正相关关系</p>
-<p>Deep learning was soon being deployed in all kinds of new products and services. Voice-driven devices such as Amazon’s Alexa appeared. Online transcription services became useful. Web browsers offered automatic translations. Saying such things were enabled by AI started to sound cool, rather than embarrassing, though it was also a bit redundant; nearly every technology referred to as AI then and now actually relies on deep learning under the bonnet.</p>
-<blockquote>
-<p>深度学习很快应用于各种新产品和服务中。Amazon 的 Alexa 等语音驱动设备问世。在线转录服务变得实用。网络浏览器提供自动翻译。说这些项目由 AI 赋能听起来很酷，而不是令人尴尬，尽管这也有点多余；当时和现在，几乎所有被称为人工智能的技术实际上都依赖于深度学习。</p>
-</blockquote>
-<p>transcription n. 抄写；誊写<br>redundant adj. 多余的；过剩的<br>bonnet n. 软帽；阀帽；引擎盖<br>under the bonnet 在内部； 在背后</p>
-<p><strong>Chatgpt and its rivals really do seem to “use language and form abstractions” ChatGPT及其竞争对手确实似乎能够 “使用语言并形成抽象概念”</strong></p>
-<p>In 2017 a qualitative change was added to the quantitative benefits being provided by more computing power and more data: a new way of arranging connections between neurons called the transformer. Transformers enable neural networks to keep track of patterns in their input, even if the elements of the pattern are far apart, in a way that allows them to bestow “attention” on particular features in the data.</p>
-<blockquote>
-<p>2017 年，更强大的计算能力和更多的数据所带来的数量效益发生了质的变化：一种安排神经元之间连接的新方法，称为“Transformer”。Transformer 使神经网络能够跟踪输入中的模式，即使模式中的元素相距很远，也能以某种方式让它们对数据中的特定特征给予“注意力”。</p>
-</blockquote>
-<p>rival n. 竞争者；敌手 ｜ v. 竞争<br>qualitative adj. 性质的；定性的<br>quantitative adj. 数量的；定量的<br>qualitative change 质变<br>quantitative benefits 量变效应<br>keep track of 追踪；纪录<br>bestow v. 给予；赠予；授予<br>bestow … on phrase. 给予；赠予；授予</p>
-<p>Transformers gave networks a better grasp of context, which suited them to a technique called “self-supervised learning”. In essence, some words are randomly blanked out during training, and the model teaches itself to fill in the most likely candidate. Because the training data do not have to be labelled in advance, such models can be trained using billions of words of raw text taken from the internet.</p>
-<blockquote>
-<p>Transformer 让神经网络更好抓住上下文，这让它们更适合一项称为“自监管学习”的技术。本质上，在训练过程中，一些单词会被随机删除，然后模型会自学填写最有可能的候选单词。由于训练数据不需要提前标记，因此这些模型可以使用从互联网上获取的数十亿字的原始文本来训练。</p>
-</blockquote>
-<p>in advance phrase. 提前<br>raw adj. 生的；未经处理的</p>
-<h2 id="Mind-Your-Language-Model-关注你的语言模型"><a href="#Mind-Your-Language-Model-关注你的语言模型" class="headerlink" title="Mind Your Language Model 关注你的语言模型"></a>Mind Your Language Model 关注你的语言模型</h2><p>Transformer-based large language models (LLMs) began attracting wider attention in 2019, when a model called GPT-2 was released by OpenAI, a startup (GPT stands for generative pre-trained transformer). Such LLMs turned out to be capable of “emergent” behaviour for which they had not been explicitly trained. Soaking up huge amounts of language did not just make them surprisingly adept at linguistic tasks like summarisation or translation, but also at things—like simple arithmetic and the writing of software—which were implicit in the training data. Less happily it also meant they reproduced biases in the data fed to them, which meant many of the prevailing prejudices of human society emerged in their output.</p>
-<blockquote>
-<p>基于 Transformer 的大语言模型在 2019 年开始受到广泛关注，当时一个由初创公司 OpenAI 发布了名为 GPT-2（GPT  代表 生成式预训练 Transformer） 的模型。这些 LLM 能够表现出 “emergent” 行为，尽管他们曾经没有接受过专门的训练。吸收大量的语料不仅使它们出人意料地擅长语言学任务（比如总结或翻译），而且还擅长训练数据中隐含的事情（比如简单的算术和软件编写）。但不幸的是，这也意味着它们在输入的数据中重现了偏见，这意味着人类社会许多普遍的偏见都出现在它们的输出中。</p>
-</blockquote>
-<p>startup n. 启动；新兴公司；初创公司<br>stand for phrase. 代表；象征；支持；容忍<br>turn out to be phrase. 结果是；原来是；证实是<br>explicitly adv. 明白地；明确地；直言地<br>soak up phrase. 吸收；吸取<br>surprisingly adv. 令人吃惊地<br>adept adj. 内行的；熟练的；擅长的 ｜ n. 内行<br>summarisation n. 总结<br>arithmetic n. 算术<br>implicit adj. 含蓄的；暗示的；无疑的；绝对的<br>prevailing adj. 普遍的；盛行的；有优势的 ｜ v-ing. 获胜；盛行；劝服<br>prejudice n. 偏见；成见 ｜ v. 使有偏见；损害</p>
-<p>In November 2022 a larger OpenAI model, GPT-3.5, was presented to the public in the form of a chatbot. Anyone with a web browser could enter a prompt and get a response. No consumer product has ever taken off quicker. Within weeks ChatGPT was generating everything from college essays to computer code. AI had made another great leap forward.</p>
-<blockquote>
-<p>2022 年 11 月，更大的 OpenAI 模型 GPT-3.5 以聊天机器人的形式向公众公开。任何拥有网络浏览器的人都可以输入 prompt 并获得响应。从来没有任何消费产品能够像它一样迅速流行。发布后的短短几周内，ChatGPT 就展现出了它强大的生成能力，涵盖了从学术写作到编程等多个领域。人工智能又一次实现了巨大的飞跃。</p>
-</blockquote>
-<p>take off phrase. 突然成功；拿掉；离开；起飞；脱下<br>within weeks 短短几周内<br>another great leap forward 又一次巨大的飞跃</p>
-<p>Where the first cohort of AI-powered products was based on recognition, this second one is based on generation. Deep-learning models such as Stable Diffusion and DALL-E, which also made their debuts around that time, used a technique called diffusion to turn text prompts into images. Other models can produce surprisingly realistic video, speech or music.</p>
-<blockquote>
-<p>第一批 AI 赋能产品基于识别，而第二批则基于生成。Stable Diffusion 和 DALL-E 等深度学习模型也是在那时首次亮相，它们使用一种称为 diffusion 的技术将文本 prompt 转换为图像。其他模型可以制作出令人惊讶的逼真的视频、语音或音乐。</p>
-</blockquote>
-<p>cohort n. 一群人；一帮人<br>debut n. 初次露面；初次登场 ｜ v. 初次登场；首次推出<br>around that time 在那个时候；大约在同一时间<br>diffusion n. 扩散；传播；漫散</p>
-<p>The leap is not just technological. Making things makes a difference. ChatGPT and rivals such as Gemini (from Google) and Claude (from Anthropic, founded by researchers previously at OpenAI) produce outputs from calculations just as other deep-learning systems do. But the fact that they respond to requests with novelties makes them feel very unlike software which recognises faces, takes dictation or translates menus. They really do seem to “use language” and “form abstractions”, just as McCarthy had hoped.</p>
-<blockquote>
-<p>这种飞跃不仅仅是技术上的。创造能够带来改变。ChatGPT 以及它的竞争对手，例如来自 Google 的 Gemini 和 Anthropic（由前 OpenAI 研究人员创立的公司）的Claude 通过计算生成输出，这也像其他深度学习系统一样。但它们通过新颖的方式回应请求这一事实，使它们看起来非常不同于那些识别人脸、进行语音转译或翻译菜单的软件。它们似乎确实在 “使用语言” 和 “形成抽象概念”，正如 McCarthy 所希望的那样。</p>
-</blockquote>
-<p>Making things makes a difference. 创造能够带来改变。</p>
-<p>This series of briefs will look at how these models work, how much further their powers can grow, what new uses they will be put to, as well as what they will not, or should not, be used for. ■</p>
-<blockquote>
-<p>本系列简报将探讨这些模型是怎样工作的、它们的能力还能增强到何种程度、它们将用于何处以及它们不会或不应该用于什么用途。■</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -1195,43 +1195,6 @@
       </tags>
   </entry>
   <entry>
-    <title>免域名 tailscale derp 搭建</title>
-    <url>/p/e68688e7.html</url>
-    <content><![CDATA[<p>#Tailscale  #中继服务 #内网穿透 </p>
-<h1 id="Tailscale-部署"><a href="#Tailscale-部署" class="headerlink" title="Tailscale 部署"></a>Tailscale 部署</h1><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL &lt;https://tailscale.com/install.sh&gt; | sh</span><br></pre></td></tr></table></figure></div>
-
-<blockquote>
-<p>tailscale 若通过 docker 搭建，可能会导致搭建 docker derper 鉴权错误 （似乎是因为进程通信条件：与 tailscaled 通信不满足）</p>
-</blockquote>
-<p>这里一键脚本搭建好后进行登录操作：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale login</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="Derper-部署"><a href="#Derper-部署" class="headerlink" title="Derper 部署"></a>Derper 部署</h1><p>创建 docker-compose.yaml</p>
-<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">derper:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">ghcr.io/yangchuansheng/ip_derper:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">derper</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"25425:25425"</span> <span class="comment"># 这里的25425请改成你自己想要的10000以上的高位端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"3478:3478/udp"</span> <span class="comment"># 3478 为stun端口，如果不冲突请勿修改</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock</span> <span class="comment"># 映射本地 tailscale 客户端验证连接，用来验证是否被偷</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DERP_ADDR=:25425</span> <span class="comment"># 此处需要与上面的同步修改</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DERP_CERTS=/app/certs</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DERP_VERIFY_CLIENTS=true</span> <span class="comment"># 启动客户端验证，这是防偷的最重要的参数</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-<p>注意，其中端口映射部分（<code>12345:12345</code>） 后部分的 <code>12344</code> 取决于环境变量 <code>DERP_ADDR</code> 。</p>
-<p>持久化数据部分，可通过 <code>find / -name "tailscaled.sock"</code> 指令查找。</p>
-<p>编写好后 <code>docker-compose up -d</code> 运行容器即可</p>
-<blockquote>
-<p>注：若 <a class="link" href="http://ghcr.io/yangchuansheng/ip_derper:latest">ghcr.io/yangchuansheng/ip_derper:latest<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 无法使用，可通过 Dockerfile 自行编译。（<a class="link" href="https://github.com/yangchuansheng/ip_derper/tree/main">项目地址<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>）</p>
-</blockquote>
-<h1 id="Tailscale-Console-配置"><a href="#Tailscale-Console-配置" class="headerlink" title="Tailscale Console 配置"></a>Tailscale Console 配置</h1><p>去 Tailscale 网页控制台，进入 ALC 编辑界面，插入下面的文本即可。</p>
-<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">"derpMap":</span> {</span><br><span class="line">	<span class="attr">"OmitDefaultRegions":</span> <span class="literal">false</span>, <span class="string">//</span> <span class="string">可以设置为</span> <span class="literal">true</span><span class="string">，这样不会下发官方的</span> <span class="string">derper</span> <span class="string">节点，测试或者实际使用都可以考虑打开</span></span><br><span class="line">	<span class="attr">"Regions":</span> {</span><br><span class="line">		<span class="attr">"900":</span> {</span><br><span class="line">			<span class="attr">"RegionID":</span>   <span class="number">900</span>, <span class="string">//</span> <span class="string">tailscale</span> <span class="number">900</span><span class="number">-999</span> <span class="string">是保留给自定义</span> <span class="string">derper</span> <span class="string">的</span></span><br><span class="line">			<span class="attr">"RegionCode":</span> <span class="string">"abc1"</span>,</span><br><span class="line">			<span class="attr">"RegionName":</span> <span class="string">"abcc1"</span>,<span class="string">//</span> <span class="string">这俩随便命名</span></span><br><span class="line">			<span class="attr">"Nodes":</span> [</span><br><span class="line">				{</span><br><span class="line">					<span class="attr">"Name":</span>             <span class="string">"fff"</span>,</span><br><span class="line">					<span class="attr">"RegionID":</span>         <span class="number">900</span>,</span><br><span class="line">					<span class="attr">"IPv4":</span>             <span class="string">"1.1.1.1"</span>, <span class="string">//</span> <span class="string">你的VPS</span> <span class="string">公网IP地址</span></span><br><span class="line">					<span class="attr">"DERPPort":</span>         <span class="number">12345</span>, <span class="string">//上面</span> <span class="number">12345</span> <span class="string">你自定义的端口</span></span><br><span class="line">					<span class="attr">"InsecureForTests":</span> <span class="literal">true</span>, <span class="string">//</span> <span class="string">因为是自签名证书，所以客户端不做校验</span></span><br><span class="line">				},</span><br><span class="line">			],</span><br><span class="line">		},</span><br><span class="line">		<span class="attr">"901":</span> {</span><br><span class="line">			<span class="attr">"RegionID":</span>   <span class="number">901</span>, <span class="string">//</span> <span class="string">加入新</span> <span class="string">derp</span> <span class="string">的时候记得修改</span></span><br><span class="line">			<span class="attr">"RegionCode":</span> <span class="string">"abc2"</span>,</span><br><span class="line">			<span class="attr">"RegionName":</span> <span class="string">"abcc2"</span>,</span><br><span class="line">			<span class="attr">"Nodes":</span> [</span><br><span class="line">				{</span><br><span class="line">					<span class="attr">"Name":</span>             <span class="string">"kkk"</span>,</span><br><span class="line">					<span class="attr">"RegionID":</span>         <span class="number">902</span>,</span><br><span class="line">					<span class="attr">"IPv4":</span>             <span class="string">"8.8.8.8"</span>, <span class="string">//</span> <span class="string">你的VPS</span> <span class="string">公网IP地址</span></span><br><span class="line">					<span class="attr">"DERPPort":</span>         <span class="number">4000</span>, <span class="string">//上面</span> <span class="number">12345</span> <span class="string">你自定义的端口</span></span><br><span class="line">					<span class="attr">"InsecureForTests":</span> <span class="literal">true</span>, <span class="string">//</span> <span class="string">因为是自签名证书，所以客户端不做校验</span></span><br><span class="line">				},</span><br><span class="line">			],</span><br><span class="line">		},</span><br><span class="line">	},</span><br><span class="line">}<span class="string">,</span></span><br></pre></td></tr></table></figure></div>
-
-
-<p>参考：<br><a class="link" href="https://blog.sleepstars.net/archives/ji-yu-docker-compose">https://blog.sleepstars.net/archives/ji-yu-docker-compose<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>Tailscale</tag>
-        <tag>内网穿透</tag>
-        <tag>中继服务</tag>
-        <tag>家里云</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The race is on to control the global supply chain for AI chips</title>
     <url>/p/706a75fe.html</url>
     <content><![CDATA[
@@ -1244,7 +1207,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#117;&#x62;&#108;&#x69;&#x63;&#x40;&#110;&#x65;&#x75;&#114;&#111;&#99;&#111;&#100;&#x61;&#x2e;&#99;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#112;&#117;&#x62;&#x6c;&#105;&#99;&#x40;&#110;&#x65;&#x75;&#x72;&#111;&#x63;&#x6f;&#x64;&#97;&#x2e;&#99;&#111;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -1406,6 +1369,43 @@
       </tags>
   </entry>
   <entry>
+    <title>免域名 tailscale derp 搭建</title>
+    <url>/p/e68688e7.html</url>
+    <content><![CDATA[<p>#Tailscale  #中继服务 #内网穿透 </p>
+<h1 id="Tailscale-部署"><a href="#Tailscale-部署" class="headerlink" title="Tailscale 部署"></a>Tailscale 部署</h1><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL &lt;https://tailscale.com/install.sh&gt; | sh</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>tailscale 若通过 docker 搭建，可能会导致搭建 docker derper 鉴权错误 （似乎是因为进程通信条件：与 tailscaled 通信不满足）</p>
+</blockquote>
+<p>这里一键脚本搭建好后进行登录操作：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale login</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="Derper-部署"><a href="#Derper-部署" class="headerlink" title="Derper 部署"></a>Derper 部署</h1><p>创建 docker-compose.yaml</p>
+<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">derper:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">ghcr.io/yangchuansheng/ip_derper:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">derper</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"25425:25425"</span> <span class="comment"># 这里的25425请改成你自己想要的10000以上的高位端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"3478:3478/udp"</span> <span class="comment"># 3478 为stun端口，如果不冲突请勿修改</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock</span> <span class="comment"># 映射本地 tailscale 客户端验证连接，用来验证是否被偷</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DERP_ADDR=:25425</span> <span class="comment"># 此处需要与上面的同步修改</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DERP_CERTS=/app/certs</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DERP_VERIFY_CLIENTS=true</span> <span class="comment"># 启动客户端验证，这是防偷的最重要的参数</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>注意，其中端口映射部分（<code>12345:12345</code>） 后部分的 <code>12344</code> 取决于环境变量 <code>DERP_ADDR</code> 。</p>
+<p>持久化数据部分，可通过 <code>find / -name "tailscaled.sock"</code> 指令查找。</p>
+<p>编写好后 <code>docker-compose up -d</code> 运行容器即可</p>
+<blockquote>
+<p>注：若 <a class="link" href="http://ghcr.io/yangchuansheng/ip_derper:latest">ghcr.io/yangchuansheng/ip_derper:latest<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 无法使用，可通过 Dockerfile 自行编译。（<a class="link" href="https://github.com/yangchuansheng/ip_derper/tree/main">项目地址<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>）</p>
+</blockquote>
+<h1 id="Tailscale-Console-配置"><a href="#Tailscale-Console-配置" class="headerlink" title="Tailscale Console 配置"></a>Tailscale Console 配置</h1><p>去 Tailscale 网页控制台，进入 ALC 编辑界面，插入下面的文本即可。</p>
+<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">"derpMap":</span> {</span><br><span class="line">	<span class="attr">"OmitDefaultRegions":</span> <span class="literal">false</span>, <span class="string">//</span> <span class="string">可以设置为</span> <span class="literal">true</span><span class="string">，这样不会下发官方的</span> <span class="string">derper</span> <span class="string">节点，测试或者实际使用都可以考虑打开</span></span><br><span class="line">	<span class="attr">"Regions":</span> {</span><br><span class="line">		<span class="attr">"900":</span> {</span><br><span class="line">			<span class="attr">"RegionID":</span>   <span class="number">900</span>, <span class="string">//</span> <span class="string">tailscale</span> <span class="number">900</span><span class="number">-999</span> <span class="string">是保留给自定义</span> <span class="string">derper</span> <span class="string">的</span></span><br><span class="line">			<span class="attr">"RegionCode":</span> <span class="string">"abc1"</span>,</span><br><span class="line">			<span class="attr">"RegionName":</span> <span class="string">"abcc1"</span>,<span class="string">//</span> <span class="string">这俩随便命名</span></span><br><span class="line">			<span class="attr">"Nodes":</span> [</span><br><span class="line">				{</span><br><span class="line">					<span class="attr">"Name":</span>             <span class="string">"fff"</span>,</span><br><span class="line">					<span class="attr">"RegionID":</span>         <span class="number">900</span>,</span><br><span class="line">					<span class="attr">"IPv4":</span>             <span class="string">"1.1.1.1"</span>, <span class="string">//</span> <span class="string">你的VPS</span> <span class="string">公网IP地址</span></span><br><span class="line">					<span class="attr">"DERPPort":</span>         <span class="number">12345</span>, <span class="string">//上面</span> <span class="number">12345</span> <span class="string">你自定义的端口</span></span><br><span class="line">					<span class="attr">"InsecureForTests":</span> <span class="literal">true</span>, <span class="string">//</span> <span class="string">因为是自签名证书，所以客户端不做校验</span></span><br><span class="line">				},</span><br><span class="line">			],</span><br><span class="line">		},</span><br><span class="line">		<span class="attr">"901":</span> {</span><br><span class="line">			<span class="attr">"RegionID":</span>   <span class="number">901</span>, <span class="string">//</span> <span class="string">加入新</span> <span class="string">derp</span> <span class="string">的时候记得修改</span></span><br><span class="line">			<span class="attr">"RegionCode":</span> <span class="string">"abc2"</span>,</span><br><span class="line">			<span class="attr">"RegionName":</span> <span class="string">"abcc2"</span>,</span><br><span class="line">			<span class="attr">"Nodes":</span> [</span><br><span class="line">				{</span><br><span class="line">					<span class="attr">"Name":</span>             <span class="string">"kkk"</span>,</span><br><span class="line">					<span class="attr">"RegionID":</span>         <span class="number">902</span>,</span><br><span class="line">					<span class="attr">"IPv4":</span>             <span class="string">"8.8.8.8"</span>, <span class="string">//</span> <span class="string">你的VPS</span> <span class="string">公网IP地址</span></span><br><span class="line">					<span class="attr">"DERPPort":</span>         <span class="number">4000</span>, <span class="string">//上面</span> <span class="number">12345</span> <span class="string">你自定义的端口</span></span><br><span class="line">					<span class="attr">"InsecureForTests":</span> <span class="literal">true</span>, <span class="string">//</span> <span class="string">因为是自签名证书，所以客户端不做校验</span></span><br><span class="line">				},</span><br><span class="line">			],</span><br><span class="line">		},</span><br><span class="line">	},</span><br><span class="line">}<span class="string">,</span></span><br></pre></td></tr></table></figure></div>
+
+
+<p>参考：<br><a class="link" href="https://blog.sleepstars.net/archives/ji-yu-docker-compose">https://blog.sleepstars.net/archives/ji-yu-docker-compose<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>Tailscale</tag>
+        <tag>内网穿透</tag>
+        <tag>中继服务</tag>
+        <tag>家里云</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多系统共用蓝牙设备</title>
     <url>/p/e68777e7.html</url>
     <content><![CDATA[<p>我的环境：</p>
@@ -1439,75 +1439,6 @@
       <tags>
         <tag>多系统</tag>
         <tag>蓝牙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记一次自建 DoH 服务器</title>
-    <url>/p/cf8cf045.html</url>
-    <content><![CDATA[<p><a href="asset/IMG-20250213182959369.png"></a></p>
-<h1 id="CoreDNS"><a href="#CoreDNS" class="headerlink" title="CoreDNS"></a>CoreDNS</h1><p>CoreDNS 是一个灵活且功能强大的 DNS 服务器，支持多种插件扩展。它非常适合用于搭建 DoH 服务。</p>
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装必要组件"><a href="#安装必要组件" class="headerlink" title="安装必要组件"></a>安装必要组件</h2><p>首先，更新系统并安装所需的软件包，包括 Docker Compose 和 Certbot（用于获取 SSL 证书）。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y &amp;&amp; <span class="built_in">sudo</span> apt install -y docker-compose certbot</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><p>确保服务器的安全性，配置防火墙规则，允许必要的端口（22、80 和 443）。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 22</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 80</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 443</span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></div>
-
-<h2 id="获取-SSL-证书"><a href="#获取-SSL-证书" class="headerlink" title="获取 SSL 证书"></a>获取 SSL 证书</h2><p>使用 Certbot 获取 SSL 证书。请将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot certonly --standalone -d &lt;DOMAIN&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>注意</strong>：确保域名已正确解析到你的服务器 IP，并且 80 端口未被其他服务占用。</p>
-<h1 id="配置并部署-CoreDNS"><a href="#配置并部署-CoreDNS" class="headerlink" title="配置并部署 CoreDNS"></a>配置并部署 CoreDNS</h1><p>我们将通过 Docker 来运行 CoreDNS。</p>
-<h2 id="创建-CoreDNS-配置目录"><a href="#创建-CoreDNS-配置目录" class="headerlink" title="创建 CoreDNS 配置目录"></a>创建 CoreDNS 配置目录</h2><p>创建配置文件存放目录。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/coredns</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="编写-CoreDNS-配置文件"><a href="#编写-CoreDNS-配置文件" class="headerlink" title="编写 CoreDNS 配置文件"></a>编写 CoreDNS 配置文件</h2><p>创建并编辑 <code>/etc/coredns/Corefile</code>：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
-
-<p>在文件中添加以下内容，记得将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://.:443 {</span><br><span class="line">    tls /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</span><br><span class="line">    bind 0.0.0.0:443</span><br><span class="line">    forward . 1.1.1.1 8.8.8.8</span><br><span class="line">    log</span><br><span class="line">    errors</span><br><span class="line">    cache 300</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>配置说明：</strong></p>
-<ul>
-<li><code>&lt;DOMAIN&gt;:443</code>：在 443 端口上监听来自指定域名的 HTTPS 请求。</li>
-<li><code>tls</code>：指定 SSL 证书和私钥的路径。</li>
-<li><code>bind 0.0.0.0:443</code>：绑定所有网络接口的 443 端口，允许外部访问。</li>
-<li><code>forward . 1.1.1.1 8.8.8.8</code>：将 DNS 请求转发到 Cloudflare (1.1.1.1) 和 Google (8.8.8.8) 的公共 DNS 服务器。</li>
-<li><code>log</code> 和 <code>errors</code>：启用日志记录和错误记录，便于调试。</li>
-<li><code>cache 300</code>：启用 DNS 缓存，缓存时间为 300 秒，提高查询速度。</li>
-</ul>
-<h2 id="运行-CoreDNS-容器"><a href="#运行-CoreDNS-容器" class="headerlink" title="运行 CoreDNS 容器"></a>运行 CoreDNS 容器</h2><p>使用 Docker 运行 CoreDNS 容器。确保将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -d \\</span><br><span class="line">  --name coredns \\</span><br><span class="line">  --restart unless-stopped \\</span><br><span class="line">  --network host \\</span><br><span class="line">  -v /etc/coredns:/etc/coredns \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem \\</span><br><span class="line">  coredns/coredns \\</span><br><span class="line">  -conf /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>运行说明：</strong></p>
-<ul>
-<li><code>-network host</code>：使用主机的网络堆栈，允许 CoreDNS 在主机的 443 端口上监听。</li>
-<li><code>v /etc/coredns:/etc/coredns</code>：将主机的配置目录挂载到容器内，方便管理配置文件。</li>
-<li><code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem</code> 和 <code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</code>：将 SSL 证书和私钥挂载到容器内，确保 CoreDNS 能够使用 HTTPS。</li>
-</ul>
-<h2 id="验证-CoreDNS-运行状态"><a href="#验证-CoreDNS-运行状态" class="headerlink" title="验证 CoreDNS 运行状态"></a>验证 CoreDNS 运行状态</h2><p>确保 CoreDNS 容器正在运行，并监听正确的端口。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker ps | grep coredns</span><br></pre></td></tr></table></figure></div>
-
-<p>你应该能看到类似如下的输出，表示 CoreDNS 容器正在运行并监听 443 端口：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES</span><br><span class="line">&lt;container_id&gt; coredns/coredns "/coredns -conf /etc…"  X seconds ago    Up X seconds    0.0.0.0:443-&gt;443/tcp                        coredns</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="配置客户端使用-DoH"><a href="#配置客户端使用-DoH" class="headerlink" title="配置客户端使用 DoH"></a>配置客户端使用 DoH</h1><p>完成上述步骤后，你的 DoH 服务器已经搭建完成。接下来，需要在客户端设备上配置 DNS 设置，使用 <code>https://&lt;DOMAIN&gt;/dns-query</code> 作为 DoH 服务器地址。</p>
-<h1 id="自动更新-SSL-证书"><a href="#自动更新-SSL-证书" class="headerlink" title="自动更新 SSL 证书"></a>自动更新 SSL 证书</h1><p>Certbot 获取的 SSL 证书有效期为 90 天，建议设置定时任务自动更新证书，并重启 CoreDNS 容器。</p>
-<p>创建一个定时任务，每天检查并更新证书：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> crontab -e</span><br></pre></td></tr></table></figure></div>
-
-<p>添加以下内容：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 1 * * certbot renew --quiet &amp;&amp; sudo docker restart coredns</span><br></pre></td></tr></table></figure></div>
-
-<p>此任务将在每个月1号的凌晨 2 点运行，自动更新证书并重启 CoreDNS 容器。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a class="link" href="https://coredns.io/manual/toc/">CoreDNS Manual<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://certbot.eff.org/">Certbot<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://docs.docker.com/">Home<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS">DNS over HTTPS<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>DNS</tag>
-        <tag>DoH</tag>
-        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
@@ -1744,6 +1675,75 @@
       </categories>
       <tags>
         <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记一次自建 DoH 服务器</title>
+    <url>/p/cf8cf045.html</url>
+    <content><![CDATA[<p><a href="asset/IMG-20250213182959369.png"></a></p>
+<h1 id="CoreDNS"><a href="#CoreDNS" class="headerlink" title="CoreDNS"></a>CoreDNS</h1><p>CoreDNS 是一个灵活且功能强大的 DNS 服务器，支持多种插件扩展。它非常适合用于搭建 DoH 服务。</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装必要组件"><a href="#安装必要组件" class="headerlink" title="安装必要组件"></a>安装必要组件</h2><p>首先，更新系统并安装所需的软件包，包括 Docker Compose 和 Certbot（用于获取 SSL 证书）。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y &amp;&amp; <span class="built_in">sudo</span> apt install -y docker-compose certbot</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><p>确保服务器的安全性，配置防火墙规则，允许必要的端口（22、80 和 443）。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 22</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 80</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 443</span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="获取-SSL-证书"><a href="#获取-SSL-证书" class="headerlink" title="获取 SSL 证书"></a>获取 SSL 证书</h2><p>使用 Certbot 获取 SSL 证书。请将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot certonly --standalone -d &lt;DOMAIN&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>注意</strong>：确保域名已正确解析到你的服务器 IP，并且 80 端口未被其他服务占用。</p>
+<h1 id="配置并部署-CoreDNS"><a href="#配置并部署-CoreDNS" class="headerlink" title="配置并部署 CoreDNS"></a>配置并部署 CoreDNS</h1><p>我们将通过 Docker 来运行 CoreDNS。</p>
+<h2 id="创建-CoreDNS-配置目录"><a href="#创建-CoreDNS-配置目录" class="headerlink" title="创建 CoreDNS 配置目录"></a>创建 CoreDNS 配置目录</h2><p>创建配置文件存放目录。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/coredns</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="编写-CoreDNS-配置文件"><a href="#编写-CoreDNS-配置文件" class="headerlink" title="编写 CoreDNS 配置文件"></a>编写 CoreDNS 配置文件</h2><p>创建并编辑 <code>/etc/coredns/Corefile</code>：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
+
+<p>在文件中添加以下内容，记得将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://.:443 {</span><br><span class="line">    tls /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</span><br><span class="line">    bind 0.0.0.0:443</span><br><span class="line">    forward . 1.1.1.1 8.8.8.8</span><br><span class="line">    log</span><br><span class="line">    errors</span><br><span class="line">    cache 300</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>配置说明：</strong></p>
+<ul>
+<li><code>&lt;DOMAIN&gt;:443</code>：在 443 端口上监听来自指定域名的 HTTPS 请求。</li>
+<li><code>tls</code>：指定 SSL 证书和私钥的路径。</li>
+<li><code>bind 0.0.0.0:443</code>：绑定所有网络接口的 443 端口，允许外部访问。</li>
+<li><code>forward . 1.1.1.1 8.8.8.8</code>：将 DNS 请求转发到 Cloudflare (1.1.1.1) 和 Google (8.8.8.8) 的公共 DNS 服务器。</li>
+<li><code>log</code> 和 <code>errors</code>：启用日志记录和错误记录，便于调试。</li>
+<li><code>cache 300</code>：启用 DNS 缓存，缓存时间为 300 秒，提高查询速度。</li>
+</ul>
+<h2 id="运行-CoreDNS-容器"><a href="#运行-CoreDNS-容器" class="headerlink" title="运行 CoreDNS 容器"></a>运行 CoreDNS 容器</h2><p>使用 Docker 运行 CoreDNS 容器。确保将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -d \\</span><br><span class="line">  --name coredns \\</span><br><span class="line">  --restart unless-stopped \\</span><br><span class="line">  --network host \\</span><br><span class="line">  -v /etc/coredns:/etc/coredns \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem \\</span><br><span class="line">  coredns/coredns \\</span><br><span class="line">  -conf /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>运行说明：</strong></p>
+<ul>
+<li><code>-network host</code>：使用主机的网络堆栈，允许 CoreDNS 在主机的 443 端口上监听。</li>
+<li><code>v /etc/coredns:/etc/coredns</code>：将主机的配置目录挂载到容器内，方便管理配置文件。</li>
+<li><code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem</code> 和 <code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</code>：将 SSL 证书和私钥挂载到容器内，确保 CoreDNS 能够使用 HTTPS。</li>
+</ul>
+<h2 id="验证-CoreDNS-运行状态"><a href="#验证-CoreDNS-运行状态" class="headerlink" title="验证 CoreDNS 运行状态"></a>验证 CoreDNS 运行状态</h2><p>确保 CoreDNS 容器正在运行，并监听正确的端口。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker ps | grep coredns</span><br></pre></td></tr></table></figure></div>
+
+<p>你应该能看到类似如下的输出，表示 CoreDNS 容器正在运行并监听 443 端口：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES</span><br><span class="line">&lt;container_id&gt; coredns/coredns "/coredns -conf /etc…"  X seconds ago    Up X seconds    0.0.0.0:443-&gt;443/tcp                        coredns</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="配置客户端使用-DoH"><a href="#配置客户端使用-DoH" class="headerlink" title="配置客户端使用 DoH"></a>配置客户端使用 DoH</h1><p>完成上述步骤后，你的 DoH 服务器已经搭建完成。接下来，需要在客户端设备上配置 DNS 设置，使用 <code>https://&lt;DOMAIN&gt;/dns-query</code> 作为 DoH 服务器地址。</p>
+<h1 id="自动更新-SSL-证书"><a href="#自动更新-SSL-证书" class="headerlink" title="自动更新 SSL 证书"></a>自动更新 SSL 证书</h1><p>Certbot 获取的 SSL 证书有效期为 90 天，建议设置定时任务自动更新证书，并重启 CoreDNS 容器。</p>
+<p>创建一个定时任务，每天检查并更新证书：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> crontab -e</span><br></pre></td></tr></table></figure></div>
+
+<p>添加以下内容：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 1 * * certbot renew --quiet &amp;&amp; sudo docker restart coredns</span><br></pre></td></tr></table></figure></div>
+
+<p>此任务将在每个月1号的凌晨 2 点运行，自动更新证书并重启 CoreDNS 容器。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a class="link" href="https://coredns.io/manual/toc/">CoreDNS Manual<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://certbot.eff.org/">Certbot<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://docs.docker.com/">Home<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS">DNS over HTTPS<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>DNS</tag>
+        <tag>DoH</tag>
+        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
