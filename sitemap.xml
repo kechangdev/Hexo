@@ -231,13 +231,6 @@
   </url>
   
   <url>
-    <loc>https://neurocoda.com/tags/Golang/</loc>
-    <lastmod>2025-02-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://neurocoda.com/tags/%E4%B8%AD%E7%BB%A7%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2025-02-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -260,6 +253,13 @@
   
   <url>
     <loc>https://neurocoda.com/tags/Windows/</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://neurocoda.com/tags/Golang/</loc>
     <lastmod>2025-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -345,14 +345,14 @@
   </url>
   
   <url>
-    <loc>https://neurocoda.com/categories/Coding/</loc>
+    <loc>https://neurocoda.com/categories/%E6%9D%82%E9%A1%B9/</loc>
     <lastmod>2025-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://neurocoda.com/categories/%E6%9D%82%E9%A1%B9/</loc>
+    <loc>https://neurocoda.com/categories/Coding/</loc>
     <lastmod>2025-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
