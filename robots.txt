@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neurocoda.com/sitemap.xml
+Sitemap: https://neurocoda.com/sitemap.txt
+Sitemap: https://neurocoda.com/baidusitemap.xml
