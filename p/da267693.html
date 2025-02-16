@@ -1,4 +1,185 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Music, IT, Sharing, Blog, Neurocoda, Network, Back-End, Full-Stack, Website, Project showcase, Tech blog, Neurocoda navigation guide"><meta name="author" content="Neurocoda"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="https://neurocoda.com/p/da267693.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="Discover the Rhythm of Life."><meta property="og:type" content="article"><meta property="og:title" content="OpenWrt 上通过 Tailscale 实现内网穿透"><meta property="og:url" content="https://neurocoda.com/p/da267693.html"><meta property="og:site_name" content="Neurocoda&#39;s Site"><meta property="og:description" content="Discover the Rhythm of Life."><meta property="og:locale" content="en_US"><meta property="og:image" content="https://neurocoda.com/avatar.png"><meta property="article:published_time" content="2025-02-13T05:19:33.000Z"><meta property="article:modified_time" content="2025-02-13T05:19:33.000Z"><meta property="article:author" content="Neurocoda"><meta property="article:tag" content="OpenWrt"><meta property="article:tag" content="Tailscale"><meta property="article:tag" content="内网穿透"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://neurocoda.com/avatar.png"><link rel="icon" type="image/png" href="/favicon.ico" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/favicon.ico"><title>OpenWrt 上通过 Tailscale 实现内网穿透 | Neurocoda</title><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><script data-swup-reload-script>document.title="Neurocoda"</script><link rel="icon" type="image/png" href="/favicon-144x144.png" sizes="144x144"><link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Neurocoda"><link rel="manifest" href="/site.webmanifest"><meta itemprop="name" content="Neurocoda's site"><meta itemprop="image" content="/avatar.png"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/build/tailwind.css"><link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css"><link rel="stylesheet" href="/fonts/Geist/geist.css"><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Engagement&display=swap" rel="stylesheet"><script src="/js/build/libs/anime.min.js"></script><script id="hexo-configurations">window.config={hostname:"neurocoda.com",root:"/",language:"en",path:"search.xml"},window.theme={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0,delete_mask:!1,title_alignment:"left",headings_top_spacing:{h1:"2.7rem",h2:"2.3rem",h3:"1.9rem",h4:"1.6rem",h5:"1.4rem",h6:"1.3rem"}},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!1,auto:!1,list:[]},code_block:{copy:!0,style:"mac",highlight_theme:{light:"github",dark:"vs2015"},font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:4,number:!1,expand:!0,init_open:!0},copyright:{enable:!0,default:"cc_by_nd"},lazyload:!0,pangu_js:!0,recommendation:{enable:!0,title:"Recommend",limit:3,mobile_limit:2,placeholder:"/images/favicon_api.png",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null,default_mode:"light"},global:{fonts:{chinese:{enable:!0,family:"Noto Serif SC",url:"https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap"},english:{enable:!0,family:"Open Sans",url:'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet'},title:{enable:!0,family:"Engagement",url:"https://fonts.googleapis.com/css2?family=Engagement&display=swap"}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!0},scroll_progress:{bar:!0,percentage:!0},website_counter:{url:"https://cn.vercount.one/js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,preloader:{enable:!0,custom_message:"Loading..."},open_graph:{enable:!0,image:"/avatar.png",description:"Discover the Rhythm of Life."},google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/background-light.webp",dark:"/images/background-dark.webp"},title:"Neurocoda's site",subtitle:{text:["Hi folks，welcome to my site! 🎉","It is a brief site!"],hitokoto:{enable:!1,show_author:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#EAB308",dark:"#0D0D0D"},text_style:{title_size:"6.0rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"Dancing Script",url:"https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"},social_links:{enable:!0,style:"reverse",links:{github:null,instagram:null,zhihu:null,twitter:null,email:"public@neurocoda.com","fa-regular fa-music":"/essays/","fa-regular fa-fish":"/bookmarks/","fa-regular fa-rss":"/atom.xml"},qrs:{weixin:null}}},plugins:{feed:{enable:!0},aplayer:{enable:!1,type:"fixed",audios:[{name:null,artist:null,url:null,cover:null,lrc:null}]},mermaid:{enable:!1,version:"11.4.1"}},version:"2.8.2",navbar:{auto_hide:!0,color:{left:"#f78736",right:"#367df7",transparency:10},width:{home:"1750px",pages:"1200px"},links:{Home:{path:"/",icon:"fa-regular fa-house"},Links:{path:"/links/",icon:"fa-regular fa-user-group"},Archives:{icon:"fa-light fa-box-archive",submenus:{Categories:"/categories/",Tags:"/tags/"}},Status:{path:"https://stats.uptimerobot.com/UYvrxHMnJ1",icon:"fa-solid fa-signal-bars"},"About me":{path:"/about/"}},search:{enable:!0,preload:!0}},page_templates:{friends_column:2,tags_style:"blur"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:null,show_on_mobile:!0,links:null},article_date_format:"auto",excerpt_length:200,categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2025/2/10 17:20:14"},window.lang_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},window.data={masonry:!1}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Music, IT, Sharing, Blog, Neurocoda, Network, Back-End, Full-Stack, Website, Project showcase, Tech blog, Neurocoda navigation guide">
+    
+    <meta name="author" content="Neurocoda">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://neurocoda.com/p/da267693.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Discover the Rhythm of Life.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenWrt 上通过 Tailscale 实现内网穿透">
+<meta property="og:url" content="https://neurocoda.com/p/da267693.html">
+<meta property="og:site_name" content="Neurocoda&#39;s Site">
+<meta property="og:description" content="Discover the Rhythm of Life.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://neurocoda.com/avatar.png">
+<meta property="article:published_time" content="2025-02-13T05:19:33.000Z">
+<meta property="article:modified_time" content="2025-02-13T05:19:33.000Z">
+<meta property="article:author" content="Neurocoda">
+<meta property="article:tag" content="OpenWrt">
+<meta property="article:tag" content="Tailscale">
+<meta property="article:tag" content="内网穿透">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://neurocoda.com/avatar.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            OpenWrt 上通过 Tailscale 实现内网穿透 | Neurocoda
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script> document.title = "Neurocoda"; </script>
+                
+    
+            
+                
+                    <link rel="icon" type="image/png" href="/favicon-144x144.png" sizes="144x144" />
+                
+    
+            
+                
+                    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+                
+    
+            
+                
+                    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+                
+    
+            
+                
+                    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+                
+    
+            
+                
+                    <link rel="shortcut icon" href="/favicon.ico" />
+                
+    
+            
+                
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                
+    
+            
+                
+                    <meta name="apple-mobile-web-app-title" content="Neurocoda" />
+                
+    
+            
+                
+                    <link rel="manifest" href="/site.webmanifest" />
+                
+    
+            
+                
+                    <meta itemprop="name" content="Neurocoda's site" />
+                
+    
+            
+                
+                    <meta itemprop="image" content="/avatar.png" />
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" rel="stylesheet">
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Engagement&display=swap" rel="stylesheet">
+    
+    
+        
+<script src="/js/build/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"neurocoda.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"2.7rem","h2":"2.3rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":4,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nd"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":true,"title":"Recommend","limit":3,"mobile_limit":2,"placeholder":"/images/favicon_api.png","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Serif SC","url":"https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap"},"english":{"enable":true,"family":"Open Sans","url":"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap\" rel=\"stylesheet"},"title":{"enable":true,"family":"Engagement","url":"https://fonts.googleapis.com/css2?family=Engagement&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"Loading..."},"open_graph":{"enable":true,"image":"/avatar.png","description":"Discover the Rhythm of Life."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/background-light.webp","dark":"/images/background-dark.webp"},"title":"Neurocoda's site","subtitle":{"text":["Hi folks，welcome to my site! 🎉","It is a brief site!"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#EAB308","dark":"#0D0D0D"},"text_style":{"title_size":"6.0rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":true,"family":"Dancing Script","url":"https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"},"social_links":{"enable":true,"style":"reverse","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":"public@neurocoda.com","fa-regular fa-music":"/essays/","fa-regular fa-fish":"/bookmarks/","fa-regular fa-rss":"/atom.xml"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":10},"width":{"home":"1750px","pages":"1200px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Links":{"path":"/links/","icon":"fa-regular fa-user-group"},"Archives":{"icon":"fa-light fa-box-archive","submenus":{"Categories":"/categories/","Tags":"/tags/"}},"Status":{"path":"https://stats.uptimerobot.com/UYvrxHMnJ1","icon":"fa-solid fa-signal-bars"},"About me":{"path":"/about/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2025/2/10 17:20:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -111,7 +292,97 @@ mjx-container[display="true"] + br {
   display: none;
 }
 </style><link rel="alternate" href="/atom.xml" title="Neurocoda's Site" type="application/atom+xml">
-</head><body><div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span></div><style>:root{--preloader-background-color:#fff;--preloader-text-color:#000}@media (prefers-color-scheme:dark){:root{--preloader-background-color:#202124;--preloader-text-color:#fff}}@media (prefers-color-scheme:light){:root{--preloader-background-color:#fff;--preloader-text-color:#000}}@media (max-width:600px){.ml13{font-size:2.6rem!important}}.preloader{display:flex;flex-direction:column;gap:1rem;align-items:center;justify-content:center;position:fixed;padding:12px;top:0;right:0;bottom:0;left:0;width:100vw;height:100vh;background-color:var(--preloader-background-color);z-index:1100;transition:opacity .2s ease-in-out}.ml13{font-size:3.2rem;color:var(--preloader-text-color);letter-spacing:-1px;font-weight:500;font-family:Chillax-Variable,sans-serif;text-align:center}.ml13 .word{display:inline-flex;flex-wrap:wrap;white-space:nowrap}.ml13 .letter{display:inline-block;line-height:1em}</style><div class="preloader"><h2 class="ml13">Loading...</h2><script>var textWrapper = document.querySelector('.ml13');
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Loading...
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
         // Split text into words
         var words = textWrapper.textContent.trim().split(' ');
 
@@ -182,4 +453,986 @@ mjx-container[display="true"] + br {
             setTimeout(function () {
                 preloader.style.display = 'none';
             }, 200);
-        }</script></div><main class="page-container" id="swup"><div class="main-content-container flex flex-col justify-between min-h-dvh"><div class="main-content-header"><header class="navbar-container px-6 md:px-12"><div class="navbar-content transition-navbar"><div class="left"><a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/"><img src="/logo.png" class="w-full h-full rounded-sm"> </a><a class="logo-title" href="/">Neurocoda</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house fa-fw"></i> HOME</a></li><li class="navbar-item"><a href="/links/"><i class="fa-regular fa-user-group fa-fw"></i> LINKS</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="&#34;return" false;&#34;><i class="fa-light fa-box-archive fa-fw"></i> ARCHIVES <i class="fa-solid fa-chevron-down fa-fw"></i></a><ul class="sub-menu"><li><a href="/categories/">CATEGORIES</a></li><li><a href="/tags/">TAGS</a></li></ul></li><li class="navbar-item"><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/UYvrxHMnJ1"><i class="fa-solid fa-signal-bars fa-fw"></i> STATUS</a></li><li class="navbar-item"><a href="/about/">ABOUT ME</a></li><li class="navbar-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between"><ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start"><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" href="/"><span>HOME </span><i class="fa-regular fa-house fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" href="/links/"><span>LINKS </span><i class="fa-regular fa-user-group fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full"><div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" navbar-data-toggle="submenu-Archives"><span>ARCHIVES </span><i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i></div><div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Archives"><div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="text-third-text-color text-xl" href="/categories/">CATEGORIES</a></div><div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="text-third-text-color text-xl" href="/tags/">TAGS</a></div></div></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" target="_blank" rel="noopener" href="https://stats.uptimerobot.com/UYvrxHMnJ1"><span>STATUS </span><i class="fa-solid fa-signal-bars fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" href="/about/"><span>ABOUT ME</span></a></li></ul><div class="statistics flex justify-around my-2.5"><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div><div class="label text-third-text-color text-sm">Tags</div></a><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div><div class="label text-third-text-color text-sm">Categories</div></a><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div><div class="label text-third-text-color text-sm">Posts</div></a></div></div><div class="window-mask"></div></header></div><div class="main-content-body transition-fade-up"><div class="main-content"><div class="post-page-container flex relative justify-between box-border w-full h-full"><div class="article-content-container"><div class="article-title relative w-full"><img src="https://images.unsplash.com/photo-1546124404-9e7e3cac2ec1?q=80&amp;w=1331&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="OpenWrt 上通过 Tailscale 实现内网穿透" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"><div class="w-full flex items-center absolute bottom-0 justify-start"><h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color">OpenWrt 上通过 Tailscale 实现内网穿透</h1></div></div><div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8"><div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]"><img src="/avatar.png"></div><div class="info flex flex-col justify-between"><div class="author flex items-center"><span class="name text-default-text-color text-lg font-semibold">Neurocoda</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2025-02-13 13:19:33</span> <span class="mobile">2025-02-13 13:19:33</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2025-02-13 13:19:33</span> <span class="mobile">2025-02-13 13:19:33</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/OpenWrt/">OpenWrt</a>&nbsp;</li><li>| <a href="/tags/Tailscale/">Tailscale</a>&nbsp;</li><li>| <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>510 Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8"><div class="note-large default"><div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center"><i class="notel-icon fa-solid fa-info"></i><p>💡</p></div><div class="notel-content"><p>😀 近日用 章鱼星球S912 配置了旁路网关，体验还行。后面想着配置一下内网穿透以便在外出时可以与内网设备交互。之前有朋友推荐用 Tailscale 很方便，本博客由此而来。</p></div></div><h1 id="安装-Tailscale"><a href="#安装-Tailscale" class="headerlink" title="安装 Tailscale"></a>安装 Tailscale</h1><p>我这里是使用的这个项目，读者可以考虑其他方式部署：</p><p><a class="link" target="_blank" rel="noopener" href="https://github.com/adyanth/openwrt-tailscale-enabler">https://github.com/adyanth/openwrt-tailscale-enabler<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p><p>具体的指令如下：</p><ul><li>通过 <code>ssh</code> 连接到 OpenWrt:</li></ul><div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@&lt;IP&gt;</span><br></pre></td></tr></table></figure></div><ul><li>下载该项目（项目版本可以自选）</li></ul><div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &lt;https://github.com/adyanth/openwrt-tailscale-enabler/releases/download/v1.60.0-e428948-autoupdate/openwrt-tailscale-enabler-v1.60.0-e428948-autoupdate.tgz&gt;</span><br></pre></td></tr></table></figure></div><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132052422.png"><ul><li><p>解压刚才下载下来的这个项目</p><div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar x -zvC / -f &lt;File Name&gt;</span><br></pre></td></tr></table></figure></div></li></ul><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053115.png"><ul><li><p>更新并安装依赖</p><div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install libustream-openssl ca-bundle kmod-tun</span><br></pre></td></tr></table></figure></div></li></ul><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053876.png"><ul><li><p>设置开机自启动</p><div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/tailscale enable</span><br><span class="line">ls /etc/rc.d/S*tailscale*</span><br></pre></td></tr></table></figure></div></li></ul><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132054868.png"><ul><li><p>启动 Tailscale</p><div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/tailscale start</span><br><span class="line">tailscale up</span><br></pre></td></tr></table></figure></div></li></ul><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132055590.png"><ul><li><p>开启子网路由</p><div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tailscale up --accept-routes --advertise-routes=<span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span> --accept-dns=false</span><br></pre></td></tr></table></figure></div><p>注意：其中 advertise-routes 的参数格式可能不一样。简单来说，取你当前 OpenWrt 的IP地址的前三部分，最后一部分为 0，并且子网掩码 255.255.255.0 即可。即 <code>&lt;原&gt;.&lt;原&gt;.&lt;原&gt;.&lt;0&gt;/24</code> 比如，我的 OpenWrt 的IP为192.168.1.254，那么我这里就需要192.168.1.0/24</p></li></ul><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132056837.png"><ul><li>在 Tailscale 控制台设置路由设置，勾选并保存</li></ul><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132058000.png"><h1 id="配置-OpenWrt"><a href="#配置-OpenWrt" class="headerlink" title="配置 OpenWrt"></a>配置 OpenWrt</h1><h2 id="配置网络接口"><a href="#配置网络接口" class="headerlink" title="配置网络接口"></a>配置网络接口</h2><p>在 LuCI 界面中：</p><ol><li><strong>添加接口</strong><ul><li>转到 <strong>网络 &gt; 接口 &gt; 添加新接口</strong>。</li><li>名称：<code>tailscale</code></li><li>协议：<strong>静态地址</strong></li><li>设备：选择 <code>tailscale0</code></li><li>IPv4 地址：填写 Tailscale 分配给路由器的 IP（如 <code>100.x.x.x</code>）。</li><li>子网掩码：<code>255.0.0.0</code></li><li>防火墙区域：选择 <code>lan</code>。</li></ul></li><li>保存并应用更改。</li></ol><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132059204.png"> <img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132101934.png"><h2 id="添加防火墙规则"><a href="#添加防火墙规则" class="headerlink" title="添加防火墙规则"></a>添加防火墙规则</h2><p>在 LuCI 界面中：</p><ol><li>转到 <strong>网络 &gt; 防火墙 &gt; 自定义规则</strong>。</li><li>添加以下内容以允许 Tailscale 流量通过：</li></ol><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -I FORWARD -i tailscale0 -j ACCEPT</span><br><span class="line">iptables -I FORWARD -o tailscale0 -j ACCEPT</span><br><span class="line">iptables -t nat -I POSTROUTING -o tailscale0 -j MASQUERADE</span><br></pre></td></tr></table></figure></div><ol><li>保存并重启防火墙。</li></ol><img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132103184.png"><p>这样就完成了。</p></div><div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> OpenWrt 上通过 Tailscale 实现内网穿透</li><li><strong>Author:</strong> Neurocoda</li><li><strong>Created at :</strong> 2025-02-13 13:19:33</li><li><strong>Updated at :</strong> 2025-02-13 13:19:33</li><li><strong>Link:</strong> https://neurocoda.com/p/da267693.html</li><li><strong>License: </strong>This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nd/4.0">CC BY-ND 4.0</a>.</li></ul></div></div><ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden"><li class="tag-item mx-0.5"><a href="/tags/OpenWrt/">#OpenWrt</a>&nbsp;</li><li class="tag-item mx-0.5"><a href="/tags/Tailscale/">#Tailscale</a>&nbsp;</li><li class="tag-item mx-0.5"><a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">#内网穿透</a>&nbsp;</li></ul><div class="recommended-article px-2 sm:px-6 md:px-8"><div class="recommended-desktop"><div class="recommended-article-header text-xl md:text-3xl font-bold mt-10"><i aria-hidden="true"></i><span>Recommend</span></div><div class="recommended-article-group"><a class="recommended-article-item" href="/p/2ccf300b.html" title="Tailscale 暴露 Socks5 端口供代理软件使用" rel="bookmark"><img src="https://images.unsplash.com/photo-1639322537504-6427a16b0a28?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tailscale 暴露 Socks5 端口供代理软件使用" class="!max-w-none"> <span class="title">Tailscale 暴露 Socks5 端口供代理软件使用</span> </a><a class="recommended-article-item" href="/p/e68688e7.html" title="免域名 tailscale derp 搭建" rel="bookmark"><img src="https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="免域名 tailscale derp 搭建" class="!max-w-none"> <span class="title">免域名 tailscale derp 搭建</span> </a><a class="recommended-article-item" href="/p/2cc1110b.html" title="Hexo webhook 自动部署" rel="bookmark"><img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hexo webhook 自动部署" class="!max-w-none"> <span class="title">Hexo webhook 自动部署</span></a></div></div><div class="recommended-mobile"><div class="recommended-article-header text-xl md:text-3xl font-bold mt-10"><i aria-hidden="true"></i><span>Recommend</span></div><div class="recommended-article-group"><a class="recommended-article-item" href="/p/2ccf300b.html" title="Tailscale 暴露 Socks5 端口供代理软件使用" rel="bookmark"><img src="https://images.unsplash.com/photo-1639322537504-6427a16b0a28?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tailscale 暴露 Socks5 端口供代理软件使用" class="!max-w-none"> <span class="title">Tailscale 暴露 Socks5 端口供代理软件使用</span> </a><a class="recommended-article-item" href="/p/e68688e7.html" title="免域名 tailscale derp 搭建" rel="bookmark"><img src="https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="免域名 tailscale derp 搭建" class="!max-w-none"> <span class="title">免域名 tailscale derp 搭建</span></a></div></div></div><div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8"><div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2"><a class="prev" rel="prev" href="/p/2cc1110b.html"><span class="left arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex justify-center items-center"><span class="post-nav-title-item">Hexo webhook 自动部署</span> <span class="post-nav-item">Prev posts</span></span></a></div><div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2"><a class="next" rel="next" href="/p/81a43a38.html"><span class="title flex justify-center items-center"><span class="post-nav-title-item">如何从 Notion 无痛转移到 Obsidian？（不完全转移）</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container px-2 sm:px-6 md:px-8 pb-8"><div class="comments-container mt-10 w-full"><div id="comment-anchor" class="w-full h-2.5"></div><div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"/js/libs/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://waline.neurocoda.com",lang:"en-US",dark:'body[class~="dark-mode"]',reaction:!1,requiredMeta:["nick","mail"],emoji:[]})}"undefined"!=typeof swup?loadWaline():window.addEventListener("DOMContentLoaded",loadWaline)</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">OpenWrt 上通过 Tailscale 实现内网穿透</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Tailscale"><span class="nav-text">安装 Tailscale</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-OpenWrt"><span class="nav-text">配置 OpenWrt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3"><span class="nav-text">配置网络接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99"><span class="nav-text">添加防火墙规则</span></a></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color"><div class="info-container py-3 text-center"><div class="text-center">&copy; <span>2025</span> - 2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">Neurocoda</a><p class="post-count space-x-0.5"><span>13 posts in total </span><span>32.4k words in total</span></p></div><script data-swup-reload-script src="https://cn.vercount.one/js"></script><div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right"><span id="busuanzi_container_site_uv" class="lg:!block"><span class="text-sm">VISITOR COUNT</span> <span id="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="lg:!block"><span class="text-sm">TOTAL PAGE VIEWS</span> <span id="busuanzi_value_site_pv"></span></span></div><div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left"><span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span> <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools rss flex justify-center items-center"><a class="flex justify-center items-center" href="/atom.xml" target="_blank"><i class="fa-regular fa-rss"></i></a></li><li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex justify-center items-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fa-solid fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fa-solid fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="/js/build/libs/Swup.min.js"></script><script src="/js/build/libs/SwupSlideTheme.min.js"></script><script src="/js/build/libs/SwupScriptsPlugin.min.js"></script><script src="/js/build/libs/SwupProgressPlugin.min.js"></script><script src="/js/build/libs/SwupScrollPlugin.min.js"></script><script src="/js/build/libs/SwupPreloadPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"}),new SwupPreloadPlugin],containers:["#swup"]})</script><script src="/js/build/tools/imageViewer.js" type="module"></script><script src="/js/build/utils.js" type="module"></script><script src="/js/build/main.js" type="module"></script><script src="/js/build/layouts/navbarShrink.js" type="module"></script><script src="/js/build/tools/scrollTopBottom.js" type="module"></script><script src="/js/build/tools/lightDarkSwitch.js" type="module"></script><script src="/js/build/layouts/categoryList.js" type="module"></script><script src="/js/build/tools/localSearch.js" type="module"></script><script src="/js/build/tools/codeBlock.js" type="module"></script><script src="/js/build/layouts/lazyload.js" type="module"></script><script src="/js/build/tools/runtime.js"></script><script src="/js/build/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/build/libs/Typed.min.js"></script><script src="/js/build/plugins/typed.js" type="module"></script><script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script><script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script><script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script><script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script><script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script><script src="/js/build/libs/pangu.min.js"></script><script src="/js/build/plugins/pangu.js"></script><script src="/js/build/layouts/bookmarkNav.js" type="module"></script></body></html>
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/logo.png" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Neurocoda
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links/"
+                                        >
+                                    <i class="fa-regular fa-user-group fa-fw"></i>
+                                    LINKS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-light fa-box-archive fa-fw"></i>
+                                    ARCHIVES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/categories/">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags/">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://stats.uptimerobot.com/UYvrxHMnJ1"
+                                        >
+                                    <i class="fa-solid fa-signal-bars fa-fw"></i>
+                                    STATUS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/about/"
+                                        >
+                                    
+                                    ABOUT ME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links/"
+                        >
+                            <span>
+                                LINKS
+                            </span>
+                            
+                                <i class="fa-regular fa-user-group fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Archives">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories/">CATEGORIES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags/">TAGS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://stats.uptimerobot.com/UYvrxHMnJ1"
+                        >
+                            <span>
+                                STATUS
+                            </span>
+                            
+                                <i class="fa-solid fa-signal-bars fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/about/"
+                        >
+                            <span>
+                                ABOUT ME
+                            </span>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="https://images.unsplash.com/photo-1546124404-9e7e3cac2ec1?q=80&amp;w=1331&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="OpenWrt 上通过 Tailscale 实现内网穿透" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">OpenWrt 上通过 Tailscale 实现内网穿透</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/avatar.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Neurocoda</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-02-13 13:19:33</span>
+        <span class="mobile">2025-02-13 13:19:33</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-13 13:19:33</span>
+            <span class="mobile">2025-02-13 13:19:33</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/OpenWrt/">OpenWrt</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Tailscale/">Tailscale</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>510 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			
+  <div class="note-large default">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <i class="notel-icon fa-solid fa-info"></i><p>💡</p>
+
+    </div>
+    <div class="notel-content">
+      <p>😀 近日用 章鱼星球S912 配置了旁路网关，体验还行。后面想着配置一下内网穿透以便在外出时可以与内网设备交互。之前有朋友推荐用 Tailscale 很方便，本博客由此而来。</p>
+
+    </div>
+  </div>
+
+<h1 id="安装-Tailscale"><a href="#安装-Tailscale" class="headerlink" title="安装 Tailscale"></a>安装 Tailscale</h1><p>我这里是使用的这个项目，读者可以考虑其他方式部署：</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://github.com/adyanth/openwrt-tailscale-enabler">https://github.com/adyanth/openwrt-tailscale-enabler<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>具体的指令如下：</p>
+<ul>
+<li>通过 <code>ssh</code> 连接到 OpenWrt:</li>
+</ul>
+<div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@&lt;IP&gt;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>下载该项目（项目版本可以自选）</li>
+</ul>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &lt;https://github.com/adyanth/openwrt-tailscale-enabler/releases/download/v1.60.0-e428948-autoupdate/openwrt-tailscale-enabler-v1.60.0-e428948-autoupdate.tgz&gt;</span><br></pre></td></tr></table></figure></div>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132052422.png" class="">
+
+<ul>
+<li><p>解压刚才下载下来的这个项目</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar x -zvC / -f &lt;File Name&gt;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053115.png" class="">
+<ul>
+<li><p>更新并安装依赖</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install libustream-openssl ca-bundle kmod-tun</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132053876.png" class="">
+<ul>
+<li><p>设置开机自启动</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/tailscale enable</span><br><span class="line">ls /etc/rc.d/S*tailscale*</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132054868.png" class="">
+<ul>
+<li><p>启动 Tailscale</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/tailscale start</span><br><span class="line">tailscale up</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132055590.png" class="">
+<ul>
+<li><p>开启子网路由</p>
+  <div class="code-container" data-rel="Docker"><figure class="iseeu highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tailscale up --accept-routes --advertise-routes=<span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span> --accept-dns=false</span><br></pre></td></tr></table></figure></div>
+<p>  注意：其中 advertise-routes 的参数格式可能不一样。简单来说，取你当前 OpenWrt 的IP地址的前三部分，最后一部分为 0，并且子网掩码 255.255.255.0 即可。即 <code>&lt;原&gt;.&lt;原&gt;.&lt;原&gt;.&lt;0&gt;/24</code> 比如，我的 OpenWrt 的IP为192.168.1.254，那么我这里就需要192.168.1.0/24</p>
+</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132056837.png" class="">
+<ul>
+<li>在 Tailscale 控制台设置路由设置，勾选并保存</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132058000.png" class="">
+<h1 id="配置-OpenWrt"><a href="#配置-OpenWrt" class="headerlink" title="配置 OpenWrt"></a>配置 OpenWrt</h1><h2 id="配置网络接口"><a href="#配置网络接口" class="headerlink" title="配置网络接口"></a>配置网络接口</h2><p>在 LuCI 界面中：</p>
+<ol>
+<li><strong>添加接口</strong><ul>
+<li>转到 <strong>网络 &gt; 接口 &gt; 添加新接口</strong>。</li>
+<li>名称：<code>tailscale</code></li>
+<li>协议：<strong>静态地址</strong></li>
+<li>设备：选择 <code>tailscale0</code></li>
+<li>IPv4 地址：填写 Tailscale 分配给路由器的 IP（如 <code>100.x.x.x</code>）。</li>
+<li>子网掩码：<code>255.0.0.0</code></li>
+<li>防火墙区域：选择 <code>lan</code>。</li>
+</ul>
+</li>
+<li>保存并应用更改。</li>
+</ol>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132059204.png" class="">
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132101934.png" class="">
+
+
+<h2 id="添加防火墙规则"><a href="#添加防火墙规则" class="headerlink" title="添加防火墙规则"></a>添加防火墙规则</h2><p>在 LuCI 界面中：</p>
+<ol>
+<li>转到 <strong>网络 &gt; 防火墙 &gt; 自定义规则</strong>。</li>
+<li>添加以下内容以允许 Tailscale 流量通过：</li>
+</ol>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -I FORWARD -i tailscale0 -j ACCEPT</span><br><span class="line">iptables -I FORWARD -o tailscale0 -j ACCEPT</span><br><span class="line">iptables -t nat -I POSTROUTING -o tailscale0 -j MASQUERADE</span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li>保存并重启防火墙。</li>
+</ol>
+<img lazyload="" src="/images/loading.svg" data-src="/p/da267693/IMG-20250213132103184.png" class="">
+<p>这样就完成了。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> OpenWrt 上通过 Tailscale 实现内网穿透</li>
+        <li><strong>Author:</strong> Neurocoda</li>
+        <li><strong>Created at
+                :</strong> 2025-02-13 13:19:33</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-02-13 13:19:33
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://neurocoda.com/p/da267693.html
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nd/4.0">CC BY-ND 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/OpenWrt/">#OpenWrt</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Tailscale/">#Tailscale</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">#内网穿透</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>Recommend</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/p/2ccf300b.html" title="Tailscale 暴露 Socks5 端口供代理软件使用" rel="bookmark">
+  <img src="https://images.unsplash.com/photo-1639322537504-6427a16b0a28?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tailscale 暴露 Socks5 端口供代理软件使用" class="!max-w-none">
+  <span class="title">Tailscale 暴露 Socks5 端口供代理软件使用</span>
+</a><a class="recommended-article-item" href="/p/e68688e7.html" title="免域名 tailscale derp 搭建" rel="bookmark">
+  <img src="https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="免域名 tailscale derp 搭建" class="!max-w-none">
+  <span class="title">免域名 tailscale derp 搭建</span>
+</a><a class="recommended-article-item" href="/p/2cc1110b.html" title="Hexo webhook 自动部署" rel="bookmark">
+  <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hexo webhook 自动部署" class="!max-w-none">
+  <span class="title">Hexo webhook 自动部署</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>Recommend</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/p/2ccf300b.html" title="Tailscale 暴露 Socks5 端口供代理软件使用" rel="bookmark">
+  <img src="https://images.unsplash.com/photo-1639322537504-6427a16b0a28?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tailscale 暴露 Socks5 端口供代理软件使用" class="!max-w-none">
+  <span class="title">Tailscale 暴露 Socks5 端口供代理软件使用</span>
+</a><a class="recommended-article-item" href="/p/e68688e7.html" title="免域名 tailscale derp 搭建" rel="bookmark">
+  <img src="https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="免域名 tailscale derp 搭建" class="!max-w-none">
+  <span class="title">免域名 tailscale derp 搭建</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/p/2cc1110b.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Hexo webhook 自动部署</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/p/81a43a38.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">如何从 Notion 无痛转移到 Obsidian？（不完全转移）</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://waline.neurocoda.com',
+          lang: 'en-US',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">OpenWrt 上通过 Tailscale 实现内网穿透</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Tailscale"><span class="nav-text">安装 Tailscale</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-OpenWrt"><span class="nav-text">配置 OpenWrt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3"><span class="nav-text">配置网络接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99"><span class="nav-text">添加防火墙规则</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2025</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neurocoda</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        13 posts in total
+                    </span>
+                    
+                        <span>
+                            32.4k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+    
+<script src="/js/build/libs/pangu.min.js"></script>
+
+<script src="/js/build/plugins/pangu.js"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/bookmarkNav.js" type="module"></script>
+
+
+	
+</body>
+
+</html>
