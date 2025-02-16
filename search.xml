@@ -13,7 +13,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#x62;&#108;&#105;&#99;&#x40;&#110;&#101;&#117;&#x72;&#111;&#99;&#x6f;&#100;&#97;&#46;&#99;&#x6f;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#117;&#98;&#108;&#105;&#x63;&#x40;&#x6e;&#x65;&#117;&#114;&#111;&#x63;&#111;&#x64;&#97;&#x2e;&#x63;&#x6f;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -143,7 +143,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#x70;&#117;&#98;&#x6c;&#105;&#x63;&#x40;&#110;&#101;&#x75;&#x72;&#111;&#99;&#x6f;&#x64;&#x61;&#46;&#x63;&#111;&#109;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#x6c;&#x69;&#x63;&#64;&#110;&#x65;&#x75;&#x72;&#x6f;&#x63;&#111;&#100;&#97;&#46;&#99;&#x6f;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -542,6 +542,103 @@
         <tag>OpenWrt</tag>
         <tag>Tailscale</tag>
         <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tailscale 暴露 Socks5 端口供代理软件使用</title>
+    <url>/p/2ccf300b.html</url>
+    <content><![CDATA[<p>💡本人长期使用 Clash 或 Quantumult X 等软件，在通过 Tailscale 搭建好内网服务后，每次需要访问内网服务时都需要切换软件（Tailscale 客户端与 上述代理软件同一时间只能运行一个），很不方便。故考虑添加内网代理节点到代理软件并配置分流规则使得不再需要频繁切换软件。</p>
+<h1 id="部署-Tailscale-容器"><a href="#部署-Tailscale-容器" class="headerlink" title="部署 Tailscale 容器"></a>部署 Tailscale 容器</h1><p>参考 <a class="link" href="https://tailscale.com/kb/1112/userspace-networking">**Userspace networking mode (for containers)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>** ，部署 tailscale 容器并暴露 socks5 端口。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d \\</span><br><span class="line">  --name tailscale-socks5 \\</span><br><span class="line">  --restart=unless-stopped \\</span><br><span class="line">  --cap-add=NET_ADMIN \\</span><br><span class="line">  -e TS_USERSPACE=<span class="literal">true</span> \\</span><br><span class="line">  -e TS_SOCKS5_SERVER=0.0.0.0:1055 \\</span><br><span class="line">  -p 127.0.0.1:1055:1055 \\</span><br><span class="line">  -v /var/www/tailscale-socks5:/var/lib/tailscale \\</span><br><span class="line">  tailscale/tailscale:latest tailscaled --tun=userspace-networking --socks5-server=0.0.0.0:1055</span><br></pre></td></tr></table></figure></div>
+
+<p>检查是否监听 <code>:1055</code> 端口：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 ss -tuln</span><br></pre></td></tr></table></figure></div>
+
+<p>启动 tailscale 并完成登录：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 tailscale up --accept-dns=<span class="literal">false</span> --accept-routes</span><br></pre></td></tr></table></figure></div>
+
+<p>登录成功后，测试 tilscale 容器暴露的 socks5 端口是否能正常使用：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl --socks5 127.0.0.1:1055 &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
+
+<p>但是这个 socks5 不带鉴权（用户名密码），为了稍显安全地暴露到公网，可以考虑部署一个带用户名/密码鉴权的 SOCKS5 代理，其 <strong>出站流量</strong> 转发给 tailscale 的不带鉴权 SOCKS5 服务。</p>
+<h1 id="部署-kechangdev-s2s-容器"><a href="#部署-kechangdev-s2s-容器" class="headerlink" title="部署 kechangdev/s2s 容器"></a>部署 kechangdev/s2s 容器</h1><p>项目地址：<a class="link" href="https://github.com/kechangdev/s2s">https://github.com/kechangdev/s2s<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>以下示例会启动本容器，监听本机 <code>45675</code> 端口，用户名/密码均设置为 <code>username</code> / <code>password</code>，并将流量转发给本机的无鉴权 SOCKS5 代理 <code>127.0.0.1:1055</code>。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --network host \\</span><br><span class="line">  --name tailscale-s2s \\</span><br><span class="line">  -e SOCKS5_USERNAME=<span class="string">"username"</span> \\</span><br><span class="line">  -e SOCKS5_PASSWORD=<span class="string">"password"</span> \\</span><br><span class="line">  -e TS_SOCKS5_HOST=<span class="string">"127.0.0.1"</span> \\</span><br><span class="line">  -e TS_SOCKS5_PORT=<span class="string">"1055"</span> \\</span><br><span class="line">  -e INBOUND_PORT=<span class="string">"45675"</span> \\</span><br><span class="line">  kechangdev/s2s:latest</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SOCKS5_USERNAME</code></td>
+<td><code>username</code></td>
+<td><strong>入站 SOCKS5</strong> 鉴权使用的用户名</td>
+</tr>
+<tr>
+<td><code>SOCKS5_PASSWORD</code></td>
+<td><code>password</code></td>
+<td><strong>入站 SOCKS5</strong> 鉴权使用的密码</td>
+</tr>
+<tr>
+<td><code>TS_SOCKS5_HOST</code></td>
+<td><code>127.0.0.1</code></td>
+<td><strong>出站 SOCKS5</strong> 的地址（例如 Tailscale 提供的 socks5）</td>
+</tr>
+<tr>
+<td><code>TS_SOCKS5_PORT</code></td>
+<td><code>1055</code></td>
+<td><strong>出站 SOCKS5</strong> 的端口</td>
+</tr>
+<tr>
+<td><code>INBOUND_PORT</code></td>
+<td><code>45675</code></td>
+<td>本容器对外暴露的 SOCKS5 端口（带用户名/密码鉴权）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>说明：</p>
+<ul>
+<li><code>-network host</code> 通常用于让容器与宿主机共享网络命名空间，方便连接到本机的 Tailscale SOCKS5。也可根据需要使用其他网络模式，只要容器能访问 <code>TS_SOCKS5_HOST:TS_SOCKS5_PORT</code> 即可。</li>
+<li>如果想修改监听端口，只需在启动时更改 <code>INBOUND_PORT</code> 并相应映射端口。</li>
+</ul>
+</blockquote>
+<p>测试：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v --socks5 127.0.0.1:45675 -U username:password &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
+
+<p>若能正确返回目标页面内容，则说明整个代理链路正常。</p>
+<h1 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h1><p>以 Quantumult X 为例：</p>
+<ul>
+<li>配置 Socks5 节点：</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">socks5=IP:Port, username=XXX, password=XXX, fast-open=<span class="literal">false</span>, udp-relay=<span class="literal">false</span>, server_check_url=http://tailscale 内网服务, tag=tailscale</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>配置策略组：</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">static=Tailscale, tailscale</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>配置分流规则：</li>
+</ul>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">; Tailscale</span><br><span class="line">ip-cidr, 100.64.0.0/10, Tailscale</span><br></pre></td></tr></table></figure></div>
+
+
+<p>好啦，你可以无感访问你的 tailscale 内网了：</p>
+<img lazyload="" src="/images/loading.svg" data-src="/p/2ccf300b/IMG-20250213190445127.jpeg" class="">
+<h1 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h1><p>强烈建议使用 <strong>TLS/SSH 隧道</strong> 或 <strong>Fail2Ban</strong> 等其他方式加固安全。仅使用 SOCKS5 + 用户名/密码在公网暴露仍存在潜在风险（暴力穷举、抓包等）。</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>Tailscale</tag>
+        <tag>内网穿透</tag>
+        <tag>中继服务</tag>
+        <tag>家里云</tag>
       </tags>
   </entry>
   <entry>
@@ -1098,100 +1195,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Tailscale 暴露 Socks5 端口供代理软件使用</title>
-    <url>/p/2ccf300b.html</url>
-    <content><![CDATA[<p>💡本人长期使用 Clash 或 Quantumult X 等软件，在通过 Tailscale 搭建好内网服务后，每次需要访问内网服务时都需要切换软件（Tailscale 客户端与 上述代理软件同一时间只能运行一个），很不方便。故考虑添加内网代理节点到代理软件并配置分流规则使得不再需要频繁切换软件。</p>
-<h1 id="部署-Tailscale-容器"><a href="#部署-Tailscale-容器" class="headerlink" title="部署 Tailscale 容器"></a>部署 Tailscale 容器</h1><p>参考 <a class="link" href="https://tailscale.com/kb/1112/userspace-networking">**Userspace networking mode (for containers)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>** ，部署 tailscale 容器并暴露 socks5 端口。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d \\</span><br><span class="line">  --name tailscale-socks5 \\</span><br><span class="line">  --restart=unless-stopped \\</span><br><span class="line">  --cap-add=NET_ADMIN \\</span><br><span class="line">  -e TS_USERSPACE=<span class="literal">true</span> \\</span><br><span class="line">  -e TS_SOCKS5_SERVER=0.0.0.0:1055 \\</span><br><span class="line">  -p 127.0.0.1:1055:1055 \\</span><br><span class="line">  -v /var/www/tailscale-socks5:/var/lib/tailscale \\</span><br><span class="line">  tailscale/tailscale:latest tailscaled --tun=userspace-networking --socks5-server=0.0.0.0:1055</span><br></pre></td></tr></table></figure></div>
+    <title>Win 服务器保持断开 RDP 后的会话</title>
+    <url>/p/e228fa80.html</url>
+    <content><![CDATA[<p>创建文本并输入以下内容：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
 
-<p>检查是否监听 <code>:1055</code> 端口：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 ss -tuln</span><br></pre></td></tr></table></figure></div>
+<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
+<p>进入下面的地址：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
 
-<p>启动 tailscale 并完成登录：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it tailscale-socks5 tailscale up --accept-dns=<span class="literal">false</span> --accept-routes</span><br></pre></td></tr></table></figure></div>
-
-<p>登录成功后，测试 tilscale 容器暴露的 socks5 端口是否能正常使用：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl --socks5 127.0.0.1:1055 &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
-
-<p>但是这个 socks5 不带鉴权（用户名密码），为了稍显安全地暴露到公网，可以考虑部署一个带用户名/密码鉴权的 SOCKS5 代理，其 <strong>出站流量</strong> 转发给 tailscale 的不带鉴权 SOCKS5 服务。</p>
-<h1 id="部署-kechangdev-s2s-容器"><a href="#部署-kechangdev-s2s-容器" class="headerlink" title="部署 kechangdev/s2s 容器"></a>部署 kechangdev/s2s 容器</h1><p>项目地址：<a class="link" href="https://github.com/kechangdev/s2s">https://github.com/kechangdev/s2s<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<p>以下示例会启动本容器，监听本机 <code>45675</code> 端口，用户名/密码均设置为 <code>username</code> / <code>password</code>，并将流量转发给本机的无鉴权 SOCKS5 代理 <code>127.0.0.1:1055</code>。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --network host \\</span><br><span class="line">  --name tailscale-s2s \\</span><br><span class="line">  -e SOCKS5_USERNAME=<span class="string">"username"</span> \\</span><br><span class="line">  -e SOCKS5_PASSWORD=<span class="string">"password"</span> \\</span><br><span class="line">  -e TS_SOCKS5_HOST=<span class="string">"127.0.0.1"</span> \\</span><br><span class="line">  -e TS_SOCKS5_PORT=<span class="string">"1055"</span> \\</span><br><span class="line">  -e INBOUND_PORT=<span class="string">"45675"</span> \\</span><br><span class="line">  kechangdev/s2s:latest</span><br></pre></td></tr></table></figure></div>
-
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>默认值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>SOCKS5_USERNAME</code></td>
-<td><code>username</code></td>
-<td><strong>入站 SOCKS5</strong> 鉴权使用的用户名</td>
-</tr>
-<tr>
-<td><code>SOCKS5_PASSWORD</code></td>
-<td><code>password</code></td>
-<td><strong>入站 SOCKS5</strong> 鉴权使用的密码</td>
-</tr>
-<tr>
-<td><code>TS_SOCKS5_HOST</code></td>
-<td><code>127.0.0.1</code></td>
-<td><strong>出站 SOCKS5</strong> 的地址（例如 Tailscale 提供的 socks5）</td>
-</tr>
-<tr>
-<td><code>TS_SOCKS5_PORT</code></td>
-<td><code>1055</code></td>
-<td><strong>出站 SOCKS5</strong> 的端口</td>
-</tr>
-<tr>
-<td><code>INBOUND_PORT</code></td>
-<td><code>45675</code></td>
-<td>本容器对外暴露的 SOCKS5 端口（带用户名/密码鉴权）</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>说明：</p>
-<ul>
-<li><code>-network host</code> 通常用于让容器与宿主机共享网络命名空间，方便连接到本机的 Tailscale SOCKS5。也可根据需要使用其他网络模式，只要容器能访问 <code>TS_SOCKS5_HOST:TS_SOCKS5_PORT</code> 即可。</li>
-<li>如果想修改监听端口，只需在启动时更改 <code>INBOUND_PORT</code> 并相应映射端口。</li>
-</ul>
-</blockquote>
-<p>测试：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v --socks5 127.0.0.1:45675 -U username:password &lt;http://tailscale&gt; 内网服务</span><br></pre></td></tr></table></figure></div>
-
-<p>若能正确返回目标页面内容，则说明整个代理链路正常。</p>
-<h1 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h1><p>以 Quantumult X 为例：</p>
-<ul>
-<li>配置 Socks5 节点：</li>
-</ul>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">socks5=IP:Port, username=XXX, password=XXX, fast-open=<span class="literal">false</span>, udp-relay=<span class="literal">false</span>, server_check_url=http://tailscale 内网服务, tag=tailscale</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>配置策略组：</li>
-</ul>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">static=Tailscale, tailscale</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>配置分流规则：</li>
-</ul>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">; Tailscale</span><br><span class="line">ip-cidr, 100.64.0.0/10, Tailscale</span><br></pre></td></tr></table></figure></div>
-
-
-<p>好啦，你可以无感访问你的 tailscale 内网了：</p>
-<img lazyload="" src="/images/loading.svg" data-src="/p/2ccf300b/IMG-20250213190445127.jpeg" class="">
-<h1 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h1><p>强烈建议使用 <strong>TLS/SSH 隧道</strong> 或 <strong>Fail2Ban</strong> 等其他方式加固安全。仅使用 SOCKS5 + 用户名/密码在公网暴露仍存在潜在风险（暴力穷举、抓包等）。</p>
+<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
+<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 ]]></content>
       <categories>
-        <category>网络</category>
+        <category>杂项</category>
       </categories>
       <tags>
-        <tag>Tailscale</tag>
-        <tag>内网穿透</tag>
-        <tag>中继服务</tag>
-        <tag>家里云</tag>
+        <tag>RDP</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1207,7 +1228,7 @@
       <p>All content on this blog is intended solely for the purpose of learning English and is not meant to infringe on any copyrights. All translations and citations are used for educational and non-commercial purposes. This blog is publicly accessible and free, with no profit being made from its content.</p>
 <p>If you believe that any content on this blog infringes on your copyright, please contact me at the following email address, and I will promptly remove the content in question after verification.</p>
 <p>Thank you for your understanding and support.</p>
-<p>Contact: <a class="link" href="mailto:&#112;&#117;&#x62;&#108;&#x69;&#x63;&#64;&#x6e;&#x65;&#x75;&#x72;&#x6f;&#x63;&#111;&#100;&#x61;&#x2e;&#x63;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>Contact: <a class="link" href="mailto:&#x70;&#x75;&#98;&#108;&#105;&#x63;&#x40;&#110;&#101;&#x75;&#114;&#x6f;&#99;&#x6f;&#100;&#x61;&#x2e;&#99;&#111;&#x6d;">public@neurocoda.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
     </div>
   </div>
@@ -1345,27 +1366,6 @@
       </categories>
       <tags>
         <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Win 服务器保持断开 RDP 后的会话</title>
-    <url>/p/e228fa80.html</url>
-    <content><![CDATA[<p>创建文本并输入以下内容：</p>
-<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f <span class="string">"skip=1 tokens=3"</span> %%s <span class="title function_">in</span> <span class="params">(<span class="string">'query user %USERNAME%'</span>)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">  %windir%\\System32\\tscon.exe %%s /dest:console</span></span><br><span class="line"><span class="params">)</span></span><br></pre></td></tr></table></figure></div>
-
-<p>将后缀改为 exe 格式。固定到任务栏即可，每次要断开连接就点击这个文件（会保持运行状态）。</p>
-<p>进入下面的地址：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%userprofile%\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar</span><br></pre></td></tr></table></figure></div>
-
-<p>将快捷方式中指向的源文件的文件及源文件的后缀改回bat，最后记得在高级设置使用管理员权限启动。</p>
-<p>来源：<br><a class="link" href="https://support.smartbear.com/testcomplete/docs/testing-with/running/via-rdp/keeping-computer-unlocked.html">Disconnecting From Remote Desktop While Running Automated Tests | TestComplete Documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>RDP</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1678,75 +1678,6 @@
       </tags>
   </entry>
   <entry>
-    <title>记一次自建 DoH 服务器</title>
-    <url>/p/cf8cf045.html</url>
-    <content><![CDATA[<p><a href="asset/IMG-20250213182959369.png"></a></p>
-<h1 id="CoreDNS"><a href="#CoreDNS" class="headerlink" title="CoreDNS"></a>CoreDNS</h1><p>CoreDNS 是一个灵活且功能强大的 DNS 服务器，支持多种插件扩展。它非常适合用于搭建 DoH 服务。</p>
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装必要组件"><a href="#安装必要组件" class="headerlink" title="安装必要组件"></a>安装必要组件</h2><p>首先，更新系统并安装所需的软件包，包括 Docker Compose 和 Certbot（用于获取 SSL 证书）。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y &amp;&amp; <span class="built_in">sudo</span> apt install -y docker-compose certbot</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><p>确保服务器的安全性，配置防火墙规则，允许必要的端口（22、80 和 443）。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 22</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 80</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 443</span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></div>
-
-<h2 id="获取-SSL-证书"><a href="#获取-SSL-证书" class="headerlink" title="获取 SSL 证书"></a>获取 SSL 证书</h2><p>使用 Certbot 获取 SSL 证书。请将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot certonly --standalone -d &lt;DOMAIN&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>注意</strong>：确保域名已正确解析到你的服务器 IP，并且 80 端口未被其他服务占用。</p>
-<h1 id="配置并部署-CoreDNS"><a href="#配置并部署-CoreDNS" class="headerlink" title="配置并部署 CoreDNS"></a>配置并部署 CoreDNS</h1><p>我们将通过 Docker 来运行 CoreDNS。</p>
-<h2 id="创建-CoreDNS-配置目录"><a href="#创建-CoreDNS-配置目录" class="headerlink" title="创建 CoreDNS 配置目录"></a>创建 CoreDNS 配置目录</h2><p>创建配置文件存放目录。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/coredns</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="编写-CoreDNS-配置文件"><a href="#编写-CoreDNS-配置文件" class="headerlink" title="编写 CoreDNS 配置文件"></a>编写 CoreDNS 配置文件</h2><p>创建并编辑 <code>/etc/coredns/Corefile</code>：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
-
-<p>在文件中添加以下内容，记得将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://.:443 {</span><br><span class="line">    tls /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</span><br><span class="line">    bind 0.0.0.0:443</span><br><span class="line">    forward . 1.1.1.1 8.8.8.8</span><br><span class="line">    log</span><br><span class="line">    errors</span><br><span class="line">    cache 300</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>配置说明：</strong></p>
-<ul>
-<li><code>&lt;DOMAIN&gt;:443</code>：在 443 端口上监听来自指定域名的 HTTPS 请求。</li>
-<li><code>tls</code>：指定 SSL 证书和私钥的路径。</li>
-<li><code>bind 0.0.0.0:443</code>：绑定所有网络接口的 443 端口，允许外部访问。</li>
-<li><code>forward . 1.1.1.1 8.8.8.8</code>：将 DNS 请求转发到 Cloudflare (1.1.1.1) 和 Google (8.8.8.8) 的公共 DNS 服务器。</li>
-<li><code>log</code> 和 <code>errors</code>：启用日志记录和错误记录，便于调试。</li>
-<li><code>cache 300</code>：启用 DNS 缓存，缓存时间为 300 秒，提高查询速度。</li>
-</ul>
-<h2 id="运行-CoreDNS-容器"><a href="#运行-CoreDNS-容器" class="headerlink" title="运行 CoreDNS 容器"></a>运行 CoreDNS 容器</h2><p>使用 Docker 运行 CoreDNS 容器。确保将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -d \\</span><br><span class="line">  --name coredns \\</span><br><span class="line">  --restart unless-stopped \\</span><br><span class="line">  --network host \\</span><br><span class="line">  -v /etc/coredns:/etc/coredns \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem \\</span><br><span class="line">  coredns/coredns \\</span><br><span class="line">  -conf /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>运行说明：</strong></p>
-<ul>
-<li><code>-network host</code>：使用主机的网络堆栈，允许 CoreDNS 在主机的 443 端口上监听。</li>
-<li><code>v /etc/coredns:/etc/coredns</code>：将主机的配置目录挂载到容器内，方便管理配置文件。</li>
-<li><code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem</code> 和 <code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</code>：将 SSL 证书和私钥挂载到容器内，确保 CoreDNS 能够使用 HTTPS。</li>
-</ul>
-<h2 id="验证-CoreDNS-运行状态"><a href="#验证-CoreDNS-运行状态" class="headerlink" title="验证 CoreDNS 运行状态"></a>验证 CoreDNS 运行状态</h2><p>确保 CoreDNS 容器正在运行，并监听正确的端口。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker ps | grep coredns</span><br></pre></td></tr></table></figure></div>
-
-<p>你应该能看到类似如下的输出，表示 CoreDNS 容器正在运行并监听 443 端口：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES</span><br><span class="line">&lt;container_id&gt; coredns/coredns "/coredns -conf /etc…"  X seconds ago    Up X seconds    0.0.0.0:443-&gt;443/tcp                        coredns</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="配置客户端使用-DoH"><a href="#配置客户端使用-DoH" class="headerlink" title="配置客户端使用 DoH"></a>配置客户端使用 DoH</h1><p>完成上述步骤后，你的 DoH 服务器已经搭建完成。接下来，需要在客户端设备上配置 DNS 设置，使用 <code>https://&lt;DOMAIN&gt;/dns-query</code> 作为 DoH 服务器地址。</p>
-<h1 id="自动更新-SSL-证书"><a href="#自动更新-SSL-证书" class="headerlink" title="自动更新 SSL 证书"></a>自动更新 SSL 证书</h1><p>Certbot 获取的 SSL 证书有效期为 90 天，建议设置定时任务自动更新证书，并重启 CoreDNS 容器。</p>
-<p>创建一个定时任务，每天检查并更新证书：</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> crontab -e</span><br></pre></td></tr></table></figure></div>
-
-<p>添加以下内容：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 1 * * certbot renew --quiet &amp;&amp; sudo docker restart coredns</span><br></pre></td></tr></table></figure></div>
-
-<p>此任务将在每个月1号的凌晨 2 点运行，自动更新证书并重启 CoreDNS 容器。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a class="link" href="https://coredns.io/manual/toc/">CoreDNS Manual<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://certbot.eff.org/">Certbot<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://docs.docker.com/">Home<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS">DNS over HTTPS<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>DNS</tag>
-        <tag>DoH</tag>
-        <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>超实数系视角下的函数极限</title>
     <url>/p/8b3ad5ef.html</url>
     <content><![CDATA[<h1 id="邻域"><a href="#邻域" class="headerlink" title="邻域"></a>邻域</h1><p>设 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.375ex;" xmlns="http://www.w3.org/2000/svg" width="2.282ex" height="1.375ex" role="img" focusable="false" viewBox="0 -442 1008.6 607.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container> 是数轴上一点，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.005ex" height="1.645ex" role="img" focusable="false" viewBox="0 -717 444 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FF" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></g></g></g></svg></mjx-container> 是某一正数，称 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="14.87ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 6572.7 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="msub" transform="translate(389,0)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g><g data-mml-node="mo" transform="translate(1619.8,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(2620,0)"><path data-c="1D6FF" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></g><g data-mml-node="mo" transform="translate(3064,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="msub" transform="translate(3508.7,0)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g><g data-mml-node="mo" transform="translate(4739.4,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(5739.7,0)"><path data-c="1D6FF" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></g><g data-mml-node="mo" transform="translate(6183.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container> 为点 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.375ex;" xmlns="http://www.w3.org/2000/svg" width="2.282ex" height="1.375ex" role="img" focusable="false" viewBox="0 -442 1008.6 607.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container> 的 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.005ex" height="1.645ex" role="img" focusable="false" viewBox="0 -717 444 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FF" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></g></g></g></svg></mjx-container> 邻域，记做 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="7.788ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3442.2 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D448" d="M107 637Q73 637 71 641Q70 643 70 649Q70 673 81 682Q83 683 98 683Q139 681 234 681Q268 681 297 681T342 682T362 682Q378 682 378 672Q378 670 376 658Q371 641 366 638H364Q362 638 359 638T352 638T343 637T334 637Q295 636 284 634T266 623Q265 621 238 518T184 302T154 169Q152 155 152 140Q152 86 183 55T269 24Q336 24 403 69T501 205L552 406Q599 598 599 606Q599 633 535 637Q511 637 511 648Q511 650 513 660Q517 676 519 679T529 683Q532 683 561 682T645 680Q696 680 723 681T752 682Q767 682 767 672Q767 650 759 642Q756 637 737 637Q666 633 648 597Q646 592 598 404Q557 235 548 205Q515 105 433 42T263 -22Q171 -22 116 34T60 167V183Q60 201 115 421Q164 622 164 628Q164 635 107 637Z"></path></g><g data-mml-node="mo" transform="translate(767,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="msub" transform="translate(1156,0)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g><g data-mml-node="mo" transform="translate(2164.6,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(2609.2,0)"><path data-c="1D6FF" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></g><g data-mml-node="mo" transform="translate(3053.2,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，即</p>
@@ -1931,6 +1862,75 @@
       <tags>
         <tag>超实数</tag>
         <tag>函数极限</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记一次自建 DoH 服务器</title>
+    <url>/p/cf8cf045.html</url>
+    <content><![CDATA[<p><a href="asset/IMG-20250213182959369.png"></a></p>
+<h1 id="CoreDNS"><a href="#CoreDNS" class="headerlink" title="CoreDNS"></a>CoreDNS</h1><p>CoreDNS 是一个灵活且功能强大的 DNS 服务器，支持多种插件扩展。它非常适合用于搭建 DoH 服务。</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="安装必要组件"><a href="#安装必要组件" class="headerlink" title="安装必要组件"></a>安装必要组件</h2><p>首先，更新系统并安装所需的软件包，包括 Docker Compose 和 Certbot（用于获取 SSL 证书）。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y &amp;&amp; <span class="built_in">sudo</span> apt install -y docker-compose certbot</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><p>确保服务器的安全性，配置防火墙规则，允许必要的端口（22、80 和 443）。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 22</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 80</span><br><span class="line"><span class="built_in">sudo</span> ufw allow 443</span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="获取-SSL-证书"><a href="#获取-SSL-证书" class="headerlink" title="获取 SSL 证书"></a>获取 SSL 证书</h2><p>使用 Certbot 获取 SSL 证书。请将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot certonly --standalone -d &lt;DOMAIN&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>注意</strong>：确保域名已正确解析到你的服务器 IP，并且 80 端口未被其他服务占用。</p>
+<h1 id="配置并部署-CoreDNS"><a href="#配置并部署-CoreDNS" class="headerlink" title="配置并部署 CoreDNS"></a>配置并部署 CoreDNS</h1><p>我们将通过 Docker 来运行 CoreDNS。</p>
+<h2 id="创建-CoreDNS-配置目录"><a href="#创建-CoreDNS-配置目录" class="headerlink" title="创建 CoreDNS 配置目录"></a>创建 CoreDNS 配置目录</h2><p>创建配置文件存放目录。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/coredns</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="编写-CoreDNS-配置文件"><a href="#编写-CoreDNS-配置文件" class="headerlink" title="编写 CoreDNS 配置文件"></a>编写 CoreDNS 配置文件</h2><p>创建并编辑 <code>/etc/coredns/Corefile</code>：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
+
+<p>在文件中添加以下内容，记得将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://.:443 {</span><br><span class="line">    tls /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</span><br><span class="line">    bind 0.0.0.0:443</span><br><span class="line">    forward . 1.1.1.1 8.8.8.8</span><br><span class="line">    log</span><br><span class="line">    errors</span><br><span class="line">    cache 300</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>配置说明：</strong></p>
+<ul>
+<li><code>&lt;DOMAIN&gt;:443</code>：在 443 端口上监听来自指定域名的 HTTPS 请求。</li>
+<li><code>tls</code>：指定 SSL 证书和私钥的路径。</li>
+<li><code>bind 0.0.0.0:443</code>：绑定所有网络接口的 443 端口，允许外部访问。</li>
+<li><code>forward . 1.1.1.1 8.8.8.8</code>：将 DNS 请求转发到 Cloudflare (1.1.1.1) 和 Google (8.8.8.8) 的公共 DNS 服务器。</li>
+<li><code>log</code> 和 <code>errors</code>：启用日志记录和错误记录，便于调试。</li>
+<li><code>cache 300</code>：启用 DNS 缓存，缓存时间为 300 秒，提高查询速度。</li>
+</ul>
+<h2 id="运行-CoreDNS-容器"><a href="#运行-CoreDNS-容器" class="headerlink" title="运行 CoreDNS 容器"></a>运行 CoreDNS 容器</h2><p>使用 Docker 运行 CoreDNS 容器。确保将 <code>&lt;DOMAIN&gt;</code> 替换为你的实际域名。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -d \\</span><br><span class="line">  --name coredns \\</span><br><span class="line">  --restart unless-stopped \\</span><br><span class="line">  --network host \\</span><br><span class="line">  -v /etc/coredns:/etc/coredns \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem \\</span><br><span class="line">  -v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem:/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem \\</span><br><span class="line">  coredns/coredns \\</span><br><span class="line">  -conf /etc/coredns/Corefile</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>运行说明：</strong></p>
+<ul>
+<li><code>-network host</code>：使用主机的网络堆栈，允许 CoreDNS 在主机的 443 端口上监听。</li>
+<li><code>v /etc/coredns:/etc/coredns</code>：将主机的配置目录挂载到容器内，方便管理配置文件。</li>
+<li><code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/fullchain.pem</code> 和 <code>v /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</code>：将 SSL 证书和私钥挂载到容器内，确保 CoreDNS 能够使用 HTTPS。</li>
+</ul>
+<h2 id="验证-CoreDNS-运行状态"><a href="#验证-CoreDNS-运行状态" class="headerlink" title="验证 CoreDNS 运行状态"></a>验证 CoreDNS 运行状态</h2><p>确保 CoreDNS 容器正在运行，并监听正确的端口。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker ps | grep coredns</span><br></pre></td></tr></table></figure></div>
+
+<p>你应该能看到类似如下的输出，表示 CoreDNS 容器正在运行并监听 443 端口：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES</span><br><span class="line">&lt;container_id&gt; coredns/coredns "/coredns -conf /etc…"  X seconds ago    Up X seconds    0.0.0.0:443-&gt;443/tcp                        coredns</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="配置客户端使用-DoH"><a href="#配置客户端使用-DoH" class="headerlink" title="配置客户端使用 DoH"></a>配置客户端使用 DoH</h1><p>完成上述步骤后，你的 DoH 服务器已经搭建完成。接下来，需要在客户端设备上配置 DNS 设置，使用 <code>https://&lt;DOMAIN&gt;/dns-query</code> 作为 DoH 服务器地址。</p>
+<h1 id="自动更新-SSL-证书"><a href="#自动更新-SSL-证书" class="headerlink" title="自动更新 SSL 证书"></a>自动更新 SSL 证书</h1><p>Certbot 获取的 SSL 证书有效期为 90 天，建议设置定时任务自动更新证书，并重启 CoreDNS 容器。</p>
+<p>创建一个定时任务，每天检查并更新证书：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> crontab -e</span><br></pre></td></tr></table></figure></div>
+
+<p>添加以下内容：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 1 * * certbot renew --quiet &amp;&amp; sudo docker restart coredns</span><br></pre></td></tr></table></figure></div>
+
+<p>此任务将在每个月1号的凌晨 2 点运行，自动更新证书并重启 CoreDNS 容器。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a class="link" href="https://coredns.io/manual/toc/">CoreDNS Manual<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://certbot.eff.org/">Certbot<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://docs.docker.com/">Home<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS">DNS over HTTPS<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>DNS</tag>
+        <tag>DoH</tag>
+        <tag>网络安全</tag>
       </tags>
   </entry>
 </search>
